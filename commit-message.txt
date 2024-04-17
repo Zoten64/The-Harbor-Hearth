@@ -1,0 +1,5 @@
+Initial commit
+
+- Make virtual environment
+- install Django
+- generate Django default code
