@@ -130,12 +130,12 @@ As an admin you can create special accounts for employees where they have access
     - AC1: Customer should be awarded points with each order that are stored in the account
     - AC2: Customer should be able to exchange a number of points for free items
 
-    Should have
+    Could have
 
 16. As a logged in customer I can access deals to make my order cheaper or more beneficial
     - AC1: Logged in customer should be able to choose a deal when ordering
 
-    Should have
+    Could have
 
 17. As a logged in customer I can add and delete my payment information for quicker ordering next time
     - AC1: Payment info MUST be stored in a secure and encrypted manner
