@@ -1,5 +1,6 @@
-Initial commit
+Feat: Connect database and change secret key
 
-- Make virtual environment
-- install Django
-- generate Django default code
+- Install dependencies: dj-database-url and psycopg2
+- Add URL to database in env.py file
+- Connect database in theharborhearth/settings.py
+- Move secret key to env.py
