@@ -1,7 +1,7 @@
 ---
 name: 'USER STORY:'
 about: User story template
-title: ''
+title: 'User Story: '
 labels: ''
 assignees: Zoten64
 
