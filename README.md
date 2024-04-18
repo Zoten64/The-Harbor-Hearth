@@ -143,7 +143,7 @@ As an admin you can create special accounts for employees where they have access
     - AC3: Payment info should be able to be added
     - AC4: Payment info should be able to be deleted
 
-    Could have
+    Should have
 
 18. As a logged in customer I can ask a question so that an employee can answer it
     - AC1: Customer should be able to ask a question on a dedicated page
