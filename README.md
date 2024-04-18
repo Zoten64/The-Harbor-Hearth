@@ -32,7 +32,7 @@ As an admin you can create special accounts for employees where they have access
 
 # User stories
 
-## Customer
+### Customer
 
 1. As a customer I can view the menu online so I can see what is available to order
     - AC1: There should be an easy way to access the menu online
@@ -137,20 +137,79 @@ As an admin you can create special accounts for employees where they have access
 
     Should have
 
-17. As a logged in customer I can add delete my payment information for quicker ordering next time
+17. As a logged in customer I can add and delete my payment information for quicker ordering next time
     - AC1: Payment info MUST be stored in a secure and encrypted manner
     - AC2: Payment info should be able to be retrieved and work
     - AC3: Payment info should be able to be added
     - AC4: Payment info should be able to be deleted
 
-    Should have
+    Could have
 
 18. As a logged in customer I can ask a question so that an employee can answer it
     - AC1: Customer should be able to ask a question on a dedicated page
     - AC2: Customer should be notified when theyr question has been approved
 
+    Must have
+
 19. As a customer I can look at previously asked questions so I can see if my question has been answered before:
     - AC1: Customer should be able to visit a page with questions and answers
     - AC2: Customer should be able to search for a question
+
+    Must have
+
+### Employee
+
+20. As an employee I can view orders made by customers so that I can serve them
+    - AC1: Website should have a separate page, accessable only to employees and the owner, where a list of customer orders can be viewed
+    - AC2: Orders should expire and be archived after a certain amount of time
+    
+    Must have
+
+21. As an employee I can cancel inapporpriate orders so that I don't have to serve them
+    - AC1: Employee's should be able to view an order and be able to delete it.
+    - AC2: Employee should be prompted to confirm the deletion
+    - AC3: An email should be sent to the person who ordered explaining why
+
+    Should have
+
+22. As an employee I can answer questions submitted by users so that I can help them
+    - AC1: Employee should be able to view questions
+    - AC2: Employee should be able to answer and approve questions
+
+    Must have
+
+23. As an employee I can delete inappropriate questions so I don't have to answer them
+    - AC1: Questions should have a delete button
+    - AC2: Employee should be prompted to confirm deletion
+
+    Should have
+
+### Admin
+
+24. As an administrator I have access to an admin dashboard so I can manage the data on the site
+    - AC1: The Django admin dashboard should have all models registered
+    - AC2: The administrator should be able to delete and add data
+    
+    Must have
+
+25. As an administrator I can create employee accounts so I can grant them access to specific features
+    - AC1: The Django admin dashboard should have an option called "employee account" when creating/changing an account
+
+    Must have
+
+26. As an administrator I can create formatted blog posts of news and important information so I can keep my customers updated
+    - AC1: The administratot creating a blog post should allow the use of HTML formatting
+
+    Should have
+
+27. As an administrator I can easily change the price of items on the menu so that I can keep it up to date
+    - AC1: The administrator should be able to change the prices from the admin panel
+
+    Must have
+
+28. As an administrator I can easily add and remove items from the menu
+    - AC1: The administrator should be able to add and remove items in the admin panel
+
+    Must have
 
  
