@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orders</title>
 </head>
+
 <body>
     <h1>Orders</h1>
-    <ul>
-        {% for order in object_list %}
-            <li> <h3>Order number: {{order.order_number}}</h3>
-                <li>Delivery method: {{order.delivery_method}}</li>
-                <li>{{order.order}}</li>
-                <li>date: {{order.date}}</li>
-                <li> finished: {{order.finished}}</li>
-            </li>
-        {% endfor %}
-    </ul>
+    {% for order in object_list %}
+        <h3>Order number: {{order.order_number}}</h3>
+        <ul>
+            <li>Delivery method: {{order.delivery_method}}</li>
+            <li>{{order.order}}</li>
+            <li>date: {{order.date}}</li>
+            <li> finished: {{order.finished}}</li>
+        </ul>
+        <br>
+    {% endfor %}
 </body>
+
 </html>
