@@ -10,6 +10,7 @@
     <ul>
         {% for order in object_list %}
             <li> <h3>Order number: {{order.order_number}}</h3>
+                <li>Delivery method: {{order.delivery_method}}</li>
                 <li>{{order.order}}</li>
                 <li>date: {{order.date}}</li>
                 <li> finished: {{order.finished}}</li>
