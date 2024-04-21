@@ -1,6 +1,8 @@
 # The Harbor Hearth
 ### Set sail for sweetness
 
+[Deployed website](https://zoten64-the-harbour-hearth-cd54b5ce5a13.herokuapp.com/)
+
 ## Table of Contents:
 
 * [Goals and target audience](#goals-and-target-audience)

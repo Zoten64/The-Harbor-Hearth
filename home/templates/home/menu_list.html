@@ -10,17 +10,112 @@
 
 <body>
     <h1>Menu</h1>
+    <h2>Meals</h2>
+        {% for menu in object_list %}
+        <!--If the menu item has a category of "Meal" it will show up here-->
+        {% if menu.category == "Meal" %}
+        <!--Displays the name of the item followed by the price. Example "Fried egg | 4£"-->
+        <h3>{{menu.name}} | {{menu.price}}£</h3>
+        <ul>
+            <!--If menu description exists, display it, otherwise don't-->
+            {% if menu.description %}
+                <li>{{menu.description}}</li>
+            {% endif %}
+            <!--If menu ingredients exists, display it, otherwise don't-->
+            {% if menu.ingridients %}
+                <li>Ingridients: {{menu.ingridients}}</li>
+            {% endif %}
+            <!--Below are a few tags. If the meal is vegan it'll show up on the menu, if it contains
+            nuts there will be a warning on the menu, etc.-->
+            {% if menu.vegan == True %}
+                <li>Vegan</li>
+            {% endif %}
+            {% if menu.nuts == True %}
+                <li>Contains nuts</li>
+            {% endif %}
+            {% if menu.lactose == True %}
+                <li>Contains lactose</li>
+            {% endif %}
+            {% if menu.gluten == True %}
+                <li>Contains gluten</li>
+            {% endif %}
+            {% if menu.eggs == True %}
+                <li>Contains eggs</li>
+            {% endif %}
+        </ul>
+        {% endif %}
+        {% endfor %}
+    <br>
+    <h2>Drinks</h2>
     {% for menu in object_list %}
+    <!--If the menu item has a category of "Meal" it will show up here-->
+    {% if menu.category == "Drink" %}
+    <!--Displays the name of the item followed by the price. Example "Fried egg | 4£"-->
     <h3>{{menu.name}} | {{menu.price}}£</h3>
     <ul>
-        <li>{{menu.description}}</li>
-        <li>{{menu.ingridients}}</li>
-        <li>Vegan: {{menu.vegan}}</li>
-        <li>Nuts: {{menu.nuts}}</li>
-        <li>Lactose: {{menu.lactose}}</li>
-        <li>Gluten: {{menu.gluten}}</li>
-        <li>Eggs: {{menu.eggs}}</li>
+        <!--If menu description exists, display it, otherwise don't-->
+        {% if menu.description %}
+            <li>{{menu.description}}</li>
+        {% endif %}
+        <!--If menu ingredients exists, display it, otherwise don't-->
+        {% if menu.ingridients %}
+            <li> Ingridients: {{menu.ingridients}}</li>
+        {% endif %}
+        <!--Below are a few tags. If the meal is vegan it'll show up on the menu, if it contains
+        nuts there will be a warning on the menu, etc.-->
+        {% if menu.vegan == True %}
+            <li>Vegan</li>
+        {% endif %}
+        {% if menu.nuts == True %}
+            <li>Contains nuts</li>
+        {% endif %}
+        {% if menu.lactose == True %}
+            <li>Contains lactose</li>
+        {% endif %}
+        {% if menu.gluten == True %}
+            <li>Contains gluten</li>
+        {% endif %}
+        {% if menu.eggs == True %}
+            <li>Contains eggs</li>
+        {% endif %}
     </ul>
+    {% endif %}
+    {% endfor %}
+
+    <h2>Desserts</h2>
+    {% for menu in object_list %}
+    <!--If the menu item has a category of "Meal" it will show up here-->
+    {% if menu.category == "Dessert" %}
+    <!--Displays the name of the item followed by the price. Example "Fried egg | 4£"-->
+    <h3>{{menu.name}} | {{menu.price}}£</h3>
+    <ul>
+        <!--If menu description exists, display it, otherwise don't-->
+        {% if menu.description %}
+            <li>{{menu.description}}</li>
+        {% endif %}
+        <!--If menu ingredients exists, display it, otherwise don't-->
+        {% if menu.ingridients %}
+            <li>Ingridients: {{menu.ingridients}}</li>
+        {% endif %}
+        <!--Below are a few tags. If the meal is vegan it'll show up on the menu, if it contains
+        nuts there will be a warning on the menu, etc.-->
+        {% if menu.vegan == True %}
+            <li>Vegan</li>
+        {% endif %}
+        {% if menu.nuts == True %}
+            <li>Contains nuts</li>
+        {% endif %}
+        {% if menu.lactose == True %}
+            <li>Contains lactose</li>
+        {% endif %}
+        {% if menu.gluten == True %}
+            <li>Contains gluten</li>
+        {% endif %}
+        {% if menu.eggs == True %}
+            <li>Contains eggs</li>
+        {% endif %}
+    </ul>
+    {% endif %}
     {% endfor %}
 </body>
 

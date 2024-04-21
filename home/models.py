@@ -11,8 +11,8 @@ class Menu(models.Model):
 
     category = models.CharField(choices=MENU_CATEGORY, default=0)
     name = models.CharField(max_length=50)
-    description = models.TextField()
-    ingridients = models.TextField()
+    description = models.TextField(blank=True)
+    ingridients = models.TextField(blank=True)
     price = models.IntegerField()
     vegan = models.BooleanField(default=False)
     nuts = models.BooleanField(default=False)
