@@ -215,3 +215,70 @@ As an admin you can create special accounts for employees where they have access
     Must have
 
  
+
+
+# Design
+
+# Wireframes
+
+# User manual
+
+# Features
+
+# Bugs and fixes
+
+# Technologies and tools
+
+### Languages
+- HTML
+- CSS
+- JavaScript
+- Python
+
+### Tools
+- Visual Studio Code
+- Git
+- Github
+- Heroku
+- Pip
+
+### Pyton Libraries
+Built in:
+
+- OS
+    - Used to make environmental variables and to import them
+- Pathlib
+    - For dynamic paths. 
+
+3rd Party:
+
+- Django
+    - Backend is built using Django
+- dj-database-url
+    - Used to parse the database access url for use within the application
+- gunicorn
+    - HTTP Server for Heroku deployment
+- asgiref
+    - Django dependency
+- packaging
+    - Dependency for gunicorn
+- psycopg2
+    - Driver to connect to the database 
+- sqlparse
+    - Django dependency
+- typing_extensions
+    - Dependency for dj-database-url
+- tzdata
+    - Django dependency
+
+**Note:**
+
+pipdeptree was used to get a better look at the relationship between libraries and therefor not used in the code itself
+
+# Technical design
+
+# Validation and testing
+
+# Deployment
+
+# Credits
