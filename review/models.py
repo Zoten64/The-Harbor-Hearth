@@ -13,3 +13,6 @@ class Review(models.Model):
     rating = models.IntegerField(choices=RATING)
     title = models.CharField(max_length=50)
     content = models.TextField(max_length=500)
+
+    def __str__(self):
+        return f"{self.title} | {self.rating} stars"
