@@ -27,7 +27,7 @@ The Harbor Hearth is a fictional bistro nearby a vacation resort located at the 
 review the bakery, create an account to be recieve loyalty points with every order that can be exchanged for goods. Making an account will also let you take part of deals
 and save your payment information for faster ordering. Though an account is not required for ordering as that may be frustrating for users.
 
-The website also features a blog where the admins can post news, changes and other relevant information. Customers may comment and ask questions.
+The website also features a blog where the admins can post news, changes and other relevant information. 
 
 As an admin you can create special accounts for employees where they have access to a page with pending orders with the ability to cancel. They also have access to answer and approve questions as well as delete inappropriate ones. 
 
@@ -147,69 +147,61 @@ As an admin you can create special accounts for employees where they have access
 
     Should have
 
-18. As a logged in customer I can ask a question so that an employee can answer it
-    - AC1: Customer should be able to ask a question on a dedicated page
-    - AC2: Customer should be notified when theyr question has been approved
+18. As a customer I can contact the Harbor Hearth using a form on their website so I can have any inquires answered
+    - AC1: The form should work 
+    - AC2: The form should have a category option so the right person can answer it
+    - AC3: The form should have a title, content and email field
+    - AC4: If the user is logged in the email should automatically be filled in with the option to change it
+    - AC5: A confirmation email should be sent to the customer upon submission
 
-    Must have
+    Could have
 
-19. As a customer I can look at previously asked questions so I can see if my question has been answered before:
-    - AC1: Customer should be able to visit a page with questions and answers
-    - AC2: Customer should be able to search for a question
-
-    Must have
 
 ### Employee
 
-20. As an employee I can view orders made by customers so that I can serve them
+19. As an employee I can view orders made by customers so that I can serve them
     - AC1: Website should have a separate page, accessable only to employees and the owner, where a list of customer orders can be viewed
     - AC2: Orders should expire and be archived after a certain amount of time
     
     Must have
 
-21. As an employee I can cancel inapporpriate orders so that I don't have to serve them
+20. As an employee I can cancel inapporpriate orders so that I don't have to serve them
     - AC1: Employee's should be able to view an order and be able to delete it.
     - AC2: Employee should be prompted to confirm the deletion
     - AC3: An email should be sent to the person who ordered explaining why
 
     Should have
 
-22. As an employee I can answer questions submitted by users so that I can help them
-    - AC1: Employee should be able to view questions
-    - AC2: Employee should be able to answer and approve questions
+21. As an employee I can see a list of questions and messages submitted by customers through the contact form so that I may assist them
+    - AC1: The employee only part of the website should feature a page where employees can answer questions
+    - AC2: The answer should be sent to the customer via email
 
-    Must have
-
-23. As an employee I can delete inappropriate questions so I don't have to answer them
-    - AC1: Questions should have a delete button
-    - AC2: Employee should be prompted to confirm deletion
-
-    Should have
+    Could have
 
 ### Admin
 
-24. As an administrator I have access to an admin dashboard so I can manage the data on the site
+22. As an administrator I have access to an admin dashboard so I can manage the data on the site
     - AC1: The Django admin dashboard should have all models registered
     - AC2: The administrator should be able to delete and add data
     
     Must have
 
-25. As an administrator I can create employee accounts so I can grant them access to specific features
+23. As an administrator I can create employee accounts so I can grant them access to specific features
     - AC1: The Django admin dashboard should have an option called "employee account" when creating/changing an account
 
     Must have
 
-26. As an administrator I can create formatted blog posts of news and important information so I can keep my customers updated
+24. As an administrator I can create formatted blog posts of news and important information so I can keep my customers updated
     - AC1: The administratot creating a blog post should allow the use of HTML formatting
 
     Should have
 
-27. As an administrator I can easily change the price of items on the menu so that I can keep it up to date
+25. As an administrator I can easily change the price of items on the menu so that I can keep it up to date
     - AC1: The administrator should be able to change the prices from the admin panel
 
     Must have
 
-28. As an administrator I can easily add and remove items from the menu
+26. As an administrator I can easily add and remove items from the menu
     - AC1: The administrator should be able to add and remove items in the admin panel
 
     Must have
@@ -243,14 +235,14 @@ As an admin you can create special accounts for employees where they have access
 - Pip
 
 ### Pyton Libraries
-Built in:
+**Built in:**
 
 - OS
     - Used to make environmental variables and to import them
 - Pathlib
     - For dynamic paths. 
 
-3rd Party:
+**3rd Party:**
 
 - Django
     - Backend is built using Django
