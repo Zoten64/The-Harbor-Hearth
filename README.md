@@ -7,6 +7,8 @@
 
 * [Goals and target audience](#goals-and-target-audience)
 * [User stories](#user-stories)
+* [Epics](#epics)
+* [Progress](#progress-documentation)
 * [Design](#design)
 * [Wireframes](#wireframes)
 * [User Manual](#user-manual)
@@ -206,8 +208,39 @@ As an admin you can create special accounts for employees where they have access
 
     Must have
 
- 
+# Epics
 
+1. Ordering and the home page (Core functionality)
+    - Ordering and home page functionality, including the menu.
+
+2. User accounts
+    - Anything related to user accounts, from critical things like account details and small things like deals and points
+
+3. Employee access
+    - Employee dashboard
+
+4. Admin panel
+    - Things only the admin can do
+
+# Progress Documentation
+
+Here I will document the progress divided into specific dates. Please note that all workdays may not be documented
+
+<details>
+<summary> Progress 23/04/2024 </summary>
+
+**Milestones/epics progress**
+
+<img src="documentation/epics_progress_23_04_2024.png">
+
+**Backlog**
+
+<img src="documentation/backlog_progress_23_04_2024.png">
+
+**Commentary:**
+
+Milestones have been created in github. Some of the user stories were changed, added and deleted because of plan changes. The plans to create a forum like page for questions and answers were switched out in favor of a contact form to have less clutter.
+</details>
 
 # Design
 
@@ -274,3 +307,10 @@ pipdeptree was used to get a better look at the relationship between libraries a
 # Deployment
 
 # Credits
+
+**Code**
+
+- [Codestar walkthrough project has been referenced in a lot of places](https://github.com/Code-Institute-Solutions/blog/tree/main/15_testing)
+- [Django documentation](https://docs.djangoproject.com/en/5.0/)
+
+**Assets**
