@@ -1,5 +1,5 @@
 # The Harbor Hearth
-### Set sail for sweetness
+### Set sail for deliciousness
 
 [Deployed website](https://zoten64-the-harbour-hearth-cd54b5ce5a13.herokuapp.com/)
 
@@ -252,6 +252,10 @@ Milestones have been created in github. Some of the user stories were changed, a
 
 # Bugs and fixes
 
+| Bug | Fix |
+-------------
+| "Cannot import name Menu from home.models" error after the menu model has been moved | Remove the Menu import in home/views.py and home/urls.py. Remove the home urls from the main urls file |
+
 # Technologies and tools
 
 ### Languages
@@ -314,3 +318,7 @@ pipdeptree was used to get a better look at the relationship between libraries a
 - [Django documentation](https://docs.djangoproject.com/en/5.0/)
 
 **Assets**
+
+**Inspiration**
+
+- [Landing page UI inspiration](https://www.behance.net/gallery/196798485/Restaurant-landing-page-UI-design?tracking_source=search_projects|restaurant+ui&l=37)
