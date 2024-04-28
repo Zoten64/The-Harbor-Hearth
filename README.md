@@ -255,6 +255,8 @@ Milestones have been created in github. Some of the user stories were changed, a
 | Bug | Fix |
 -------------
 | "Cannot import name Menu from home.models" error after the menu model has been moved | Remove the Menu import in home/views.py and home/urls.py. Remove the home urls from the main urls file |
+| Django looks for home index template in the wrong folder | Change views path to home/index.html |
+| Template functions displaying as example { % block content % } instead of displaying the actual block content|  |
 
 # Technologies and tools
 
@@ -303,6 +305,11 @@ Milestones have been created in github. Some of the user stories were changed, a
 **Note:**
 
 pipdeptree was used to get a better look at the relationship between libraries and therefor not used in the code itself
+
+### Frontend libraries
+
+- Bootstrap
+    - Used to quickly build the UI
 
 # Technical design
 
