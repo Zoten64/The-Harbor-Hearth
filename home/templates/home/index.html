@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
-{ % block title % } Home { % endblock title % }
+<!--Displayed at the end of the title. Used to make the title dynamic-->
+{% block title %} Home {% endblock title %}
 
-{ % block content % }
-    <p>home test</p>
-{ % endblock content % }
+<!--The content-->
+{% block content %}
+    <p>some content</p>
+{% endblock content %}

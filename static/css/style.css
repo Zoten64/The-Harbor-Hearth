@@ -1,0 +1,40 @@
+/*Google fonts import*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    /*Overrides default settings*/
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+
+    /*Sets font for entire page. Easily overriden*/
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    /*Makes sure the page takes up at least the whole viewport*/
+    min-height: 100vh;
+    width: 100vw;
+    /*Required to make the main content take up any unused space*/
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+header{
+    /*Temporary color*/
+    background-color: aqua;
+}
+
+main{
+    /*Temporary color*/
+    background-color: blueviolet;
+
+    flex: 1 0 auto;
+}
+
+footer{
+    /*Temporary color*/
+    background-color: brown;
+}

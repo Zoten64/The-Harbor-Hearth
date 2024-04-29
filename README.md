@@ -256,7 +256,8 @@ Milestones have been created in github. Some of the user stories were changed, a
 -------------
 | "Cannot import name Menu from home.models" error after the menu model has been moved | Remove the Menu import in home/views.py and home/urls.py. Remove the home urls from the main urls file |
 | Django looks for home index template in the wrong folder | Change views path to home/index.html |
-| Template functions displaying as example { % block content % } instead of displaying the actual block content|  |
+| Template functions displaying as example { % block content % } instead of displaying the actual block content| Remove spaces between {} and % |
+| The resource from “http://127.0.0.1:8000/css/style.css” was blocked due to MIME type (“text/html”) mismatch (X-Content-Type-Options: nosniff) | Wrong path specified as CSS stylesheet |
 
 # Technologies and tools
 
@@ -323,6 +324,7 @@ pipdeptree was used to get a better look at the relationship between libraries a
 
 - [Codestar walkthrough project has been referenced in a lot of places](https://github.com/Code-Institute-Solutions/blog/tree/main/15_testing)
 - [Django documentation](https://docs.djangoproject.com/en/5.0/)
+- Various snippets from other personal projects to speed up the process
 
 **Assets**
 
