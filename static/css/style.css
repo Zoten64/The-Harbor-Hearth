@@ -38,3 +38,13 @@ footer{
     /*Temporary color*/
     background-color: brown;
 }
+
+nav ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.nav-grid-item{
+    display: grid;
+    justify-self: center;
+}

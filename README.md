@@ -309,8 +309,10 @@ pipdeptree was used to get a better look at the relationship between libraries a
 
 ### Frontend libraries
 
-- Bootstrap
+- Tailwind
     - Used to quickly build the UI
+- Flowbite
+    - Open source components
 
 # Technical design
 

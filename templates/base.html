@@ -8,8 +8,8 @@
     <!--The title will depend on what is defined on a page. Example: The Harbor Hearth - Menu-->
     <title>The Harbor Hearth - {% block title %}{% endblock title %}</title>
     <meta name="description" content="Set sail for deliciousness">
-    <!--Fontawesome import-->
-    <script src="https://kit.fontawesome.com/b43359952f.js" crossorigin="anonymous"></script>
+    <!--Flowbite CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <!--Personal CSS-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
@@ -17,12 +17,28 @@
     <header>
         <nav>
             <ul>
-                <!--hamburger menu-->
-                <li><i class="fa-solid fa-bars"></i></li>
-                <!--Logo, also works as a home button-->
-                <li></li>
-                <!--Order button. A call to action-->
-                <li></li>
+                <!--Dropdown menu on mobile-->
+                <li class="nav-grid-item justify-self-start">
+                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" type="button">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    
+                    <ul id="dropdown" class="hidden ">
+                        <li>Home</li>
+                        <li>Menu</li>
+                        <li>Reviews</li>
+                        <li>Contact</li>
+                        <li>Blog and news</li>
+                    </ul>
+                </li>
+                <!-- Logo-->
+                <li class="nav-grid-item">
+                    test
+                </li>
+                <!--Order now call to action button-->
+                <li class="nav-grid-item justify-self-end">
+                    <a href="#">Order now!</a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -36,5 +52,12 @@
     <footer>
         test footer
     </footer> 
+
+    <!--Fontawesome import-->
+    <script src="https://kit.fontawesome.com/b43359952f.js" crossorigin="anonymous"></script>
+    <!--tailwindCSS import-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--Flowbite script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>
 </html>
