@@ -24,19 +24,16 @@ body{
 
 header{
     /*Temporary color*/
-    background-color: aqua;
 }
 
 main{
     /*Temporary color*/
-    background-color: blueviolet;
 
     flex: 1 0 auto;
 }
 
 footer{
     /*Temporary color*/
-    background-color: brown;
 }
 
 nav ul{
