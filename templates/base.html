@@ -20,16 +20,16 @@
             <ul>
                 <!--Dropdown menu on mobile-->
                 <li class="nav-grid-item justify-self-start">
-                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" type="button">
+                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" type="button" data-dropdown-offset-distance=0S>
                         <i class="fa-solid fa-bars"></i>
                     </button>
                     
-                    <ul id="dropdown" class="hidden ">
-                        <li>Home</li>
-                        <li>Menu</li>
-                        <li>Reviews</li>
-                        <li>Contact</li>
-                        <li>Blog and news</li>
+                    <ul id="dropdown" class="hidden bg-slate-100 dark:bg-gray-900 w-full rounded-b-lg p-2">
+                        <li class="p-1">Home</li>
+                        <li class="p-1">Menu</li>
+                        <li class="p-1">Reviews</li>
+                        <li class="p-1">Contact</li>
+                        <li class="p-1">Blog and news</li>
                     </ul>
                 </li>
                 <!-- Logo-->
@@ -44,10 +44,6 @@
         </nav>
     </header>
     <main>
-
-        {% block content %}
-
-        {% endblock content %}
 
     </main>
     <footer class="border-t-2 border-slate-900 dark:border-black ">

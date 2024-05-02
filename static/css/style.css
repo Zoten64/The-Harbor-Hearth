@@ -22,18 +22,8 @@ body{
     overflow-x: hidden;
 }
 
-header{
-    /*Temporary color*/
-}
-
 main{
-    /*Temporary color*/
-
     flex: 1 0 auto;
-}
-
-footer{
-    /*Temporary color*/
 }
 
 nav ul{
