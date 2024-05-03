@@ -35,3 +35,8 @@ nav ul{
     display: grid;
     justify-self: center;
 }
+
+footer ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
