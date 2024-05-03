@@ -15,16 +15,16 @@
 </head>
 <!--Classes used throughout the entire document-->
 <body class="text-slate-900 bg-slate-50 dark:bg-gray-950 dark:text-slate-200">
-    <header class="border-b-2 border-slate-900 shadow-xl shadow-slate-200 dark:border-black dark:shadow-slate-950 p-2">
+    <header class="border-b-2 border-slate-900 shadow-xl shadow-slate-200 dark:border-black dark:shadow-slate-950 py-2 px-3">
         <nav>
             <ul>
                 <!--Dropdown menu on mobile-->
                 <li class="nav-grid-item justify-self-start">
-                    <button id="dropdownDefaultButton" data-dropdown-toggle="hamburger-menu" type="button" data-dropdown-offset-distance=8>
-                        <i class="fa-solid fa-bars"></i>
+                    <button id="dropdownDefaultButton" data-dropdown-toggle="hamburger-menu-dropdown" type="button" data-dropdown-offset-distance=10 aria-label="Main menu">
+                        <i class="fa-solid fa-bars scale-150 translate-x-1"></i>
                     </button>
                     
-                    <ul id="hamburger-menu" class="hidden bg-slate-100 dark:bg-gray-900 w-full rounded-b-lg p-2">
+                    <ul id="hamburger-menu-dropdown" class="hidden bg-slate-100 dark:bg-gray-900 w-full rounded-b-lg p-2 border-b-2 border-slate-900 shadow-xl shadow-slate-200 dark:border-black dark:shadow-slate-950">
                         <li class="p-1">Home</li>
                         <li class="p-1">Menu</li>
                         <li class="p-1">Reviews</li>
@@ -34,11 +34,13 @@
                 </li>
                 <!-- Logo-->
                 <li class="nav-grid-item">
-                    test
+                    logo
                 </li>
                 <!--Order now call to action button-->
                 <li class="nav-grid-item justify-self-end">
-                    <a href="#">Order now!</a>
+                    <a href="#" class="bg-orange-500 rounded-lg p-1 hover:bg-orange-400 hover:scale-110 transition-all">
+                        Order now!
+                    </a>
                 </li>
             </ul>
         </nav>
