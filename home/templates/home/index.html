@@ -24,29 +24,62 @@
 <hr class="border-b-2 border-slate-900 m-4 dark:border-slate-200 lg max-w-screen-md md:mx-auto sm:mx-4">
 <!--This section will not exceed the width of a medium screen. m-auto centers it-->
 <section class="max-w-screen-md m-auto px-3">
-    <ul class="menu-list">
+    <ul class="menu-list" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist" data-tabs-active-classes="text-black dark:text-white underline">
         <li class="flex">
             <h1 class="font-bold text-2xl text-black dark:text-white self-center">Menu</h1>
         </li>
-        <li class="flex">
-            <button class="self-center w-full text-right" id="meals-tab" data-tabs-target="#meals" type="button" role="tab" aria-controls="Meals" aria-selected="false">
+        <li class="flex" role="presentation">
+            <button class="self-center w-full text-right" id="meals-tab" data-tabs-target="#meals" type="button"
+                role="tab" aria-controls="Meals" aria-selected="true">
                 Meals
             </button>
         </li>
-        <li class="flex">
-            <button class="self-center w-full text-right" id="drinks-tab" data-tabs-target="#drinks" type="button" role="tab" aria-controls="Drinks" aria-selected="false">
+        <li class="flex" role="presentation">
+            <button class="self-center w-full text-right" id="drinks-tab" data-tabs-target="#drinks" type="button"
+                role="tab" aria-controls="Drinks" aria-selected="false">
                 Drinks
             </button>
         </li>
-        <li class="flex">
-            <button class="self-center w-full text-right" id="dessert-tab" data-tabs-target="#dessert" type="button" role="tab" aria-controls="Dessert" aria-selected="false">
+        <li class="flex" role="presentation">
+            <button class="self-center w-full text-right" id="dessert-tab" data-tabs-target="#dessert" type="button"
+                role="tab" aria-controls="Dessert" aria-selected="false">
                 Dessert
             </button>
         </li>
     </ul>
 
-    <hr class="border-b-2 border-slate-900 m-4 dark:border-slate-200 lg max-w-screen-md md:mx-auto sm:mx-4">
-
-    
+    <hr class="border-b-2 border-slate-900 my-4 dark:border-slate-200 lg">
+    <div id="default-tab-content">
+        <div id="meals" role="tabpanel" class="hidden" aria-labelledby="meals-tab">
+            {% for item in menu_list %}
+            {% if item.category == 'Meal' %}
+            <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} </h2>
+            <p> {{ item.description }} </p>
+            <p> ingridients: {{ item.ingridients }} </p>
+            <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div id="drinks" role="tabpanel" class="hidden" aria-labelledby="drinks-tab">
+            {% for item in menu_list %}
+            {% if item.category == 'Drink' %}
+            <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} </h2>
+            <p> {{ item.description }} </p>
+            <p> ingridients: {{ item.ingridients }} </p>
+            <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div id="dessert" role="tabpanel" class="hidden" aria-labelledby="dessert-tab">
+            {% for item in menu_list %}
+            {% if item.category == 'Dessert' %}
+            <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} </h2>
+            <p> {{ item.description }} </p>
+            <p> ingridients: {{ item.ingridients }} </p>
+            <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 </section>
 {% endblock content %}

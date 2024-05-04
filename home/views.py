@@ -5,5 +5,5 @@ from menu.models import Menu
 # Create your views here.
 
 class Index(generic.ListView):
-    queryset = Menu
+    model = Menu
     template_name = 'home/index.html'
