@@ -7,6 +7,7 @@
 <!--The content-->
 {% block content %}
 
+<!--Hero + title section-->
 <section>
     <!-- This will be an image later-->
     <div class="h-32 bg-orange-500"></div>
@@ -22,12 +23,18 @@
     </div>
 </section>
 <hr class="border-b-2 border-slate-900 m-4 dark:border-slate-200 lg max-w-screen-md md:mx-auto sm:mx-4">
+<!--Menu section-->
 <!--This section will not exceed the width of a medium screen. m-auto centers it-->
 <section class="max-w-screen-md m-auto px-3">
-    <ul class="menu-list" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist" data-tabs-active-classes="text-black dark:text-white underline">
+    <!--list of tab buttons to toggle between displaying the meals, drinks and desserts. data-tabs-active-classes adds styling to active classes-->
+    <ul class="menu-list" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist"
+        data-tabs-active-classes="text-black dark:text-white underline">
+        <!--Menu title. Not clickable-->
         <li class="flex">
             <h1 class="font-bold text-2xl text-black dark:text-white self-center">Menu</h1>
         </li>
+        <!--Each li item apart of this list below here is a button for changign the menu displayed-->
+        <!--data-tabs-target targets the div with the specified id. This applies to all list items below-->
         <li class="flex" role="presentation">
             <button class="self-center w-full text-right" id="meals-tab" data-tabs-target="#meals" type="button"
                 role="tab" aria-controls="Meals" aria-selected="true">
@@ -47,9 +54,11 @@
             </button>
         </li>
     </ul>
-
+    <!--Divider-->
     <hr class="border-b-2 border-slate-900 my-4 dark:border-slate-200 lg">
+    <!--The content that will be displayed based on the tab selected-->
     <div id="default-tab-content">
+        <!--Each meal in the database is listed here-->
         <div id="meals" role="tabpanel" class="hidden" aria-labelledby="meals-tab">
             {% for item in menu_list %}
             {% if item.category == 'Meal' %}
@@ -60,6 +69,7 @@
             {% endif %}
             {% endfor %}
         </div>
+        <!--Each drink in the database is listed here-->
         <div id="drinks" role="tabpanel" class="hidden" aria-labelledby="drinks-tab">
             {% for item in menu_list %}
             {% if item.category == 'Drink' %}
@@ -70,6 +80,7 @@
             {% endif %}
             {% endfor %}
         </div>
+        <!--Each dessert in the database is listed here-->
         <div id="dessert" role="tabpanel" class="hidden" aria-labelledby="dessert-tab">
             {% for item in menu_list %}
             {% if item.category == 'Dessert' %}
@@ -81,5 +92,11 @@
             {% endfor %}
         </div>
     </div>
+</section>
+<!--Reviews section-->
+<section class="mt-8">
+    <h1 class="text-center font-bold underline text-2xl mt-2 text-black dark:text-white">Don't just take our word for it
+    </h1>
+    <h2 class="text-center text-xl text-black dark:text-white">See what others are thinking</h2>
 </section>
 {% endblock content %}
