@@ -62,9 +62,32 @@
         <div id="meals" role="tabpanel" class="hidden" aria-labelledby="meals-tab">
             {% for item in menu_list %}
             {% if item.category == 'Meal' %}
-            <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} </h2>
-            <p> {{ item.description }} </p>
+            <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} | {{ item.price }}£</h2>
+            <p> {{ item.description }}</p>
             <p> ingridients: {{ item.ingridients }} </p>
+
+            <ul class="flex">
+                <!-- If Item is vegan, display a green label with the text "Vegan"-->
+                {% if item.vegan == True %}
+                <li class="bg-lime-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Vegan</li>
+                {% endif %}
+                <!-- If Item contains nuts, display a red label with the text "Nuts"-->
+                {% if item.nuts == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Nuts</li>
+                {% endif %}
+                <!-- If Item contains lactose, display a red label with the text "Lactose"-->
+                {% if item.lactose == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Lactose</li>
+                {% endif %}
+                <!-- If Item contains Gluten, display a red label with the text "Gluten"-->
+                {% if item.gluten == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Gluten</li>
+                {% endif %}
+                <!-- If Item contains eggs, display a red label with the text "Eggs"-->
+                {% if item.eggs == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Eggs</li>
+                {% endif %}
+            </ul>
             <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
             {% endif %}
             {% endfor %}
@@ -73,9 +96,31 @@
         <div id="drinks" role="tabpanel" class="hidden" aria-labelledby="drinks-tab">
             {% for item in menu_list %}
             {% if item.category == 'Drink' %}
-            <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} </h2>
+            <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} | {{ item.price }}£ </h2>
             <p> {{ item.description }} </p>
             <p> ingridients: {{ item.ingridients }} </p>
+            <ul class="flex">
+                <!-- If Item is vegan, display a green label with the text "Vegan"-->
+                {% if item.vegan == True %}
+                <li class="bg-lime-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Vegan</li>
+                {% endif %}
+                <!-- If Item contains nuts, display a red label with the text "Nuts"-->
+                {% if item.nuts == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Nuts</li>
+                {% endif %}
+                <!-- If Item contains lactose, display a red label with the text "Lactose"-->
+                {% if item.lactose == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Lactose</li>
+                {% endif %}
+                <!-- If Item contains Gluten, display a red label with the text "Gluten"-->
+                {% if item.gluten == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Gluten</li>
+                {% endif %}
+                <!-- If Item contains eggs, display a red label with the text "Eggs"-->
+                {% if item.eggs == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Eggs</li>
+                {% endif %}
+            </ul>
             <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
             {% endif %}
             {% endfor %}
@@ -84,9 +129,31 @@
         <div id="dessert" role="tabpanel" class="hidden" aria-labelledby="dessert-tab">
             {% for item in menu_list %}
             {% if item.category == 'Dessert' %}
-            <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} </h2>
+            <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} | {{ item.price }}£</h2>
             <p> {{ item.description }} </p>
             <p> ingridients: {{ item.ingridients }} </p>
+            <ul class="flex">
+                <!-- If Item is vegan, display a green label with the text "Vegan"-->
+                {% if item.vegan == True %}
+                <li class="bg-lime-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Vegan</li>
+                {% endif %}
+                <!-- If Item contains nuts, display a red label with the text "Nuts"-->
+                {% if item.nuts == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Nuts</li>
+                {% endif %}
+                <!-- If Item contains lactose, display a red label with the text "Lactose"-->
+                {% if item.lactose == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Lactose</li>
+                {% endif %}
+                <!-- If Item contains Gluten, display a red label with the text "Gluten"-->
+                {% if item.gluten == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Gluten</li>
+                {% endif %}
+                <!-- If Item contains eggs, display a red label with the text "Eggs"-->
+                {% if item.eggs == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Eggs</li>
+                {% endif %}
+            </ul>
             <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
             {% endif %}
             {% endfor %}
