@@ -41,6 +41,11 @@ nav ul{
     grid-template-columns: 1fr 1fr;
 }
 
+.menu-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 /*Media Query: Tablets and larger (768px and up)*/
 @media screen and (min-width: 768px) {
     footer ul{
