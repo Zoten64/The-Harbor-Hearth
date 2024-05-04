@@ -54,14 +54,13 @@
             </button>
         </li>
     </ul>
-    <!--Divider-->
-    <hr class="border-b-2 border-slate-900 my-4 dark:border-slate-200 lg">
     <!--The content that will be displayed based on the tab selected-->
     <div id="default-tab-content">
         <!--Each meal in the database is listed here-->
         <div id="meals" role="tabpanel" class="hidden" aria-labelledby="meals-tab">
             {% for item in menu_list %}
             {% if item.category == 'Meal' %}
+            <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
             <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} | {{ item.price }}£</h2>
             <p> {{ item.description }}</p>
             <p> ingridients: {{ item.ingridients }} </p>
@@ -87,8 +86,7 @@
                 {% if item.eggs == True %}
                 <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Eggs</li>
                 {% endif %}
-            </ul>
-            <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
+            </ul>  
             {% endif %}
             {% endfor %}
         </div>
@@ -96,6 +94,7 @@
         <div id="drinks" role="tabpanel" class="hidden" aria-labelledby="drinks-tab">
             {% for item in menu_list %}
             {% if item.category == 'Drink' %}
+            <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
             <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} | {{ item.price }}£ </h2>
             <p> {{ item.description }} </p>
             <p> ingridients: {{ item.ingridients }} </p>
@@ -121,7 +120,6 @@
                 <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Eggs</li>
                 {% endif %}
             </ul>
-            <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
             {% endif %}
             {% endfor %}
         </div>
@@ -129,6 +127,7 @@
         <div id="dessert" role="tabpanel" class="hidden" aria-labelledby="dessert-tab">
             {% for item in menu_list %}
             {% if item.category == 'Dessert' %}
+            <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
             <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} | {{ item.price }}£</h2>
             <p> {{ item.description }} </p>
             <p> ingridients: {{ item.ingridients }} </p>
@@ -154,12 +153,13 @@
                 <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Eggs</li>
                 {% endif %}
             </ul>
-            <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
             {% endif %}
             {% endfor %}
         </div>
     </div>
 </section>
+<!--Divider-->
+<hr class="border-b-2 border-slate-900 m-4 dark:border-slate-200 lg max-w-screen-md md:mx-auto sm:mx-4">
 <!--Reviews section-->
 <section class="mt-8">
     <h1 class="text-center font-bold underline text-2xl mt-2 text-black dark:text-white">Don't just take our word for it
