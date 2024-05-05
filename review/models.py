@@ -8,11 +8,16 @@ RATING = ((1, "1 star"), (2, "2 stars"), (3, "3 stars"),
 class Review(models.Model):
     '''
     Model for reviews
+    Featured reviews will appear on the home page
+    Reviews needs to be approved in order to prevent troll reviews or reviews
+    containing inappropriate material
     '''
 
     rating = models.IntegerField(choices=RATING)
     title = models.CharField(max_length=50)
     content = models.TextField(max_length=500)
+    approved = models.BooleanField(default=False)
+    featured = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.title} | {self.rating} stars"
