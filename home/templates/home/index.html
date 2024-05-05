@@ -58,8 +58,7 @@
     <div id="default-tab-content">
         <!--Each meal in the database is listed here-->
         <div id="meals" role="tabpanel" class="hidden" aria-labelledby="meals-tab">
-            {% for item in menu_list %}
-            {% if item.category == 'Meal' %}
+            {% for item in meals %}
             <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
             <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} | {{ item.price }}£</h2>
             <p> {{ item.description }}</p>
@@ -87,13 +86,11 @@
                 <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Eggs</li>
                 {% endif %}
             </ul>  
-            {% endif %}
             {% endfor %}
         </div>
         <!--Each drink in the database is listed here-->
         <div id="drinks" role="tabpanel" class="hidden" aria-labelledby="drinks-tab">
-            {% for item in menu_list %}
-            {% if item.category == 'Drink' %}
+            {% for item in drinks %}
             <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
             <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} | {{ item.price }}£ </h2>
             <p> {{ item.description }} </p>
@@ -120,13 +117,11 @@
                 <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Eggs</li>
                 {% endif %}
             </ul>
-            {% endif %}
             {% endfor %}
         </div>
         <!--Each dessert in the database is listed here-->
         <div id="dessert" role="tabpanel" class="hidden" aria-labelledby="dessert-tab">
-            {% for item in menu_list %}
-            {% if item.category == 'Dessert' %}
+            {% for item in desserts %}
             <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
             <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} | {{ item.price }}£</h2>
             <p> {{ item.description }} </p>
@@ -153,7 +148,6 @@
                 <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Eggs</li>
                 {% endif %}
             </ul>
-            {% endif %}
             {% endfor %}
         </div>
     </div>
@@ -165,5 +159,9 @@
     <h1 class="text-center font-bold underline text-2xl mt-2 text-black dark:text-white">Don't just take our word for it
     </h1>
     <h2 class="text-center text-xl text-black dark:text-white">See what others are thinking</h2>
+
+    <div id="controls-carousel" class="relative w-full" data-carousel="static">
+
+    </div>
 </section>
 {% endblock content %}

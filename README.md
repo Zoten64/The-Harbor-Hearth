@@ -329,6 +329,7 @@ pipdeptree was used to get a better look at the relationship between libraries a
 - [Tailwind documentation](https://tailwindcss.com/docs/installation)
 - [Flowbite dropdown menu](https://flowbite.com/docs/components/dropdowns/)
 - [Flowbite tabs menu](https://flowbite.com/docs/components/tabs/)
+- [Flowbite carousel for reviews and news section](https://flowbite.com/docs/components/carousel/)
 - Various snippets from other personal projects to speed up the process
 
 **Assets**
