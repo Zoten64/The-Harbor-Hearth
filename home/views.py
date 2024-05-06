@@ -7,9 +7,9 @@ from review.models import Review
 # Credit to loading multiple models:
 # https://forum.djangoproject.com/t/how-do-i-load-multiple-models-items-into-a-single-view/919
 def Index(request):
-    meals = Menu.objects.filter(category="meal")
-    drinks = Menu.objects.filter(category="drink")
-    desserts = Menu.objects.filter(category="dessert")
+    meals = Menu.objects.filter(category="Meal")
+    drinks = Menu.objects.filter(category="Drink")
+    desserts = Menu.objects.filter(category="Dessert")
     reviews = Review.objects.filter(featured=True)
     context = {
         'meals' : meals,
