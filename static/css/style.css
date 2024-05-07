@@ -41,9 +41,16 @@ nav ul{
     grid-template-columns: 1fr 1fr;
 }
 
-.menu-list{
+/*The menu list on the home page*/
+.menu-list-home{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/*The menu list at /menu*/
+.menu-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 /*Media Query: Tablets and larger (768px and up)*/

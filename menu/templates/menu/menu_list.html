@@ -1,1 +1,148 @@
-hello world
+{% extends "base.html" %}
+{% load static %}
+
+<!--Displayed at the end of the title. Used to make the title dynamic-->
+{% block title %} Menu {% endblock title %}
+
+<!--The content-->
+
+{% block content %}
+<!--Menu section-->
+<section class="max-w-screen-md m-auto px-3">
+    <h1 class="text-center font-bold underline text-2xl mt-4 text-black dark:text-white">Menu</h1>
+    <p class="text-center my-2 mx-4">View out menu below</p>
+    <!--list of tab buttons to toggle between displaying the meals, drinks and desserts. data-tabs-active-classes adds styling to active classes-->
+    <ul class="menu-list text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist"
+        data-tabs-active-classes="text-black dark:text-white underline">
+        <!--Each li item apart of this list below here is a button for changign the menu displayed-->
+        <!--data-tabs-target targets the div with the specified id. This applies to all list items below-->
+        <li class="flex" role="presentation">
+            <button class="self-center w-full" id="meals-tab" data-tabs-target="#meals" type="button" role="tab"
+                aria-controls="Meals" aria-selected="true">
+                Meals
+            </button>
+        </li>
+        <li class="flex" role="presentation">
+            <button class="self-center w-full" id="drinks-tab" data-tabs-target="#drinks" type="button" role="tab"
+                aria-controls="Drinks" aria-selected="false">
+                Drinks
+            </button>
+        </li>
+        <li class="flex" role="presentation">
+            <button class="self-center w-full" id="dessert-tab" data-tabs-target="#dessert" type="button" role="tab"
+                aria-controls="Dessert" aria-selected="false">
+                Dessert
+            </button>
+        </li>
+    </ul>
+    <!--The content that will be displayed based on the tab selected-->
+    <div id="default-tab-content">
+        <!--Each meal in the database is listed here-->
+        <div id="meals" role="tabpanel" class="hidden" aria-labelledby="meals-tab">
+            {% for item in meals %}
+            <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
+            <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} | {{ item.price }}£</h2>
+            <p> {{ item.description }}</p>
+            <p> ingridients: {{ item.ingridients }} </p>
+
+            <ul class="flex flex-wrap">
+                <!-- If Item is vegan, display a green label with the text "Vegan"-->
+                {% if item.vegan == True %}
+                <li class="bg-lime-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Vegan</li>
+                {% endif %}
+                <!-- If Item contains nuts, display a red label with the text "Nuts"-->
+                {% if item.nuts == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Nuts</li>
+                {% endif %}
+                <!-- If Item contains lactose, display a red label with the text "Lactose"-->
+                {% if item.lactose == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Lactose</li>
+                {% endif %}
+                <!-- If Item contains Gluten, display a red label with the text "Gluten"-->
+                {% if item.gluten == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Gluten</li>
+                {% endif %}
+                <!-- If Item contains eggs, display a red label with the text "Eggs"-->
+                {% if item.eggs == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Eggs</li>
+                {% endif %}
+            </ul>
+            {% endfor %}
+        </div>
+        <!--Each drink in the database is listed here-->
+        <div id="drinks" role="tabpanel" class="hidden" aria-labelledby="drinks-tab">
+            {% for item in drinks %}
+            <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
+            <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} | {{ item.price }}£ </h2>
+            <p> {{ item.description }} </p>
+            <p> ingridients: {{ item.ingridients }} </p>
+            <ul class="flex flex-wrap">
+                <!-- If Item is vegan, display a green label with the text "Vegan"-->
+                {% if item.vegan == True %}
+                <li class="bg-lime-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Vegan</li>
+                {% endif %}
+                <!-- If Item contains nuts, display a red label with the text "Nuts"-->
+                {% if item.nuts == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Nuts</li>
+                {% endif %}
+                <!-- If Item contains lactose, display a red label with the text "Lactose"-->
+                {% if item.lactose == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Lactose</li>
+                {% endif %}
+                <!-- If Item contains Gluten, display a red label with the text "Gluten"-->
+                {% if item.gluten == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Gluten</li>
+                {% endif %}
+                <!-- If Item contains eggs, display a red label with the text "Eggs"-->
+                {% if item.eggs == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Eggs</li>
+                {% endif %}
+            </ul>
+            {% endfor %}
+        </div>
+        <!--Each dessert in the database is listed here-->
+        <div id="dessert" role="tabpanel" class="hidden" aria-labelledby="dessert-tab">
+            {% for item in desserts %}
+            <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
+            <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} | {{ item.price }}£</h2>
+            <p> {{ item.description }} </p>
+            <p> ingridients: {{ item.ingridients }} </p>
+            <ul class="flex flex-wrap">
+                <!-- If Item is vegan, display a green label with the text "Vegan"-->
+                {% if item.vegan == True %}
+                <li class="bg-lime-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Vegan</li>
+                {% endif %}
+                <!-- If Item contains nuts, display a red label with the text "Nuts"-->
+                {% if item.nuts == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Nuts</li>
+                {% endif %}
+                <!-- If Item contains lactose, display a red label with the text "Lactose"-->
+                {% if item.lactose == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Lactose</li>
+                {% endif %}
+                <!-- If Item contains Gluten, display a red label with the text "Gluten"-->
+                {% if item.gluten == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Gluten</li>
+                {% endif %}
+                <!-- If Item contains eggs, display a red label with the text "Eggs"-->
+                {% if item.eggs == True %}
+                <li class="bg-red-500 py-2 px-4 my-2 mx-1 rounded-full text-black">Eggs</li>
+                {% endif %}
+            </ul>
+            {% endfor %}
+        </div>
+    </div>
+    <hr class="border-b-2 border-slate-900 m-4 dark:border-slate-200 lg max-w-screen-md md:mx-auto sm:mx-4">
+    <h2 class="text-center text-xl text-black dark:text-white">Do you have questions about allergies?</h2>
+    <!--Redirect to the contact page later-->
+    <p class="text-center my-2 mx-4">Ask our staff or <a href="#" class="underline">contact us</a></p>
+</section>
+<hr class="border-b-2 border-slate-900 m-4 dark:border-slate-200 lg max-w-screen-md md:mx-auto sm:mx-4">
+<section>
+    <h2 class="text-center text-xl text-black dark:text-white">Ready to order?</h2>
+    <a href="#" class="block bg-orange-500 rounded-lg p-3 hover:bg-orange-400 hover:rounded-xl hover:scale-110 transition-all w-32 mx-auto my-4 text-center text-black dark:text-white">
+        Order now!
+    </a>
+</section>
+
+{% endblock content %}

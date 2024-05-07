@@ -242,6 +242,22 @@ Here I will document the progress divided into specific dates. Please note that 
 Milestones have been created in github. Some of the user stories were changed, added and deleted because of plan changes. The plans to create a forum like page for questions and answers were switched out in favor of a contact form to have less clutter.
 </details>
 
+<details>
+<summary> Progress 7/05/2024 </summary>
+
+**Milestones/epics progress**
+
+<img src="documentation/epics_progress_07_05_2024.png.png">
+
+**Backlog**
+
+<img src="documentation/backlog_progress_07_05_2024.png"> ![alt text](image.png)
+
+**Commentary:**
+
+Home page has been finished and the menu page has been made. I still need to add most of the links and then work on the employee side of the website as it is different from the admin site
+</details>
+
 # Design
 
 # Wireframes
