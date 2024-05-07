@@ -162,9 +162,12 @@
 
     <div id="default-carousel" class="relative max-w-screen-md m-auto" data-carousel="static">
         <!-- Carousel wrapper -->
-        <div class="relative h-36 md:h-52 overflow-hidden rounded-lg mx-5 md:mx-20">
+        <div class="relative h-36 md:h-52 overflow-hidden rounded-lg m-5 md:mx-20">
+            <!--For each featured review a new carousel item will be made-->
             {% for review in reviews %}
-            <div class="hidden duration-700 ease-in-out bg-slate-300 dark:bg-gray-900" data-carousel-item>
+            <!--The text will fade when it gets too long to make some contrast between text and buttons on mobile-->
+            <div class="hidden duration-700 ease-in-out bg-slate-300 dark:bg-gray-900 pb-5 bg-gradient-to-t from-gray-900 to-slate-300 to-70% bg-clip-text text-transparent" data-carousel-item>
+                <div>
                 <h2> {{review.title}} </h2>
                 <h3> 
                     <!--A string is generated based on the number in review.rating to be iterated over as review.rating is an int
@@ -174,6 +177,7 @@
                     {% endfor %}
                 </h3>
                 <p> {{review.content}} </p>
+            </div>
             </div>
             {% endfor %}
         </div>
