@@ -18,7 +18,8 @@
         </div>
         <h1 class="text-center font-bold underline text-2xl mt-2 text-black dark:text-white">The Harbor Hearth</h1>
         <h2 class="text-center text-xl text-black dark:text-white">Set sail for deliciousness</h2>
-        <p class="text-center mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean imperdiet diam eget
+        <p class="text-center my-2 mx-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean imperdiet diam
+            eget
             mauris convallis venenatis</p>
     </div>
 </section>
@@ -166,18 +167,21 @@
             <!--For each featured review a new carousel item will be made-->
             {% for review in reviews %}
             <!--The text will fade when it gets too long to make some contrast between text and buttons on mobile-->
-            <div class="hidden duration-700 ease-in-out bg-slate-300 dark:bg-gray-900 pb-5 bg-gradient-to-t from-gray-300 to-slate-900 dark:from-gray-900 dark:to-slate-300 to-70% bg-clip-text text-transparent" data-carousel-item>
+            <div class="hidden duration-700 ease-in-out bg-slate-300 dark:bg-gray-900 pb-5 bg-gradient-to-t from-gray-300 to-slate-900 dark:from-gray-900 dark:to-slate-300 from-30% to-70% bg-clip-text text-transparent"
+                data-carousel-item>
                 <div>
-                <h2> {{review.title}} </h2>
-                <h3> 
-                    <!--A string is generated based on the number in review.rating to be iterated over as review.rating is an int
+                    <h2> {{review.title}} </h2>
+                    <h3>
+                        <!--A string is generated based on the number in review.rating to be iterated over as review.rating is an int
                     and int is not iterable-->
-                    {% for star in "x"|rjust:review.rating %}
-                    <span class="text-yellow-400"><i class="fa-solid fa-star"></i></span>
-                    {% endfor %}
-                </h3>
-                <p> {{review.content}} </p>
-            </div>
+                        {% for star in "x"|rjust:review.rating %}
+                        <span class="text-yellow-400"><i class="fa-solid fa-star"></i></span>
+                        {% endfor %}
+                    </h3>
+                    <p> {{review.content}} </p>
+                    <!--Make this a working link later-->
+                    <a href="#" class="absolute bottom-0 block w-full text-center text-black dark:text-white">Read more</a>
+                </div>
             </div>
             {% endfor %}
         </div>
@@ -195,7 +199,7 @@
             class="absolute top-0 end-0 z-30 flex items-end md:items-center md:justify-center h-full px-4 cursor-pointer group focus:outline-none"
             data-carousel-next>
             <span
-            class="inline-flex items-center justify-center w-10 h-10 rounded-full md:bg-slate-300 md:dark:bg-gray-900 md:group-hover:bg-slate-500 md:dark:group-hover:dark:bg-gray-700 ">
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full md:bg-slate-300 md:dark:bg-gray-900 md:group-hover:bg-slate-500 md:dark:group-hover:dark:bg-gray-700 ">
                 <i class="fa-solid fa-arrow-right"></i>
                 <span class="sr-only">Next</span>
             </span>

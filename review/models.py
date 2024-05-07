@@ -1,4 +1,5 @@
 from django.db import models
+import uuid
 
 # Create your models here.
 
@@ -15,7 +16,9 @@ class Review(models.Model):
 
     rating = models.IntegerField(choices=RATING)
     title = models.CharField(max_length=50)
+    author = models.CharField(max_length=50)
     content = models.TextField(max_length=500)
+    url = models.UUIDField(unique=True, default=uuid.uuid4, null=True)
     approved = models.BooleanField(default=False)
     featured = models.BooleanField(default=False)
 
