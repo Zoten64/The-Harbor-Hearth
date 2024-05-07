@@ -6,7 +6,7 @@
 
 {% block content %}
     <h1>Reviews</h1>
-        {% for review in object_list %}
+        {% for review in reviews %}
             <h3>{{review.title}} | {{review.rating}} stars</h3>
             <p>{{review.content}}</p>
             <br>
