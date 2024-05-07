@@ -12,3 +12,9 @@ class Post(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
     home_page = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ["-date"]
+
+    def __str__(self):
+        return f"{self.title} | {self.date}"

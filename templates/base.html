@@ -1,5 +1,8 @@
 {% load static %}
 
+{% url 'home' as home_url %}
+{% url 'menu' as menu_url %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,11 +32,11 @@
                     <!--the menu that will drop down when the hamburger menu is pressed-->
                     <ul id="hamburger-menu-dropdown" class="hidden bg-slate-100 dark:bg-gray-900 w-full rounded-b-lg p-2 border-b-2 border-slate-900 shadow-xl shadow-slate-200 dark:border-black dark:shadow-slate-950">
                         <!--Make these clickable later-->
-                        <li class="p-1">Home</li>
-                        <li class="p-1">Menu</li>
-                        <li class="p-1">Reviews</li>
-                        <li class="p-1">Contact</li>
-                        <li class="p-1">Blog and news</li>
+                        <li class="p-1"><a href="{% url 'home' %}">Home</a></li>
+                        <li class="p-1"><a href="{% url 'menu' %}">Menu</a></li>
+                        <li class="p-1"><a href="#">Reviews</a></li>
+                        <li class="p-1"><a href="#">Contact</a></li>
+                        <li class="p-1"><a href="#">Blog and news</a></li>
                     </ul>
                 </li>
                 <!--Logo. Will be added later-->
