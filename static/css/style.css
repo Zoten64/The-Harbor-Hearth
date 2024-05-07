@@ -23,10 +23,13 @@ body{
 }
 
 main{
+    /*Any unused space in the viewport will be taken up by the main element to make sure the footer is always at the bottom*/
     flex: 1 0 auto;
+    /*Prevent header from obsucing the top content*/
     margin-top: 40px;
 }
 
+/*Navigation elements have been split up into 3, each one getting an equal amount of space*/
 nav ul{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -37,6 +40,7 @@ nav ul{
     justify-self: center;
 }
 
+/*Social media section contains 2 elements.*/
 .social-media{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -56,8 +60,9 @@ nav ul{
 
 /*Media Query: Tablets and larger (768px and up)*/
 @media screen and (min-width: 768px) {
-    footer ul{
+    .location-contact{
+        /**/
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     } 
 }
