@@ -14,7 +14,6 @@
     <div class="relative bottom-16">
         <!--Logo will be placed inside later-->
         <div class="border-8 border-slate-50 dark:border-gray-950 rounded-full h-32 w-32 bg-cyan-400 m-auto">
-            <p class="text-center">logo</p>
         </div>
         <h1 class="text-center font-bold underline text-2xl mt-2 text-black dark:text-white">The Harbor Hearth</h1>
         <h2 class="text-center text-xl text-black dark:text-white">Set sail for deliciousness</h2>
@@ -27,30 +26,28 @@
 <!--Menu section-->
 <!--This section will not exceed the width of a medium screen. m-auto centers it-->
 <section class="max-w-screen-md m-auto px-3">
+    <!--Menu title. Not clickable-->
+    <h2 class="font-bold text-2xl text-black dark:text-white text-center mb-4">Menu</h2>
     <!--list of tab buttons to toggle between displaying the meals, drinks and desserts. data-tabs-active-classes adds styling to active classes-->
-    <ul class="menu-list-home" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist"
-        data-tabs-active-classes="text-black dark:text-white underline">
-        <!--Menu title. Not clickable-->
-        <li class="flex font-bold text-2xl text-black dark:text-white self-center">
-            Menu
-        </li>
+    <ul class="menu-list" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist"
+        data-tabs-active-classes="text-black dark:text-white underline" aria-labelledby="Category selector">
         <!--Each li item apart of this list below here is a button for changign the menu displayed-->
         <!--data-tabs-target targets the div with the specified id. This applies to all list items below-->
         <li class="flex" role="presentation">
-            <button class="self-center w-full text-right" id="meals-tab" data-tabs-target="#meals" type="button"
-                role="tab" aria-controls="Meals" aria-selected="true" aria-label="Meals tab in the menu section">
+            <button class="self-center w-full text-center" id="meals-tab" data-tabs-target="#meals" type="button"
+                role="tab" aria-controls="Meals" aria-label="Meals tab in the menu section">
                 Meals
             </button>
         </li>
         <li class="flex" role="presentation">
-            <button class="self-center w-full text-right" id="drinks-tab" data-tabs-target="#drinks" type="button"
-                role="tab" aria-controls="Drinks" aria-selected="false" aria-label="Meals tab in the menu section">
+            <button class="self-center w-full text-center" id="drinks-tab" data-tabs-target="#drinks" type="button"
+                role="tab" aria-controls="Drinks" aria-label="Meals tab in the menu section">
                 Drinks
             </button>
         </li>
         <li class="flex" role="presentation">
-            <button class="self-center w-full text-right" id="dessert-tab" data-tabs-target="#dessert" type="button"
-                role="tab" aria-controls="Dessert" aria-selected="false" aria-label="Meals tab in the menu section">
+            <button class="self-center w-full text-center" id="dessert-tab" data-tabs-target="#dessert" type="button"
+                role="tab" aria-controls="Dessert" aria-label="Meals tab in the menu section">
                 Dessert
             </button>
         </li>
@@ -171,11 +168,11 @@
                 data-carousel-item>
                 <div>
                     <h2 class="font-bold text-xl text-black dark:text-white"> {{review.title}} </h2>
-                        <!--A string is generated based on the number in review.rating to be iterated over as review.rating is an int
+                    <!--A string is generated based on the number in review.rating to be iterated over as review.rating is an int
                     and int is not iterable-->
-                        {% for star in "x"|rjust:review.rating %}
-                        <span class="text-yellow-400"><i class="fa-solid fa-star"></i></span>
-                        {% endfor %}
+                    {% for star in "x"|rjust:review.rating %}
+                    <span class="text-yellow-400"><i class="fa-solid fa-star"></i></span>
+                    {% endfor %}
                     <p class="text-black dark:text-white"> {{review.author}} wrote: </p>
                     <p> {{review.content}} </p>
                     <!--Make this a working link later-->
