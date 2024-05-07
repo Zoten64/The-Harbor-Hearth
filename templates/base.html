@@ -2,6 +2,7 @@
 
 {% url 'home' as home_url %}
 {% url 'menu' as menu_url %}
+{% url 'review' as reviews_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +35,7 @@
                         <!--Make these clickable later-->
                         <li class="p-1"><a href="{% url 'home' %}">Home</a></li>
                         <li class="p-1"><a href="{% url 'menu' %}">Menu</a></li>
-                        <li class="p-1"><a href="#">Reviews</a></li>
+                        <li class="p-1"><a href="{% url 'review' %}">Reviews</a></li>
                         <li class="p-1"><a href="#">Contact</a></li>
                         <li class="p-1"><a href="#">Blog and news</a></li>
                     </ul>
