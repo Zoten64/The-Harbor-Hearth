@@ -100,6 +100,8 @@ DATABASES = {
 }
 
 
+CSRF_TRUSTED_ORIGINS = ['127.0.0.1', '.herokuapp.com', '192.168.0.15']
+
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
