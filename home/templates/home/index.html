@@ -31,26 +31,26 @@
     <ul class="menu-list-home" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist"
         data-tabs-active-classes="text-black dark:text-white underline">
         <!--Menu title. Not clickable-->
-        <li class="flex">
-            <h1 class="font-bold text-2xl text-black dark:text-white self-center">Menu</h1>
+        <li class="flex font-bold text-2xl text-black dark:text-white self-center">
+            Menu
         </li>
         <!--Each li item apart of this list below here is a button for changign the menu displayed-->
         <!--data-tabs-target targets the div with the specified id. This applies to all list items below-->
         <li class="flex" role="presentation">
             <button class="self-center w-full text-right" id="meals-tab" data-tabs-target="#meals" type="button"
-                role="tab" aria-controls="Meals" aria-selected="true">
+                role="tab" aria-controls="Meals" aria-selected="true" aria-label="Meals tab in the menu section">
                 Meals
             </button>
         </li>
         <li class="flex" role="presentation">
             <button class="self-center w-full text-right" id="drinks-tab" data-tabs-target="#drinks" type="button"
-                role="tab" aria-controls="Drinks" aria-selected="false">
+                role="tab" aria-controls="Drinks" aria-selected="false" aria-label="Meals tab in the menu section">
                 Drinks
             </button>
         </li>
         <li class="flex" role="presentation">
             <button class="self-center w-full text-right" id="dessert-tab" data-tabs-target="#dessert" type="button"
-                role="tab" aria-controls="Dessert" aria-selected="false">
+                role="tab" aria-controls="Dessert" aria-selected="false" aria-label="Meals tab in the menu section">
                 Dessert
             </button>
         </li>
@@ -167,7 +167,7 @@
             <!--For each featured review a new carousel item will be made-->
             {% for review in reviews %}
             <!--The text will fade when it gets too long to make some contrast between text and buttons on mobile-->
-            <div class="hidden duration-700 ease-in-out p-5 bg-gradient-to-t from-gray-300 to-slate-900 dark:from-gray-900 dark:to-slate-300 from-20% to-70% bg-clip-text text-transparent"
+            <div class="hidden duration-700 ease-in-out p-5 bg-gradient-to-t from-gray-300 to-slate-900 dark:from-gray-900 dark:to-slate-300 from-20% to-40% bg-clip-text text-transparent"
                 data-carousel-item>
                 <div>
                     <h2 class="font-bold text-xl text-black dark:text-white"> {{review.title}} </h2>
@@ -221,7 +221,7 @@
             <!--For each featured review a new carousel item will be made-->
             {% for post in posts %}
             <!--The text will fade when it gets too long to make some contrast between text and buttons on mobile-->
-            <div class="hidden duration-700 ease-in-out p-5 bg-gradient-to-t from-gray-300 to-slate-900 dark:from-gray-900 dark:to-slate-300 from-20% to-70% bg-clip-text text-transparent"
+            <div class="hidden duration-700 ease-in-out p-5 bg-gradient-to-t from-gray-300 to-slate-900 dark:from-gray-900 dark:to-slate-300 from-20% to-40% bg-clip-text text-transparent"
                 data-carousel-item>
                 <div>
                     <h2 class="font-bold text-xl text-black dark:text-white"> {{post.title}} </h2>

@@ -31,13 +31,13 @@
                         <i class="fa-solid fa-bars scale-150 translate-x-1"></i>
                     </button>
                     <!--the menu that will drop down when the hamburger menu is pressed-->
-                    <ul id="hamburger-menu-dropdown" class="hidden bg-slate-100 dark:bg-gray-900 w-full rounded-b-lg p-2 border-b-2 border-slate-900 shadow-xl shadow-slate-200 dark:border-black dark:shadow-slate-950 z-40">
+                    <ul id="hamburger-menu-dropdown" class="hidden bg-slate-100 dark:bg-gray-900 w-full rounded-b-lg py-2 px-4 border-b-2 border-slate-900 shadow-xl shadow-slate-200 dark:border-black dark:shadow-slate-950 z-40">
                         <!--Make these clickable later-->
-                        <li class="p-1"><a href="{% url 'home' %}">Home</a></li>
-                        <li class="p-1"><a href="{% url 'menu' %}">Menu</a></li>
-                        <li class="p-1"><a href="{% url 'review' %}">Reviews</a></li>
-                        <li class="p-1"><a href="#">Contact</a></li>
-                        <li class="p-1"><a href="#">Blog and news</a></li>
+                        <li class="p-2 {% if request.path == home_url %}underline{% endif %}"><a href="{% url 'home' %}" class="hover:pl-2 transition-all">Home</a></li>
+                        <li class="p-2 {% if request.path == menu_url %}underline{% endif %}"><a href="{% url 'menu' %}" class="hover:pl-2 transition-all">Menu</a></li>
+                        <li class="p-2 {% if request.path == reviews_url %}underline{% endif %}"><a href="{% url 'review' %}" class="hover:pl-2 transition-all">Reviews</a></li>
+                        <li class="p-2"><a href="#" class="hover:pl-2 transition-all">Contact</a></li>
+                        <li class="p-2"><a href="#" class="hover:pl-2 transition-all">Blog and news</a></li>
                     </ul>
                 </li>
                 <!--Logo. Will be added later-->
@@ -92,7 +92,7 @@
             <!--Contact section-->
             <li class="justify-self-end sm:mt-4 md:mt-0">
                 <p class="font-bold">Contact us</p>
-                <p class="underline"><a href="#">Contact form</a></p>
+                <p class="underline"><a href="#" aria-label="A link to our contact form">Contact form</a></p>
                 <p><a href="tel:+441635286716">+441635286716</a></p>
                 <p><a href="mailto:contact@theharborhearth.com">contact@theharborhearth.com</a></p>
             </li>
