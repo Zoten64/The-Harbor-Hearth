@@ -163,14 +163,14 @@
 
     <div id="default-carousel" class="relative max-w-screen-md m-auto" data-carousel="static">
         <!-- Carousel wrapper -->
-        <div class="relative h-36 md:h-52 overflow-hidden rounded-lg m-5 md:mx-20">
+        <div class="relative h-80 md:h-72 overflow-hidden rounded-lg m-5 md:mx-20 bg-slate-300 dark:bg-gray-900">
             <!--For each featured review a new carousel item will be made-->
             {% for review in reviews %}
             <!--The text will fade when it gets too long to make some contrast between text and buttons on mobile-->
-            <div class="hidden duration-700 ease-in-out bg-slate-300 dark:bg-gray-900 pb-5 bg-gradient-to-t from-gray-300 to-slate-900 dark:from-gray-900 dark:to-slate-300 from-30% to-70% bg-clip-text text-transparent"
+            <div class="hidden duration-700 ease-in-out p-5 bg-gradient-to-t from-gray-300 to-slate-900 dark:from-gray-900 dark:to-slate-300 from-20% to-70% bg-clip-text text-transparent"
                 data-carousel-item>
                 <div>
-                    <h2> {{review.title}} </h2>
+                    <h2 class="font-bold text-xl text-black dark:text-white"> {{review.title}} </h2>
                     <h3>
                         <!--A string is generated based on the number in review.rating to be iterated over as review.rating is an int
                     and int is not iterable-->
@@ -178,9 +178,12 @@
                         <span class="text-yellow-400"><i class="fa-solid fa-star"></i></span>
                         {% endfor %}
                     </h3>
+                    <p class="text-black dark:text-white"> {{review.author}} wrote: </p>
                     <p> {{review.content}} </p>
                     <!--Make this a working link later-->
-                    <a href="#" class="absolute bottom-0 block w-full text-center text-black dark:text-white">Read more</a>
+                    <a href="#"
+                        class="absolute bottom-0 left-0 right-0 block w-full text-center mb-4 text-black dark:text-white hover:scale-110 transition-all">
+                        Read more</a>
                 </div>
             </div>
             {% endfor %}
