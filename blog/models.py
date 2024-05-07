@@ -11,3 +11,4 @@ class Post(models.Model):
     content = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
+    home_page = models.BooleanField(default=False)

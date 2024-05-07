@@ -30,7 +30,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', '192.168.0.15']
@@ -100,7 +100,8 @@ DATABASES = {
 }
 
 
-CSRF_TRUSTED_ORIGINS = ['127.0.0.1', '.herokuapp.com', '192.168.0.15']
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1', 'https://*.herokuapp.com', 
+                        'http://192.168.0.15']
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
