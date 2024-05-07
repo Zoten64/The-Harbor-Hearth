@@ -5,11 +5,29 @@
 {% block title %} Reviews {% endblock title %}
 
 {% block content %}
-    <h1>Reviews</h1>
-        {% for review in reviews %}
+<h1>Reviews</h1>
+<div class="grid grid-cols-3 grid-rows-2">
+    {% for review in review_list %}
+    <div>
+        <!--Add working links later-->
+        <a href="#">
             <h3>{{review.title}} | {{review.rating}} stars</h3>
             <p>{{review.content}}</p>
-            <br>
-        {% endfor %}
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% if is_paginated %}
+<nav aria-label="Page navigation">
+    <ul class="">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">PREV </a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
 
 {% endblock content %}

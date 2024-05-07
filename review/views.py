@@ -3,10 +3,7 @@ from django.views import generic
 from .models import Review
 
 # Create your views here.
-def ReviewList(request):
-
-    reviews = Review.objects.filter(approved=True) 
-    context = {
-        'reviews' : reviews,
-    }
-    return render(request, 'review/review.html', context)
+class ReviewList(generic.ListView):
+    queryset = Review.objects.filter(approved=True)
+    template_name = "review/review.html"
+    paginate_by = 6
