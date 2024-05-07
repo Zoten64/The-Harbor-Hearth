@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orders</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load static %}
+
+<!--Displayed at the end of the title. Used to make the title dynamic-->
+{% block title %} Reviews {% endblock title %}
+
+{% block content %}
     <h1>Reviews</h1>
         {% for review in object_list %}
             <h3>{{review.title}} | {{review.rating}} stars</h3>
@@ -13,5 +12,4 @@
             <br>
         {% endfor %}
 
-</body>
-</html>
+{% endblock content %}

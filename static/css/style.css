@@ -26,7 +26,7 @@ main{
     /*Any unused space in the viewport will be taken up by the main element to make sure the footer is always at the bottom*/
     flex: 1 0 auto;
     /*Prevent header from obsucing the top content*/
-    margin-top: 40px;
+    margin-top: 49px;
 }
 
 /*Navigation elements have been split up into 3, each one getting an equal amount of space*/
