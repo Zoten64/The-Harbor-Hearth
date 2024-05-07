@@ -10,10 +10,10 @@
 <!--Hero + title section-->
 <section>
     <!-- This will be an image later-->
-    <div class="h-32 bg-orange-500"></div>
+    <div class="h-32 bg-cyan-400"></div>
     <div class="relative bottom-16">
         <!--Logo will be placed inside later-->
-        <div class="border-8 border-slate-50 dark:border-gray-950 rounded-full h-32 w-32 bg-orange-500 m-auto">
+        <div class="border-8 border-slate-50 dark:border-gray-950 rounded-full h-32 w-32 bg-cyan-400 m-auto">
             <p class="text-center">logo</p>
         </div>
         <h1 class="text-center font-bold underline text-2xl mt-2 text-black dark:text-white">The Harbor Hearth</h1>
@@ -171,18 +171,17 @@
                 data-carousel-item>
                 <div>
                     <h2 class="font-bold text-xl text-black dark:text-white"> {{review.title}} </h2>
-                    <h3>
                         <!--A string is generated based on the number in review.rating to be iterated over as review.rating is an int
                     and int is not iterable-->
                         {% for star in "x"|rjust:review.rating %}
                         <span class="text-yellow-400"><i class="fa-solid fa-star"></i></span>
                         {% endfor %}
-                    </h3>
                     <p class="text-black dark:text-white"> {{review.author}} wrote: </p>
                     <p> {{review.content}} </p>
                     <!--Make this a working link later-->
+                    <!--Fix accessibility issues with javascript later-->
                     <a href="#"
-                        class="absolute bottom-0 left-0 right-0 block w-full text-center mb-4 text-black dark:text-white hover:scale-110 transition-all">
+                        class="absolute bottom-0 left-0 right-0 block w-full text-center mb-4 text-black dark:text-white hover:scale-110 transition-all cursor-pointer">
                         Read more</a>
                 </div>
             </div>

@@ -341,6 +341,7 @@ pipdeptree was used to get a better look at the relationship between libraries a
 **Code**
 
 - [Codestar walkthrough project has been referenced in a lot of places](https://github.com/Code-Institute-Solutions/blog/tree/main/15_testing)
+- [Love running project for social media link help](https://github.com/Code-Institute-Solutions/love-running-v3/blob/main/8.1-testing-and-validation/index.html)
 - [Django documentation](https://docs.djangoproject.com/en/5.0/)
 - [Tailwind documentation](https://tailwindcss.com/docs/installation)
 - [Flowbite dropdown menu](https://flowbite.com/docs/components/dropdowns/)
