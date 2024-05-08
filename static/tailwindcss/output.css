@@ -783,6 +783,10 @@ video {
   justify-self: end;
 }
 
+.justify-self-center {
+  justify-self: center;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }

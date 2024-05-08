@@ -22,12 +22,12 @@
 <!--Classes used throughout the entire document-->
 <body class="text-slate-950 bg-slate-50 dark:bg-gray-950 dark:text-slate-100">
     <!--Border and shadow. In darkmode the border will be black. In light mode it will be the color #0f172a.-->
-    <header class="border-b-2 border-slate-900 dark:border-black py-2 px-3 fixed bg-slate-50 dark:bg-gray-950 w-full z-50">
+    <header class="border-b-2 border-solid border-slate-900 dark:border-black py-2 px-3 fixed bg-slate-50 dark:bg-gray-950 w-full z-50">
         <nav>
             <!--Above 1024px the px-5 class will be used. px-5 adds 1.25rem padding on the x axis-->
             <ul class="lg:px-5">
-                <!--Dropdown menu on mobile-->
-                <li class="nav-grid-item justify-self-start">
+                <!--Dropdown menu-->
+                <li class="justify-self-start">
                     <!--Flowbite dropdown menu. data-dropdown-toggle links the button with the menu to be dropped down. Offset is in pixels-->
                     <button id="dropdownDefaultButton" data-dropdown-toggle="hamburger-menu-dropdown" type="button" data-dropdown-offset-distance=10 aria-label="Main menu">
                         <i class="fa-solid fa-bars scale-150 translate-x-1"></i>
@@ -43,11 +43,11 @@
                     </ul>
                 </li>
                 <!--Logo. Will be added later-->
-                <li class="nav-grid-item">
+                <li class="justify-self-center">
                     logo
                 </li>
                 <!--Order now call to action button-->
-                <li class="nav-grid-item justify-self-end">
+                <li class="justify-self-end">
                     <a href="#" class="bg-cyan-400 hover:bg-cyan-300 text-black rounded-lg p-1 hover:scale-110 transition-all ">
                         Order now!
                     </a>
@@ -81,7 +81,7 @@
             </li>
         </ul>
         <!--Divider line-->
-        <hr class="border-b-2 border-slate-900 m-4 dark:border-slate-200 lg max-w-screen-md md:mx-auto sm:mx-4">
+        <hr class="border-b-2 border-slate-900 my-4 dark:border-slate-200 lg max-w-screen-md md:mx-auto sm:mx-4">
         <!--The width will not exceed the width of a medium device screen m-auto centers it-->
         <ul class="location-contact p-4 max-w-screen-md m-auto">
             <!--Adress section-->

@@ -26,7 +26,7 @@ main{
     /*Any unused space in the viewport will be taken up by the main element to make sure the footer is always at the bottom*/
     flex: 1 0 auto;
     /*Prevent header from obsucing the top content*/
-    margin-top: 49px;
+    margin-top: 40px;
 }
 
 hr{
