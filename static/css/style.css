@@ -34,7 +34,7 @@ hr{
 }
 
 /*Navigation elements have been split up into 3, each one getting an equal amount of space*/
-nav ul{
+.main-navigation{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
