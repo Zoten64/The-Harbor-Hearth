@@ -29,6 +29,10 @@ main{
     margin-top: 49px;
 }
 
+hr{
+    border-style: solid;
+}
+
 /*Navigation elements have been split up into 3, each one getting an equal amount of space*/
 nav ul{
     display: grid;
