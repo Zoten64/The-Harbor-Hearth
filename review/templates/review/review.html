@@ -6,14 +6,29 @@
 
 {% block content %}
 <h1>Reviews</h1>
-<div class="grid grid-cols-3 grid-rows-2">
+<!--on medium devices and above the container will be a grid. On small devices it will display beneath each other.
+On medium devices there will be 2 columns and 3 rows, on large devices 3 columns and 2 rows.-->
+
+<div class="md:grid lg:grid-cols-3 lg:grid-rows-2 md:grid-cols-2 md:grid-rows-3 sm:block m-4">
     {% for review in review_list %}
-    <div>
-        <!--Add working links later-->
-        <a href="#">
-            <h3>{{review.title}} | {{review.rating}} stars</h3>
-            <p>{{review.content}}</p>
-        </a>
+    <div class="rounded-lg m-4 bg-slate-300 dark:bg-gray-900">
+        <!--The text will fade when it gets too long to make some contrast between text and buttons on mobile-->
+        <div
+            class=" overflow-clip h-44 ease-in-out p-5 bg-gradient-to-t from-gray-300 to-slate-900 dark:from-gray-900 dark:to-slate-300 from-20% to-40% bg-clip-text text-transparent">
+            <h2 class="font-bold text-xl text-black dark:text-white"> {{review.title}} </h2>
+            <!--A string is generated based on the number in review.rating to be iterated over as review.rating is an int
+                    and int is not iterable-->
+            {% for star in "x"|rjust:review.rating %}
+            <span class="text-yellow-400"><i class="fa-solid fa-star"></i></span>
+            {% endfor %}
+            <p class="text-black dark:text-white"> {{review.author}} wrote: </p>
+            <p> {{review.content}} </p>
+            <!--Make this a working link later-->
+            <!--Fix accessibility issues with javascript later-->
+        </div>
+        <a href="#"
+            class="relative bottom-0 left-0 right-0 block w-full text-center mb-4 text-black dark:text-white hover:scale-110 transition-all cursor-pointer">
+            Read more</a>
     </div>
     {% endfor %}
 </div>
