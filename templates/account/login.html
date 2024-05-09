@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+<!--Displayed at the end of the title. Used to make the title dynamic-->
+{% block title %} Account {% endblock title %}
+
+<!--The content-->
+{% block content %}
+
+<h3>{% trans "Sign In" %}</h3>
+
+{% blocktrans %}
+<a class="link" href="{{ signup_url }}">sign up</a>
+{% endblocktrans %}
+
+<form class="login" method="POST" action="{% url 'account_login' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
+</form>
+
+{% endblock content %}

@@ -4,6 +4,9 @@
 {% url 'menu' as menu_url %}
 {% url 'review' as reviews_url %}
 {% url 'blog' as blog_url %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,6 +62,7 @@
                         <li class="p-2 {% if blog_url in request.path %}underline{% endif %}"><a href="{% url 'blog' %}"
                                 class="hover:pl-2 transition-all">Blog and news</a>
                         </li>
+                        <!--Fix this link stuff later-->
                         <li class="p-2 {% if blog_url in request.path %}underline{% endif %}"><a href="{% url 'blog' %}"
                                 class="hover:pl-2 transition-all">Account</a>
                         </li>
