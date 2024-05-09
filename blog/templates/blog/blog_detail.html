@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Reviews {% endblock title %}
+
+{% block content %}
+<div class="w-full grid justify-items-center my-16 grid-rows-2 grid-cols-1">
+    <div class="rounded-lg bg-slate-300 dark:bg-gray-900 w-11/12 md:w-4/5 md:p-8 p-4">
+        <h2 class="font-bold text-xl text-black dark:text-white pb-4"> {{post.title}} </h2>
+        <p> {{post.content}} </p>
+        <!--Make this a working link later-->
+        <!--Fix accessibility issues with javascript later-->
+    </div>
+    <div class="content-end">
+        <a class="rounded-lg bg-slate-300 dark:bg-gray-900 p-2 mx-4 justify-self-end w-fit" href="{% url 'blog' %}"> Back </a>
+    </div>
+</div>
+{% endblock content %}

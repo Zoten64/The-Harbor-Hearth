@@ -18,7 +18,7 @@ class Review(models.Model):
     title = models.CharField(max_length=50)
     author = models.CharField(max_length=50)
     content = models.TextField(max_length=500)
-    url = models.UUIDField(unique=True, default=uuid.uuid4, null=True)
+    url = models.UUIDField(unique=True, default=uuid.uuid4)
     approved = models.BooleanField(default=False)
     featured = models.BooleanField(default=False)
 

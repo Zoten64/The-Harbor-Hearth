@@ -3,6 +3,7 @@
 {% url 'home' as home_url %}
 {% url 'menu' as menu_url %}
 {% url 'review' as reviews_url %}
+{% url 'blog' as blog_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +47,8 @@
                                 class="hover:pl-2 transition-all">Menu</a></li>
                         <li class="p-2 {% if request.path == reviews_url %}underline{% endif %}"><a
                                 href="{% url 'review' %}" class="hover:pl-2 transition-all">Reviews</a></li>
-                        <li class="p-2"><a href="#" class="hover:pl-2 transition-all">Contact</a></li>
+                        <li class="p-2 {% if request.path == blog_url %}underline{% endif %}"><a
+                                href="{% url 'blog' %}" class="hover:pl-2 transition-all">Blog and news</a></li>
                         <li class="p-2"><a href="#" class="hover:pl-2 transition-all">Blog and news</a></li>
                     </ul>
                 </li>
