@@ -179,8 +179,7 @@
                     <p class="text-black dark:text-white"> {{review.author}} wrote: </p>
                     <p> {{review.content}} </p>
                     <!--Make this a working link later-->
-                    <!--Fix accessibility issues with javascript later-->
-                    <a href="#"
+                    <a href="{% url 'review_detail' review.url %}"
                         class="absolute bottom-0 left-0 right-0 block w-full text-center mb-4 text-black dark:text-white hover:scale-110 transition-all cursor-pointer">
                         Read more</a>
                 </div>
@@ -227,7 +226,7 @@
                     <h2 class="font-bold text-xl text-black dark:text-white"> {{post.title}} </h2>
                     <p> {{post.content}} </p>
                     <!--Make this a working link later-->
-                    <a href="#"
+                    <a href="{% url 'blog_detail' post.url %}"
                         class="absolute bottom-0 left-0 right-0 block w-full text-center mb-4 text-black dark:text-white hover:scale-110 transition-all">
                         Read more</a>
                 </div>

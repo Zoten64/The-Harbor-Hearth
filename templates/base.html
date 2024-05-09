@@ -40,16 +40,25 @@
                     <!--the menu that will drop down when the hamburger menu is pressed-->
                     <ul id="hamburger-menu-dropdown"
                         class="hidden bg-slate-100 dark:bg-gray-900 w-full rounded-b-lg py-2 px-4 border-b-2 border-slate-900 shadow-xl shadow-slate-200 dark:border-black dark:shadow-slate-950 z-40">
-                        <!--Make these clickable later-->
+                        <!--Home page button. If the user is on the home page the item will be underlined-->
                         <li class="p-2 {% if request.path == home_url %}underline{% endif %}"><a href="{% url 'home' %}"
-                                class="hover:pl-2 transition-all">Home</a></li>
-                        <li class="p-2 {% if request.path == menu_url %}underline{% endif %}"><a href="{% url 'menu' %}"
-                                class="hover:pl-2 transition-all">Menu</a></li>
-                        <li class="p-2 {% if request.path == reviews_url %}underline{% endif %}"><a
-                                href="{% url 'review' %}" class="hover:pl-2 transition-all">Reviews</a></li>
-                        <li class="p-2 {% if request.path == blog_url %}underline{% endif %}"><a
-                                href="{% url 'blog' %}" class="hover:pl-2 transition-all">Blog and news</a></li>
-                        <li class="p-2"><a href="#" class="hover:pl-2 transition-all">Blog and news</a></li>
+                                class="hover:pl-2 transition-all">Home</a>
+                        </li>
+                        <!--Menu page button. If the user is on the home page the item will be underlined-->
+                        <li class="p-2 {% if menu_url in request.path %}underline{% endif %}"><a href="{% url 'menu' %}"
+                                class="hover:pl-2 transition-all">Menu</a>
+                        </li>
+                        <!--Reviews page button. If the user is on the home page the item will be underlined-->
+                        <li class="p-2 {% if reviews_url in request.path %}underline{% endif %}"><a
+                                href="{% url 'review' %}" class="hover:pl-2 transition-all">Reviews</a>
+                        </li>
+                        <!--Contact page button. Currently doesn't work-->
+                        <li class="p-2"><a href="#" class="hover:pl-2 transition-all">Contact</a>
+                        </li>
+                        <!--Blog and news page button. If the user is on the home page the item will be underlined-->
+                        <li class="p-2 {% if blog_url in request.path %}underline{% endif %}"><a href="{% url 'blog' %}"
+                                class="hover:pl-2 transition-all">Blog and news</a>
+                        </li>
                     </ul>
                 </li>
                 <!--Logo. Will be added later-->
