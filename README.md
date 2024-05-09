@@ -251,12 +251,30 @@ Milestones have been created in github. Some of the user stories were changed, a
 
 **Backlog**
 
-<img src="documentation/backlog_progress_07_05_2024.png"> ![alt text](image.png)
+<img src="documentation/backlog_progress_07_05_2024.png">
 
 **Commentary:**
 
 Home page has been finished and the menu page has been made. I still need to add most of the links and then work on the employee side of the website as it is different from the admin site
 </details>
+
+</details>
+
+<details>
+<summary> Progress 10/05/2024 </summary>
+
+**Milestones/epics progress**
+
+<img src="documentation/epics_progress_10_05_2024.png.png">
+
+**Backlog**
+
+<img src="documentation/backlog_progress_10_05_2024.png">
+
+**Commentary:**
+Blog page has been finished and viewing reviews is now possible. Clicking on a review/blog preiew brings you to the full page with the details. Works on both the list pages and the home page. Account authentication has been set up and so has email verification and password reset.
+</details>
+
 
 # Design
 

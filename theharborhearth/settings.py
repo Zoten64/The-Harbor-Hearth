@@ -55,7 +55,6 @@ INSTALLED_APPS = [
     'contact',
     'blog',
     'menu',
-    'account_page',
 ]
 
 SITE_ID = 1
@@ -132,7 +131,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 #Temporary
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_REQUIRED = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
