@@ -19,7 +19,7 @@ On medium devices there will be 2 columns and 3 rows, on large devices 3 columns
                 <h2 class="font-bold text-xl text-black dark:text-white"> {{post.title}} </h2>
                 <p> {{post.content}} </p>
             </div>
-            <a href="#"
+            <a href="{% url 'blog_detail' post.url %}"
                 class="relative bottom-0 left-0 right-0 block w-full text-center pb-4 text-black dark:text-white hover:scale-110 transition-all cursor-pointer">
                 Read more</a>
         </div>
