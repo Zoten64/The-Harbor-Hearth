@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--The title will depend on what is defined on a page. Example: The Harbor Hearth - Menu-->
+    <title>THH Employee page - {% block title %}{% endblock title %}</title>
+    <!--The employee section of the site will be hidden from search engines-->
+    <meta name="robots" content="noindex">
+    <!--Flowbite CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <!--Local Tailwind-->
+    <link href="{% static 'tailwindcss/output.css' %}" rel="stylesheet" />
+    <!--Personal CSS-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<!--Classes used throughout the entire document-->
+
+<body class="text-slate-950 bg-slate-50 dark:bg-gray-950 dark:text-slate-100">
+    <!--Border and shadow. In darkmode the border will be black. In light mode it will be the color #0f172a.-->
+    <header
+        class="border-b-2 border-solid border-slate-900 dark:border-black py-2 px-3 fixed bg-slate-50 dark:bg-gray-950 w-full z-50">
+        <nav>
+            <ul class="grid grid-cols-2">
+                <li>
+                    <ul class="flex flex-row">
+                        <li class="mx-2"><a href="#">Orders</a></li>
+                        <li class="mx-2"><a href="#">Contact forms</a></li>
+                    </ul>
+                </li>
+                <!--Logo. Will be added later-->
+                <li class="justify-self-end">
+                    logo
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Dynamic content that will be appended onto here depending on page -->
+        {% block content %}
+
+        {% endblock content %}
+
+    </main>
+    <!--Border. In darkmode it will be black. In light mode it will be the color #0f172a-->
+    <footer class="border-t-2 border-slate-900 dark:border-black">
+
+    </footer>
+
+    <!--Fontawesome import-->
+    <script src="https://kit.fontawesome.com/b43359952f.js" crossorigin="anonymous"></script>
+    <!--tailwindCSS import-->
+    <!--Flowbite script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+
+</html>
