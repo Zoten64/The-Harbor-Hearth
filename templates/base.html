@@ -17,6 +17,13 @@
     <!--The title will depend on what is defined on a page. Example: The Harbor Hearth - Menu-->
     <title>The Harbor Hearth - {% block title %}{% endblock title %}</title>
     <meta name="description" content="Set sail for deliciousness">
+    <!--Favicons-->
+    <link rel="apple-touch-icon" sizes="180x180" href=" {% static 'favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
     <!--Flowbite CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <!--Local Tailwind-->
@@ -84,7 +91,7 @@
                     </a>
                     {% endif %}
                 </li>
-                
+
             </ul>
         </nav>
     </header>
