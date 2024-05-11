@@ -32,13 +32,13 @@
         class="border-b-2 border-solid border-slate-900 dark:border-black py-2 px-3 fixed bg-slate-50 dark:bg-gray-950 w-full z-50">
         <nav>
             <!--Above 1024px the px-5 class will be used. px-5 adds 1.25rem padding on the x axis-->
-            <ul class="lg:px-5 main-navigation">
+            <ul class="main-navigation px-5 h-12">
                 <!--Dropdown menu-->
-                <li class="justify-self-start">
+                <li class="justify-self-start self-center text-xl">
                     <!--Flowbite dropdown menu. data-dropdown-toggle links the button with the menu to be dropped down. Offset is in pixels-->
                     <button id="dropdownDefaultButton" data-dropdown-toggle="hamburger-menu-dropdown" type="button"
                         data-dropdown-offset-distance=10 aria-label="Main menu">
-                        <i class="fa-solid fa-bars scale-150 translate-x-1"></i>
+                        <i class="fa-solid fa-bars text-4xl"></i>
                     </button>
                     <!--the menu that will drop down when the hamburger menu is pressed-->
                     <ul id="hamburger-menu-dropdown"
@@ -68,17 +68,23 @@
                         </li>
                     </ul>
                 </li>
-                <!--Logo. Will be added later-->
-                <li class="justify-self-center">
-                    logo
-                </li>
-                <!--Order now call to action button-->
-                <li class="justify-self-end">
+
+                <li class="justify-self-end self-center">
+                    {% if request.path != home_url %}
+                    <a href="{% url 'home' %}"><img class="h-12" src="{% static 'images/harborhearthlogo.svg' %}"
+                            alt="The harbour hearth logo"></a>
+
+                    {% endif %}
+                    <!--Order now call to action button-->
+                    {% if request.path == home_url %}
+
                     <a href="#"
-                        class="bg-cyan-400 hover:bg-cyan-300 text-black rounded-lg p-1 hover:scale-110 transition-all ">
+                        class="bg-cyan-400 hover:bg-cyan-300 text-black rounded-lg p-2 hover:scale-110 transition-all w-32 h-fit text-center">
                         Order now!
                     </a>
+                    {% endif %}
                 </li>
+                
             </ul>
         </nav>
     </header>
@@ -121,7 +127,7 @@
                 <p>country</p>
             </li>
             <!--Contact section-->
-            <li class="justify-self-end sm:mt-4 md:mt-0">
+            <li class="justify-self-end mt-4 md:mt-0">
                 <p class="font-bold">Contact us</p>
                 <p class="underline"><a href="#" aria-label="A link to our contact form">Contact form</a></p>
                 <p><a href="tel:+441635286716">+441635286716</a></p>
