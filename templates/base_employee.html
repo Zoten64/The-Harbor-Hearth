@@ -1,5 +1,7 @@
 {% load static %}
 
+{% url 'home' as home_url %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,9 +9,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--The title will depend on what is defined on a page. Example: The Harbor Hearth - Menu-->
-    <title>THH Employee page - {% block title %}{% endblock title %}</title>
-    <!--The employee section of the site will be hidden from search engines-->
-    <meta name="robots" content="noindex">
+    <title>The Harbor Hearth - {% block title %}{% endblock title %}</title>
+    <meta name="description" content="Set sail for deliciousness">
+    <!--Favicons-->
+    <link rel="apple-touch-icon" sizes="180x180" href=" {% static 'favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
     <!--Flowbite CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <!--Local Tailwind-->
@@ -24,17 +32,19 @@
     <header
         class="border-b-2 border-solid border-slate-900 dark:border-black py-2 px-3 fixed bg-slate-50 dark:bg-gray-950 w-full z-50">
         <nav>
-            <ul class="grid grid-cols-2">
+            <!--Above 1024px the px-5 class will be used. px-5 adds 1.25rem padding on the x axis-->
+            <ul class="main-navigation px-5 h-12">
                 <li>
-                    <ul class="flex flex-row">
-                        <li class="mx-2"><a href="#">Orders</a></li>
-                        <li class="mx-2"><a href="#">Contact forms</a></li>
+                    <ul class="flex h-full items-center">
+                        <li class="pr-5"><a href="">Orders</a></li>
+                        <li><a href="">Contact forms</a></li>
                     </ul>
                 </li>
-                <!--Logo. Will be added later-->
-                <li class="justify-self-end">
-                    logo
+                <li class="justify-self-end self-center">
+                    <a href="{% url 'home' %}"><img class="h-12" src="{% static 'images/harborhearthlogo.svg' %}"
+                            alt="The harbour hearth logo"></a>
                 </li>
+
             </ul>
         </nav>
     </header>
@@ -47,7 +57,6 @@
     </main>
     <!--Border. In darkmode it will be black. In light mode it will be the color #0f172a-->
     <footer class="border-t-2 border-slate-900 dark:border-black">
-
     </footer>
 
     <!--Fontawesome import-->

@@ -5,6 +5,9 @@ from django.db import models
 DELIVERY_METHOD = (("Eat-in: Counter", "EAT-IN-COUNTER"), 
                    ("Eat-in: Table", "EAT-IN-TABLE"), ("Take-Out", "TAKE-OUT"))
 
+STATE = (("Not Started", "NOT-STARTED"), ("In progress", "IN-PROGRESS"),
+         ("Finished", "FINISHED"))
+
 class Order(models.Model):
     '''
     Model for adding orders to the database
@@ -13,7 +16,7 @@ class Order(models.Model):
     delivery_method = models.CharField(choices=DELIVERY_METHOD, 
                                        default=0)
     order = models.TextField()
-    finished = models.BooleanField(default=False)
+    state = models.CharField(choices=STATE, default=0)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
