@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -12,6 +13,8 @@ class Order(models.Model):
     '''
     Model for adding orders to the database
     '''
+    user = models.ForeignKey(User, on_delete=models.CASCADE, 
+                             related_name="order_user", blank=True, null=True)
     order_number = models.AutoField(primary_key=True)
     delivery_method = models.CharField(choices=DELIVERY_METHOD, 
                                        default=0)
