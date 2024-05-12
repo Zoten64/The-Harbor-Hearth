@@ -4,6 +4,7 @@
 {% url 'menu' as menu_url %}
 {% url 'review' as reviews_url %}
 {% url 'blog' as blog_url %}
+{% url 'account_email' as account_email %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
@@ -70,7 +71,7 @@
                                 class="hover:pl-2 transition-all">Blog and news</a>
                         </li>
                         <!--Fix this link stuff later-->
-                        <li class="p-2 {% if blog_url in request.path %}underline{% endif %}"><a href="{% url 'blog' %}"
+                        <li class="p-2 {% if account_email in request.path %}underline{% endif %}"><a href="{% url 'account_email' %}"
                                 class="hover:pl-2 transition-all">Account</a>
                         </li>
                     </ul>

@@ -22,7 +22,7 @@ urlpatterns = [
     path("menu/", include("menu.urls"), name="menu-urls"),
     path("reviews/", include("review.urls"), name="review-urls"),
     path("blog/", include("blog.urls"), name="blog-urls"),
-    path("accounts/", include("allauth.urls")),
+    path("accounts/", include("allauth.urls"), name="account-urls"),
     path("employee/", include("employee_page.urls"), name="employee-urls"),
     path('admin/', admin.site.urls),
 ]
