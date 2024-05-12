@@ -5,7 +5,7 @@ from django.db import models
 #Code credit:
 # - Email field: https://www.geeksforgeeks.org/emailfield-django-models/
 
-class Contact_form(models.Model):
+class ContactForm(models.Model):
     '''
     Model for contact forms
     '''

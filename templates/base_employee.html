@@ -1,6 +1,9 @@
 {% load static %}
 
 {% url 'home' as home_url %}
+{% url 'employee_page' as employee_page_url %}
+{% url 'employee_orders' as employee_orders_url %}
+{% url 'employee_contact_forms' as employee_contact_forms_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,8 +39,9 @@
             <ul class="main-navigation px-5 h-12">
                 <li>
                     <ul class="flex h-full items-center">
-                        <li class="pr-5"><a href="">Orders</a></li>
-                        <li><a href="">Contact forms</a></li>
+                        <li class="pr-5 {% if request.path == employee_page_url %}underline{% endif %}"><a href="{% url 'employee_page' %}">Start</a></li>
+                        <li class="pr-5 {% if employee_orders_url in request.path %}underline{% endif %}"><a href="{% url 'employee_orders' %}">Orders</a></li>
+                        <li class="pr-5 {% if employee_contact_forms_url in request.path %}underline{% endif %}" ><a href="{% url 'employee_contact_forms' %}">Contact forms</a></li>
                     </ul>
                 </li>
                 <li class="justify-self-end self-center">
