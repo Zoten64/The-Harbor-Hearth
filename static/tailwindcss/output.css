@@ -703,6 +703,11 @@ video {
   margin-bottom: 2rem;
 }
 
+.mx-8 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -795,6 +800,11 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.min-w-fit {
+  min-width: -moz-fit-content;
+  min-width: fit-content;
 }
 
 .max-w-screen-md {
@@ -1100,6 +1110,16 @@ video {
 
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover\:mx-9:hover {
+  margin-left: 2.25rem;
+  margin-right: 2.25rem;
+}
+
+.hover\:mx-10:hover {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
 }
 
 .hover\:scale-110:hover {
