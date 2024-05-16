@@ -28,6 +28,14 @@
                 <!--The text will fade when it gets too long to make some contrast between text and View order button-->
                 <div
                     class="overflow-clip h-44 ease-in-out p-5 bg-gradient-to-t from-gray-300 to-slate-900 dark:from-gray-900 dark:to-slate-300 from-20% to-40% bg-clip-text text-transparent">
+                    <h2 class="text-3xl font-bold">{{order.order_number}}</h1>
+                        <h3 class="text-xl">{{order.delivery_method}}
+                    </h2>
+                    <p>{{order.order}}</p>
+                </div>
+                <div class="grid grid-cols-2 mx-4">
+                    <p class="bg-red-500 rounded-full text-white w-fit p-2 self-start">Not started</p>
+                    <p class="self-end text-right opacity-50">{{order.date}}</p>
                 </div>
                 <a href="#"
                     class="relative bottom-0 left-0 right-0 block w-full text-center pb-4 text-black dark:text-white hover:scale-110 transition-all cursor-pointer">
@@ -48,6 +56,14 @@
                 <!--The text will fade when it gets too long to make some contrast between text and View order button-->
                 <div
                     class="overflow-clip h-44 ease-in-out p-5 bg-gradient-to-t from-gray-300 to-slate-900 dark:from-gray-900 dark:to-slate-300 from-20% to-40% bg-clip-text text-transparent">
+                    <h2 class="text-3xl font-bold">{{order.order_number}}</h1>
+                        <h3 class="text-xl">{{order.delivery_method}}
+                    </h2>
+                    <p>{{order.order}}</p>
+                </div>
+                <div class="grid grid-cols-2 mx-4">
+                    <p class="bg-orange-600 rounded-full text-white w-fit p-2 self-start">In progress</p>
+                    <p class="self-end text-right opacity-50">{{order.date}}</p>
                 </div>
                 <a href="#"
                     class="relative bottom-0 left-0 right-0 block w-full text-center pb-4 text-black dark:text-white hover:scale-110 transition-all cursor-pointer">
@@ -68,6 +84,14 @@
                 <!--The text will fade when it gets too long to make some contrast between text and View order button-->
                 <div
                     class="overflow-clip h-44 ease-in-out p-5 bg-gradient-to-t from-gray-300 to-slate-900 dark:from-gray-900 dark:to-slate-300 from-20% to-40% bg-clip-text text-transparent">
+                    <h2 class="text-3xl font-bold">{{order.order_number}}</h1>
+                        <h3 class="text-xl">{{order.delivery_method}}
+                    </h2>
+                    <p>{{order.order}}</p>
+                </div>
+                <div class="grid grid-cols-2 mx-4">
+                    <p class="bg-green-700 rounded-full text-white w-fit p-2 self-start">Finished</p>
+                    <p class="self-end text-right opacity-50">{{order.date}}</p>
                 </div>
                 <a href="#"
                     class="relative bottom-0 left-0 right-0 block w-full text-center pb-4 text-black dark:text-white hover:scale-110 transition-all cursor-pointer">

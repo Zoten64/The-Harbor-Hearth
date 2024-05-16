@@ -4,7 +4,8 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 DELIVERY_METHOD = (("Eat-in: Counter", "EAT-IN-COUNTER"), 
-                   ("Eat-in: Table", "EAT-IN-TABLE"), ("Take-Out", "TAKE-OUT"))
+                   ("Eat-in: Table delivery", "EAT-IN-TABLE"), 
+                   ("Take-Out", "TAKE-OUT"))
 
 STATE = (("Not Started", "NOT-STARTED"), ("In progress", "IN-PROGRESS"),
          ("Finished", "FINISHED"))
