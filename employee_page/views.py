@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from order.models import Order
 from contact.models import ContactForm
 from django.core.paginator import Paginator
@@ -20,6 +20,16 @@ def EmployeeOrders(request, page=1):
                "finished_orders" : finished_orders}
 
     return render(request, 'employee_page/employee_orders.html', context)
+
+def EmployeeOrderDetail(request, order_number):
+    order = Order.objects.all()
+    order = get_object_or_404(order, order_number=order_number)
+
+    context = {
+        'order' : order
+    }
+
+    return render(request, 'employee_page/employee_order_detail.html', context)
 
 def EmployeeContactForms(request):
     contact_forms = ContactForm.objects.all()

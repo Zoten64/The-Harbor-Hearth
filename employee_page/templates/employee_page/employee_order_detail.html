@@ -1,0 +1,32 @@
+{% extends "base_employee.html" %}
+{% load static %}
+
+{% block title %} Reviews {% endblock title %}
+
+{% block content %}
+<div class="w-full grid justify-items-center my-16 grid-rows-2 grid-cols-1">
+    <div class="rounded-lg bg-slate-300 dark:bg-gray-900 w-11/12 md:w-4/5 md:p-8 p-4">
+        <h2 class="text-3xl font-bold">{{order.order_number}}</h1>
+            <h3 class="text-xl">{{order.delivery_method}}
+        </h2>
+        <p>{{order.order}}</p>
+
+        <div class="grid grid-cols-2 mt-4">
+            {% if order.state == 'Finished' %}
+            <p class="bg-green-700 rounded-full text-white w-fit p-2 self-start">Finished</p>
+            {% endif %}
+            {% if order.state == 'In progress' %}
+            <p class="bg-orange-600 rounded-full text-white w-fit p-2 self-start">In Progress</p>
+            {% endif %}
+            {% if order.state == 'Not Started' %}
+            <p class="bg-red-500 rounded-full text-white w-fit p-2 self-start">Not started</p>
+            {% endif %}
+            <p class="self-end text-right opacity-50">{{order.date}}</p>
+        </div>
+    </div>
+</div>
+<div>
+    <a class="rounded-lg bg-slate-300 dark:bg-gray-900 p-2 mx-auto w-fit text-xl block"
+        href="{% url 'employee_orders' %}"> Back </a>
+</div>
+{% endblock content %}
