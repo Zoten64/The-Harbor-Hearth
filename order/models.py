@@ -5,10 +5,10 @@ from django.contrib.auth.models import User
 
 DELIVERY_METHOD = (("Eat-in: Counter", "EAT-IN-COUNTER"), 
                    ("Eat-in: Table delivery", "EAT-IN-TABLE"), 
-                   ("Take-Out", "TAKE-OUT"), ("cancelled", "CANCELLED"))
+                   ("Take-Out", "TAKE-OUT"))
 
 STATE = (("Not Started", "NOT-STARTED"), ("In progress", "IN-PROGRESS"),
-         ("Finished", "FINISHED"))
+         ("Finished", "FINISHED"), ("cancelled", "CANCELLED"))
 
 class Order(models.Model):
     '''

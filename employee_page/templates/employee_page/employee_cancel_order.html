@@ -1,0 +1,26 @@
+{% extends "base_employee.html" %}
+{% load static %}
+
+{% block title %} Cancel Order {% endblock title %}
+
+{% block content %}
+
+<h1>Do you really want to cancel order number {{order.order_number}}?</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Cancel">
+</form>
+
+<ul class="messages">
+    {% for message in messages %}
+    <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+    {% endfor %}
+</ul>
+<div>
+    <a class="rounded-lg bg-slate-300 dark:bg-gray-900 p-2 m-4 w-fit text-xl block"
+        href="{% url 'employee_orders' %}"> Back </a>
+</div>
+
+{% endblock content %}
