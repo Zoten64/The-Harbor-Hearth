@@ -882,6 +882,10 @@ video {
   overflow: clip;
 }
 
+.whitespace-pre {
+  white-space: pre;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }

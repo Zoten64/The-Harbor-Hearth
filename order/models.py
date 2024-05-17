@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 DELIVERY_METHOD = (("Eat-in: Counter", "EAT-IN-COUNTER"), 
                    ("Eat-in: Table delivery", "EAT-IN-TABLE"), 
-                   ("Take-Out", "TAKE-OUT"))
+                   ("Take-Out", "TAKE-OUT"), ("cancelled", "CANCELLED"))
 
 STATE = (("Not Started", "NOT-STARTED"), ("In progress", "IN-PROGRESS"),
          ("Finished", "FINISHED"))
@@ -22,6 +22,7 @@ class Order(models.Model):
     order = models.TextField()
     state = models.CharField(choices=STATE, default=0)
     date = models.DateTimeField(auto_now_add=True)
+    cancel_reason = models.TextField(max_length=200, blank=True)
 
     def __str__(self):
         return f"Order number: {self.order_number}"
