@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
+from django.contrib.auth.models import User
 from order.models import Order
+from .models import Employee
 from contact.models import ContactForm
 from .forms import Cancel, ChangeStatus
 from django.contrib import messages
@@ -11,11 +13,13 @@ from django.core.mail import send_mail
 
 def EmployeeHome(request):
     context = {}
-
+    user = request.user
+    employee = Employee.objects.filter(user=user)
+    print(employee)
     return render(request, 'employee_page/employee_home.html', context)
 
 
-def EmployeeOrders(request, page=1):
+def EmployeeOrders(request):
     unfinished_orders = Order.objects.filter(state="Not Started")
     in_progress_orders = Order.objects.filter(state="In progress")
     finished_orders = Order.objects.filter(state="Finished")

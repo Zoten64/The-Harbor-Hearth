@@ -366,6 +366,7 @@ pipdeptree was used to get a better look at the relationship between libraries a
 - [Flowbite tabs menu](https://flowbite.com/docs/components/tabs/)
 - [Flowbite carousel for reviews and news section](https://flowbite.com/docs/components/carousel/)
 - [Success message after post](https://stackoverflow.com/questions/28723266/django-display-message-after-post-form-submit)
+- [Login always throwing "wrong password or email" error issue fix](https://stackoverflow.com/questions/27967319/django-allauth-email-login-always-wrong)
 - Various snippets from other personal projects to speed up the process
 
 **Assets**
