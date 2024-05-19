@@ -3,6 +3,7 @@ from order.models import Order
 from contact.models import ContactForm
 from .forms import Cancel
 from django.contrib import messages
+from django.core.mail import send_mail
 
 
 # Create your views here.
@@ -54,8 +55,17 @@ def EmployeeCancelOrderConfirm(request, order_number):
             order.state = 'cancelled'
             order.cancel_reason = request.POST['cancel_reason']
             order.save()
-            messages.success(request, 'Cancellation successful')
 
+            message = "Your order was cancelled for the following reason: \n" \
+                        f"{order.cancel_reason}"
+            send_mail(
+                "Your order was cancelled",
+                message,
+                None,
+                [order.email],
+                fail_silently=False,
+            )
+            messages.success(request, 'Cancellation successful')
 
     form = Cancel
 

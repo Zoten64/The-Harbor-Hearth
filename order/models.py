@@ -16,6 +16,7 @@ class Order(models.Model):
     '''
     user = models.ForeignKey(User, on_delete=models.CASCADE, 
                              related_name="order_user", blank=True, null=True)
+    email = models.EmailField(blank=True, null=True)
     order_number = models.AutoField(primary_key=True)
     delivery_method = models.CharField(choices=DELIVERY_METHOD, 
                                        default=0)
