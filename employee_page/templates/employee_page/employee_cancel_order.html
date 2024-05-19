@@ -10,7 +10,7 @@
 <form method="post">
     {% csrf_token %}
     {{form}}
-    <input type="submit" value="Cancel">
+    <input class="rounded-lg bg-red-500 text-white p-2 m-4 w-fit text-xl block cursor-pointer" type="submit" value="Cancel">
 </form>
 
 <ul class="messages">

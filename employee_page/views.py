@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from order.models import Order
 from contact.models import ContactForm
-from .forms import Cancel
+from .forms import Cancel, ChangeStatus
 from django.contrib import messages
 from django.core.mail import send_mail
 
@@ -31,8 +31,18 @@ def EmployeeOrderDetail(request, order_number):
     order = Order.objects.all()
     order = get_object_or_404(order, order_number=order_number)
 
+    if request.method == 'POST':
+        new_status = ChangeStatus(request.POST)
+        if new_status.is_valid():
+            order.state = request.POST['state']
+            order.save()
+            messages.success(request, 'Status change successful')
+
+    form = ChangeStatus
+
     context = {
-        'order': order
+        'order': order,
+        'form' : form
     }
 
     return render(request, 'employee_page/employee_order_detail.html', context)

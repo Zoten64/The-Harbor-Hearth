@@ -26,26 +26,20 @@
 
         </div>
         <div class="flex">
-            <button id="dropdownDefaultButton" data-dropdown-toggle="order-status" type="button"
-                data-dropdown-offset-distance=0 aria-label="order-status-button" class="mt-4 text-left">Change
+            <button class="bg-slate-400 dark:bg-gray-800 mt-4 p-2 rounded-xl" id="dropdownDefaultButton" data-dropdown-toggle="order-status" type="button"
+                data-dropdown-offset-distance=10 aria-label="order-status-button" class="mt-4 text-left">Change
                 status</button>
-            <ul id="order-status"
-                class="hidden left-0 bg-slate-100 dark:bg-gray-900 shadow-xl shadow-slate-200 dark:shadow-slate-950 rounded-b-lg">
-                <!--Home page button. If the user is on the home page the item will be underlined-->
-                <li class="py-2 px-4">
-                    Not started
-                </li>
-                <li class="py-2 px-4">
-                    In progress
-                </li>
-                <li class="py-2 px-4">
-                    Finished
-                </li>
-            </ul>
+            <form id="order-status" method="post"
+                class="hidden left-0 bg-slate-400 dark:bg-gray-800 shadow-xl shadow-slate-200 dark:shadow-slate-950 rounded-lg p-4">
+                {% csrf_token %}
+                {{ form }}
+                <input class="bg-slate-500 dark:bg-gray-700 mt-4 p-2 rounded-xl cursor-pointer" type="submit" value="Change">
+            </form>
             <p class="grow text-right opacity-50 mt-4">{{order.date}}</p>
         </div>
     </div>
-    <a href="{% url 'employee_cancel_order' order.order_number%}" class="bg-red-500 rounded-full text-white w-fit h-fit p-2 mt-8">Cancel order</a>
+    <a href="{% url 'employee_cancel_order' order.order_number%}"
+        class="bg-red-500 rounded-full text-white w-fit h-fit p-2 mt-8">Cancel order</a>
 </div>
 <div>
     <a class="rounded-lg bg-slate-300 dark:bg-gray-900 p-2 mx-auto w-fit text-xl block"
