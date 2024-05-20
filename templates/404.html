@@ -4,14 +4,14 @@
 {% url 'home' as home_url %}
 
 <!--Displayed at the end of the title. Used to make the title dynamic-->
-{% block title %} 403 Forbidden {% endblock title %}
+{% block title %} 404 {% endblock title %}
 
 <!--The content-->
 {% block content %}
 <div class="flex min-h-full flex-col">
-    <h1 class="text-4xl text-center font-extrabold underline mt-16 mb-8"> You shall not pass!</h1>
-    <h2 class="text-center">Unfortunately, you don't have permission to access this site</h2>
+    <h1 class="text-4xl text-center font-extrabold underline mt-16 mb-8"> Oops!</h1>
+    <h2 class="text-center">The site you're looking for doesn't exist</h2>
     <a class="rounded-lg text-black w-fit h-fit p-2 mt-8 bg-cyan-400 text-lg m-auto" href="{% url 'home' %}">Take me back home</a>
-    <h2 class="text-center mt-8 opacity-50">Error code: 403 Forbidden</h2>
+    <h2 class="text-center mt-8 opacity-50">Error code: 404 Not Found</h2>
 </div>
 {% endblock content %}

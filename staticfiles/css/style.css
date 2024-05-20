@@ -23,12 +23,20 @@ body{
 }
 
 main{
+    /*Any unused space in the viewport will be taken up by the main element to make sure the footer is always at the bottom*/
     flex: 1 0 auto;
+    /*Prevent header from obsucing the top content*/
+    margin-top: 65px;
 }
 
-nav ul{
+hr{
+    border-style: solid;
+}
+
+/*Navigation elements have been split up into 3, each one getting an equal amount of space*/
+.main-navigation{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .nav-grid-item{
@@ -36,20 +44,30 @@ nav ul{
     justify-self: center;
 }
 
+/*Social media section contains 2 elements.*/
 .social-media{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
+/*The menu list at /menu*/
 .menu-list{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
+
+.logo-home{
+    background-image: url('../images/harborhearthlogo.svg');
+    background-size: 101%;
+    background-position: center;
+}
+
 
 /*Media Query: Tablets and larger (768px and up)*/
 @media screen and (min-width: 768px) {
-    footer ul{
+    .location-contact{
+        /**/
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     } 
 }

@@ -3,6 +3,7 @@ from django.views import generic
 from menu.models import Menu
 from review.models import Review
 from blog.models import Post
+import django.core.exceptions
 
 # Create your views here.
 # Credit to loading multiple models:
@@ -21,3 +22,4 @@ def Index(request):
         'posts' : posts,
     }
     return render(request, 'home/index.html', context)
+
