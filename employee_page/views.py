@@ -24,7 +24,12 @@ def EmployeeAuth(request):
 
 def EmployeeHome(request):
     if EmployeeAuth(request):
-        context = {}
+        unfinished_orders = Order.objects.filter(state="Not Started").count()
+        in_progress_orders = Order.objects.filter(state="In progress").count()
+        order_count = unfinished_orders + in_progress_orders
+        user = request.user
+        context = {'user' : user,
+                   'order_count' : order_count}
         return render(request, 'employee_page/employee_home.html', context)
 
 

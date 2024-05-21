@@ -664,16 +664,20 @@ video {
   margin: 1.25rem;
 }
 
-.m-80 {
-  margin: 20rem;
-}
-
 .m-auto {
   margin: auto;
 }
 
-.m-8 {
-  margin: 2rem;
+.m-20 {
+  margin: 5rem;
+}
+
+.m-28 {
+  margin: 7rem;
+}
+
+.m-24 {
+  margin: 6rem;
 }
 
 .mx-1 {
@@ -716,12 +720,21 @@ video {
   margin-bottom: 2rem;
 }
 
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
 
 .mb-8 {
   margin-bottom: 2rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
 }
 
 .mt-2 {
@@ -736,8 +749,8 @@ video {
   margin-top: 2rem;
 }
 
-.mt-16 {
-  margin-top: 4rem;
+.mt-24 {
+  margin-top: 6rem;
 }
 
 .block {
@@ -791,6 +804,14 @@ video {
 
 .h-full {
   height: 100%;
+}
+
+.h-24 {
+  height: 6rem;
+}
+
+.h-20 {
+  height: 5rem;
 }
 
 .min-h-full {
@@ -854,12 +875,20 @@ video {
   align-content: flex-end;
 }
 
+.items-start {
+  align-items: flex-start;
+}
+
 .items-end {
   align-items: flex-end;
 }
 
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-center {
@@ -898,8 +927,16 @@ video {
   overflow: clip;
 }
 
+.overflow-visible {
+  overflow: visible;
+}
+
 .whitespace-pre {
   white-space: pre;
+}
+
+.text-nowrap {
+  text-wrap: nowrap;
 }
 
 .rounded-full {
@@ -1162,10 +1199,6 @@ video {
   opacity: 0.5;
 }
 
-.opacity-5 {
-  opacity: 0.05;
-}
-
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
@@ -1235,9 +1268,25 @@ video {
   .sm\:block {
     display: block;
   }
+
+  .sm\:flex-col {
+    flex-direction: column;
+  }
 }
 
 @media (min-width: 768px) {
+  .md\:m-12 {
+    margin: 3rem;
+  }
+
+  .md\:m-14 {
+    margin: 3.5rem;
+  }
+
+  .md\:m-16 {
+    margin: 4rem;
+  }
+
   .md\:mx-20 {
     margin-left: 5rem;
     margin-right: 5rem;
@@ -1252,6 +1301,10 @@ video {
     margin-top: 0px;
   }
 
+  .md\:mt-16 {
+    margin-top: 4rem;
+  }
+
   .md\:flex {
     display: flex;
   }
@@ -1260,12 +1313,20 @@ video {
     height: 18rem;
   }
 
+  .md\:h-12 {
+    height: 3rem;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
   }
 
   .md\:w-4\/5 {
     width: 80%;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
   }
 
   .md\:flex-wrap {

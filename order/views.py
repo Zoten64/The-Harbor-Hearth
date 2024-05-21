@@ -3,5 +3,7 @@ from django.views import generic
 from .models import Order
 
 # Create your views here.
-class Order(generic.ListView):
-    model = Order
+def Order(request):
+    context = {
+    }
+    return render(request, 'order/order.html', context)

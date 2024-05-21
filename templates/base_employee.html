@@ -36,12 +36,12 @@
         class="border-b-2 border-solid border-slate-900 dark:border-black py-2 px-3 fixed bg-slate-50 dark:bg-gray-950 w-full z-50">
         <nav>
             <!--Above 1024px the px-5 class will be used. px-5 adds 1.25rem padding on the x axis-->
-            <ul class="main-navigation px-5 h-12">
+            <ul class="main-navigation px-5 md:h-12 h-20">
                 <li>
-                    <ul class="flex h-full items-center">
+                    <ul class="flex h-full items-start flex-col md:flex-row md:items-center">
                         <li class="pr-5 {% if request.path == employee_page_url %}underline{% endif %}"><a href="{% url 'employee_page' %}">Start</a></li>
                         <li class="pr-5 {% if employee_orders_url in request.path %}underline{% endif %}"><a href="{% url 'employee_orders' %}">Orders</a></li>
-                        <li class="pr-5 {% if employee_contact_forms_url in request.path %}underline{% endif %}" ><a href="{% url 'employee_contact_forms' %}">Contact forms</a></li>
+                        <li class="pr-5 text-nowrap {% if employee_contact_forms_url in request.path %}underline{% endif %}" ><a href="{% url 'employee_contact_forms' %}">Contact forms</a></li>
                     </ul>
                 </li>
                 <li class="justify-self-end self-center">
@@ -52,7 +52,7 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main class="md:mt-16 mt-24">
         <!-- Dynamic content that will be appended onto here depending on page -->
         {% block content %}
 
