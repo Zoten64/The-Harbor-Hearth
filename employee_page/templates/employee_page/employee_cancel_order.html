@@ -4,23 +4,25 @@
 {% block title %} Cancel Order {% endblock title %}
 
 {% block content %}
+<div class="m-4">
+    <h1 class="text-xl font-bold my-4">Do you really want to cancel order number {{order.order_number}}?</h1>
 
-<h1>Do you really want to cancel order number {{order.order_number}}?</h1>
+    <form class="my-8" method="post">
+        {% csrf_token %}
+        {{form}}
+        <input class="rounded-lg bg-red-500 text-white p-2 m-4 w-fit text-xl block cursor-pointer" type="submit"
+            value="Cancel">
+    </form>
 
-<form method="post">
-    {% csrf_token %}
-    {{form}}
-    <input class="rounded-lg bg-red-500 text-white p-2 m-4 w-fit text-xl block cursor-pointer" type="submit" value="Cancel">
-</form>
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+        {% endfor %}
+    </ul>
+    <div>
+        <a class="rounded-lg bg-slate-300 dark:bg-gray-900 p-2 m-4 mt-40 w-fit text-xl block"
+            href="{% url 'employee_orders' %}"> Back </a>
+    </div>
 
-<ul class="messages">
-    {% for message in messages %}
-    <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
-    {% endfor %}
-</ul>
-<div>
-    <a class="rounded-lg bg-slate-300 dark:bg-gray-900 p-2 m-4 w-fit text-xl block"
-        href="{% url 'employee_orders' %}"> Back </a>
 </div>
-
 {% endblock content %}

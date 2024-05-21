@@ -1,6 +1,7 @@
 /*Google fonts import*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+/*Generic styles*/
 * {
     /*Overrides default settings*/
     margin: 0;
@@ -33,6 +34,7 @@ hr{
     border-style: solid;
 }
 
+/*Classes*/
 /*Navigation elements have been split up into 3, each one getting an equal amount of space*/
 .main-navigation{
     display: grid;
@@ -62,6 +64,15 @@ hr{
     background-position: center;
 }
 
+/*ID classes*/
+
+.field_text_input{
+    background-color: #f8fafc;
+    border: 1px solid black;
+    color: #020617;
+    border-radius: 10px;
+    display: block;
+}
 
 /*Media Query: Tablets and larger (768px and up)*/
 @media screen and (min-width: 768px) {
@@ -71,3 +82,10 @@ hr{
         grid-template-columns: 1fr 1fr;
     } 
 }
+
+/*Darkmode*/
+@media (prefers-color-scheme: dark){
+
+}
+
+/*text-slate-950 bg-slate-50 dark:bg-gray-950 dark:text-slate-100*/
