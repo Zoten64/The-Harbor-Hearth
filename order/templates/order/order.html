@@ -8,5 +8,11 @@
 
 <!--The content-->
 {% block content %}
-Placeholder
+<form>
+    {% csrf_token %}
+    <!-- The email field shows up if the user is not logged in -->
+    {{ email }}
+    <!-- The form itself -->
+    {{ order_form }}
+</form>
 {% endblock content %}
