@@ -2,10 +2,10 @@ from django.shortcuts import render
 from django.views import generic
 from django.contrib.auth.models import User
 from .models import Order
-from .forms import OrderEmail, Order
+from .forms import OrderEmail, OrderForm
 
 # Create your views here.
-def Order(request):
+def OrderView(request):
 
     if request.user.is_authenticated:
         status = 'logged in'
@@ -16,7 +16,7 @@ def Order(request):
         # if the user is not logged in they'll have to enter their email
         email_form = OrderEmail
 
-    order_form = Order
+    order_form = OrderForm
     context = {
         'email' : email_form,
         'order_form' : order_form

@@ -14,7 +14,7 @@ class OrderEmail(forms.Form):
         # This is the association between the model and the model form
         model = Order
     
-class Order(forms.Form):
+class OrderForm(forms.Form):
     order = forms.Textarea()
     delivery_method = forms.ChoiceField(choices=DELIVERY_METHOD)
 
