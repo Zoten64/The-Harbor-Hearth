@@ -4,6 +4,7 @@
 {% url 'menu' as menu_url %}
 {% url 'review' as reviews_url %}
 {% url 'blog' as blog_url %}
+{% url 'order' as order_url %}
 {% url 'account_email' as account_email %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
@@ -86,7 +87,7 @@
                     <!--Order now call to action button-->
                     {% if request.path == home_url %}
 
-                    <a href="#"
+                    <a href="{% url 'order' %}"
                         class="bg-cyan-400 hover:bg-cyan-300 text-black rounded-lg p-2 hover:scale-110 transition-all w-32 h-fit text-center">
                         Order now!
                     </a>

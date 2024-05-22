@@ -737,12 +737,12 @@ video {
   margin-top: 1rem;
 }
 
-.mt-8 {
-  margin-top: 2rem;
-}
-
 .mt-40 {
   margin-top: 10rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .block {
