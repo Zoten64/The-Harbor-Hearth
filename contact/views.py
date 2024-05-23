@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib import messages
+from django.core.mail import send_mail
 from .models import ContactModel
 from .forms import ContactForm
 
@@ -23,6 +24,19 @@ def ContactView(request):
                 phone_number = phone_number,
                 preferred_contact = preferred_contact,
                 message = message,
+            )
+
+            msg = f"Hello {name}! Thank you for contacting us." \
+            "Here's what you wrote: \n" \
+            f"{message} \n" \
+            "Please be patient for an answer. \n" \
+            "Sincerely, The Harbour Hearth Team"
+            send_mail(
+                "We've recieved your contact form",
+                msg,
+                None,
+                [email],
+                fail_silently=False,
             )
             messages.success(request, 'Message sent')
     form = ContactForm
