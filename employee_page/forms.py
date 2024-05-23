@@ -1,8 +1,8 @@
 from django import forms
 from order.models import Order
 
-STATE = (("Not Started", "Not Started"), ("In progress", "in progress"),
-         ("Finished", "finished"))
+STATE = (("NOT-STARTED", "Not Started"), ("IN-PROGRESS", "In Progress"),
+         ("FINISHED", "finished"))
 
 
 class Cancel(forms.Form):

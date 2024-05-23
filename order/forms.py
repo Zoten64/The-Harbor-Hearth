@@ -1,13 +1,14 @@
 from django import forms
 from .models import Order
 
-DELIVERY_METHOD = (("Eat-in: Counter", "EAT-IN-COUNTER"), 
-                   ("Eat-in: Table delivery", "EAT-IN-TABLE"), 
-                   ("Take-Out", "TAKE-OUT"))
+DELIVERY_METHOD = (("COUNTER", "Eat-in: Pick up at counter"), 
+                   ("TABLE", "Eat-in: Table delivery"), 
+                   ("TAKE-OUT", "Take-Out"))
 
 # if the user is not logged in they will need to enter their email
 class OrderEmail(forms.Form):
-    email = forms.EmailField()
+    email = forms.EmailField(widget=forms.EmailInput(
+        attrs={"class": "field_text_input"}))
 
     class Meta:
         fields = ('email',)
@@ -15,10 +16,19 @@ class OrderEmail(forms.Form):
         model = Order
     
 class OrderForm(forms.Form):
-    order_info = forms.CharField()
-    delivery_method = forms.ChoiceField(choices=DELIVERY_METHOD)
+    #Hide this later as this will be handled with javascript
+    order_info = forms.CharField(widget=forms.TextInput(attrs={"class": "field_text_input"}))
+    delivery_method = forms.ChoiceField(widget=forms.RadioSelect(
+        attrs={"class": "my-2 border-solid"}), choices=DELIVERY_METHOD, 
+        label='')
+    #This field will be hidden by default. Using javascript this will be
+    #shown if the table delivery option is selected. 
+    #This field will be set to required in the case above through JS
+    table_number = forms.IntegerField(
+        widget=forms.NumberInput(attrs={"class": "field_text_input", "style" : 
+        "display: none;"}), label='', min_value=1, max_value=20, required=False)
 
     class Meta:
-        fields = ('order_info', 'delivery_method')
+        fields = ('order_info', 'delivery_method', 'table_number')
         # This is the association between the model and the model form
         model = Order

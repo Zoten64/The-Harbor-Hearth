@@ -22,14 +22,15 @@ def EmployeeAuth(request):
     else:
         return True
 
+
 def EmployeeHome(request):
     if EmployeeAuth(request):
         unfinished_orders = Order.objects.filter(state="Not Started").count()
         in_progress_orders = Order.objects.filter(state="In progress").count()
         order_count = unfinished_orders + in_progress_orders
         user = request.user
-        context = {'user' : user,
-                   'order_count' : order_count}
+        context = {'user': user,
+                   'order_count': order_count}
         return render(request, 'employee_page/employee_home.html', context)
 
 
@@ -40,8 +41,8 @@ def EmployeeOrders(request):
         finished_orders = Order.objects.filter(state="Finished")
 
         context = {"unfinished_orders": unfinished_orders,
-                "in_progress_orders": in_progress_orders,
-                "finished_orders": finished_orders}
+                   "in_progress_orders": in_progress_orders,
+                   "finished_orders": finished_orders}
 
         return render(request, 'employee_page/employee_orders.html', context)
 
@@ -57,17 +58,17 @@ def EmployeeOrderDetail(request, order_number):
                 order.state = request.POST['state']
                 order.save()
                 messages.success(request, 'Status change successful')
-
+                
         form = ChangeStatus
 
         context = {
             'order': order,
-            'form' : form,
+            'form': form,
         }
 
-        return render(request, 'employee_page/employee_order_detail.html', 
+        return render(request, 'employee_page/employee_order_detail.html',
                       context)
-    
+
 
 def EmployeeCancelOrderConfirm(request, order_number):
     if EmployeeAuth(request):
@@ -77,12 +78,12 @@ def EmployeeCancelOrderConfirm(request, order_number):
         if request.method == 'POST':
             cancel_reason = Cancel(request.POST)
             if cancel_reason.is_valid():
-                order.state = 'cancelled'
+                order.state = 'CANCELLED'
                 order.cancel_reason = request.POST['cancel_reason']
                 order.save()
 
                 msg = "Your order was cancelled for the following reason:" \
-                            f"\n{order.cancel_reason}"
+                    f"\n{order.cancel_reason}"
                 send_mail(
                     "Your order was cancelled",
                     msg,
@@ -99,7 +100,7 @@ def EmployeeCancelOrderConfirm(request, order_number):
             'form': form,
         }
         return render(request, "employee_page/employee_cancel_order.html",
-                    context)
+                      context)
 
 
 def EmployeeContactForms(request):
@@ -107,8 +108,5 @@ def EmployeeContactForms(request):
         contact_forms = ContactForm.objects.all()
         context = {"contact_forms": contact_forms}
 
-        return render(request, 'employee_page/employee_contact_forms.html', 
+        return render(request, 'employee_page/employee_contact_forms.html',
                       context)
-
-
-

@@ -3,12 +3,12 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-DELIVERY_METHOD = (("Eat-in: Counter", "EAT-IN-COUNTER"), 
-                   ("Eat-in: Table delivery", "EAT-IN-TABLE"), 
-                   ("Take-Out", "TAKE-OUT"))
+DELIVERY_METHOD = (("COUNTER", "Eat-in: Pick up at counter"), 
+                   ("TABLE", "Eat-in: Table delivery"), 
+                   ("TAKE-OUT", "Take-Out"))
 
-STATE = (("Not Started", "NOT-STARTED"), ("In progress", "IN-PROGRESS"),
-         ("Finished", "FINISHED"), ("cancelled", "CANCELLED"))
+STATE = (("NOT-STARTED", "Not Started"), ("IN-PROGRESS", "In Progress"),
+         ("FINISHED", "finished"), ("CANCELLED", "Cancelled"))
 
 class Order(models.Model):
     '''
@@ -20,6 +20,7 @@ class Order(models.Model):
     order_number = models.AutoField(primary_key=True)
     delivery_method = models.CharField(choices=DELIVERY_METHOD, 
                                        default=0)
+    table_number = models.IntegerField(blank=True, null=True)
     order = models.TextField()
     state = models.CharField(choices=STATE, default=0)
     date = models.DateTimeField(auto_now_add=True)
