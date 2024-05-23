@@ -15,10 +15,10 @@ class OrderEmail(forms.Form):
         model = Order
     
 class OrderForm(forms.Form):
-    order = forms.Textarea()
+    order_info = forms.CharField()
     delivery_method = forms.ChoiceField(choices=DELIVERY_METHOD)
 
     class Meta:
-        fields = ('order', 'delivery_method')
+        fields = ('order_info', 'delivery_method')
         # This is the association between the model and the model form
         model = Order

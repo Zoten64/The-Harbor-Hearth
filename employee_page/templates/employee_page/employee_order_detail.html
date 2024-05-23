@@ -6,7 +6,7 @@
 {% block title %} Orders {% endblock title %}
 
 {% block content %}
-<div class="w-full grid justify-items-center my-16 grid-rows-2 grid-cols-1">
+<div class="w-full flex items-center mt-16 flex-col">
     <div class="rounded-lg bg-slate-300 dark:bg-gray-900 w-11/12 md:w-4/5 md:p-8 p-4">
         <h2 class="text-3xl font-bold">{{order.order_number}}</h1>
             <h3 class="text-xl">{{order.delivery_method}}
@@ -26,23 +26,32 @@
 
         </div>
         <div class="flex">
-            <button class="bg-slate-400 dark:bg-gray-800 mt-4 p-2 rounded-xl" id="dropdownDefaultButton" data-dropdown-toggle="order-status" type="button"
-                data-dropdown-offset-distance=10 aria-label="order-status-button" class="mt-4 text-left">Change
+            <button class="bg-slate-400 dark:bg-gray-800 mt-4 p-2 rounded-xl" id="dropdownDefaultButton"
+                data-dropdown-toggle="order-status" type="button" data-dropdown-offset-distance=10
+                aria-label="order-status-button" class="mt-4 text-left">Change
                 status</button>
             <form id="order-status" method="post"
                 class="hidden left-0 bg-slate-400 dark:bg-gray-800 shadow-xl shadow-slate-200 dark:shadow-slate-950 rounded-lg p-4">
                 {% csrf_token %}
                 {{ form }}
-                <input class="bg-slate-500 dark:bg-gray-700 mt-4 p-2 rounded-xl cursor-pointer" type="submit" value="Change">
+                <input class="bg-slate-500 dark:bg-gray-700 mt-4 p-2 rounded-xl cursor-pointer" type="submit"
+                    value="Change">
             </form>
             <p class="grow text-right opacity-50 mt-4">{{order.date}}</p>
         </div>
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class=" {{ message.tags }} mt-2 text-green-700 dark:text-green-400" {% endif %}> {{ message }} </li>
+            {% endfor %}
+        </ul>
     </div>
     <a href="{% url 'employee_cancel_order' order.order_number%}"
-        class="bg-red-500 rounded-full text-white w-fit h-fit p-2 mt-8">Cancel order</a>
+        class="bg-red-500 rounded-full text-white w-fit h-fit p-2 mt-8 text-xl">Cancel order</a>
+
+    <div>
+        <a class="rounded-lg bg-slate-300 dark:bg-gray-900 p-2 mx-auto mt-8 w-fit text-xl block"
+            href="{% url 'employee_orders' %}"> Back </a>
+    </div>
 </div>
-<div>
-    <a class="rounded-lg bg-slate-300 dark:bg-gray-900 p-2 mx-auto w-fit text-xl block"
-        href="{% url 'employee_orders' %}"> Back </a>
-</div>
+
 {% endblock content %}

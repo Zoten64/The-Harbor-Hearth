@@ -62,21 +62,12 @@ def EmployeeOrderDetail(request, order_number):
 
         context = {
             'order': order,
-            'form' : form
+            'form' : form,
         }
 
         return render(request, 'employee_page/employee_order_detail.html', 
                       context)
-
-
-def EmployeeContactForms(request):
-    if EmployeeAuth(request):
-        contact_forms = ContactForm.objects.all()
-        context = {"contact_forms": contact_forms}
-
-        return render(request, 'employee_page/employee_contact_forms.html', 
-                      context)
-
+    
 
 def EmployeeCancelOrderConfirm(request, order_number):
     if EmployeeAuth(request):
@@ -90,11 +81,11 @@ def EmployeeCancelOrderConfirm(request, order_number):
                 order.cancel_reason = request.POST['cancel_reason']
                 order.save()
 
-                message = "Your order was cancelled for the following reason:" \
+                msg = "Your order was cancelled for the following reason:" \
                             f"\n{order.cancel_reason}"
                 send_mail(
                     "Your order was cancelled",
-                    message,
+                    msg,
                     None,
                     [order.email],
                     fail_silently=False,
@@ -105,7 +96,19 @@ def EmployeeCancelOrderConfirm(request, order_number):
 
         context = {
             'order': order,
-            'form': form
+            'form': form,
         }
         return render(request, "employee_page/employee_cancel_order.html",
                     context)
+
+
+def EmployeeContactForms(request):
+    if EmployeeAuth(request):
+        contact_forms = ContactForm.objects.all()
+        context = {"contact_forms": contact_forms}
+
+        return render(request, 'employee_page/employee_contact_forms.html', 
+                      context)
+
+
+
