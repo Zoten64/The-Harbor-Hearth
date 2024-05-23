@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from order.models import Order
 from .models import Employee
 from contact.models import ContactForm
-from .forms import Cancel, ChangeStatus
+from .forms import Cancel, ChangeStatus, DeleteOrder
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.core.exceptions import PermissionDenied
@@ -36,13 +36,15 @@ def EmployeeHome(request):
 
 def EmployeeOrders(request):
     if EmployeeAuth(request):
-        unfinished_orders = Order.objects.filter(state="Not Started")
-        in_progress_orders = Order.objects.filter(state="In progress")
-        finished_orders = Order.objects.filter(state="Finished")
+        unfinished_orders = Order.objects.filter(state="NOT-STARTED")
+        in_progress_orders = Order.objects.filter(state="IN-PROGRESS")
+        finished_orders = Order.objects.filter(state="FINISHED")
+        cancelled_orders = Order.objects.filter(state="CANCELLED")
 
         context = {"unfinished_orders": unfinished_orders,
                    "in_progress_orders": in_progress_orders,
-                   "finished_orders": finished_orders}
+                   "finished_orders": finished_orders,
+                   "cancelled_orders" : cancelled_orders}
 
         return render(request, 'employee_page/employee_orders.html', context)
 
@@ -100,6 +102,26 @@ def EmployeeCancelOrderConfirm(request, order_number):
             'form': form,
         }
         return render(request, "employee_page/employee_cancel_order.html",
+                      context)
+    
+def EmployeeDeleteOrderConfirm(request, order_number):
+    if EmployeeAuth(request):
+        order = Order.objects.all()
+        order = get_object_or_404(order, order_number=order_number)
+
+        if request.method == 'POST':
+            delete = DeleteOrder(request.POST)
+            if delete.is_valid():
+                order.delete()
+                messages.success(request, 'Deletion successful')
+
+        form = DeleteOrder
+
+        context = {
+            'order': order,
+            'form': form,
+        }
+        return render(request, "employee_page/employee_delete_order.html",
                       context)
 
 

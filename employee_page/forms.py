@@ -2,7 +2,7 @@ from django import forms
 from order.models import Order
 
 STATE = (("NOT-STARTED", "Not Started"), ("IN-PROGRESS", "In Progress"),
-         ("FINISHED", "finished"))
+         ("FINISHED", "Finished"))
 
 
 class Cancel(forms.Form):
@@ -22,5 +22,14 @@ class ChangeStatus(forms.Form):
 
     class Meta:
         fields = ('state',)
+        # This is the association between the model and the model form
+        model = Order
+
+class DeleteOrder(forms.Form):
+    delete_confirm = forms.BooleanField(widget=forms.CheckboxInput(), 
+                    label='Confirm deletion')
+
+    class Meta:
+        fields = ('delete_confirm',)
         # This is the association between the model and the model form
         model = Order

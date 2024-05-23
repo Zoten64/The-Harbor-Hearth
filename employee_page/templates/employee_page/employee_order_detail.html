@@ -14,22 +14,30 @@
         <p class="whitespace-pre">{{order.order}}</p>
 
         <div class="mt-4">
-            {% if order.state == 'Finished' %}
+            {% if order.state == 'FINISHED' %}
             <p class="bg-green-700 rounded-full text-white w-fit p-2 self-start">Finished</p>
             {% endif %}
-            {% if order.state == 'In progress' %}
+            {% if order.state == 'IN-PROGRESS' %}
             <p class="bg-orange-600 rounded-full text-white w-fit p-2 self-start">In Progress</p>
             {% endif %}
-            {% if order.state == 'Not Started' %}
+            {% if order.state == 'NOT-STARTED' %}
             <p class="bg-red-500 rounded-full text-white w-fit p-2 self-start">Not started</p>
+            {% endif %}
+            {% if order.state == 'CANCELLED' %}
+            <p class="bg-red-500 rounded-full text-white w-fit p-2 self-start">Cancelled</p>
             {% endif %}
 
         </div>
         <div class="flex">
             <button class="bg-slate-400 dark:bg-gray-800 mt-4 p-2 rounded-xl" id="dropdownDefaultButton"
                 data-dropdown-toggle="order-status" type="button" data-dropdown-offset-distance=10
-                aria-label="order-status-button" class="mt-4 text-left">Change
-                status</button>
+                aria-label="order-status-button" class="mt-4 text-left">
+                {% if order.state == 'CANCELLED' %}
+                Reopen and set status
+                {% else %}
+                Change status
+                {% endif %}
+            </button>
             <form id="order-status" method="post"
                 class="hidden left-0 bg-slate-400 dark:bg-gray-800 shadow-xl shadow-slate-200 dark:shadow-slate-950 rounded-lg p-4">
                 {% csrf_token %}
@@ -45,8 +53,14 @@
             {% endfor %}
         </ul>
     </div>
+    {% if order.state == 'CANCELLED' %}
+    <a href="{% url 'employee_delete_order' order.order_number%}"
+    class="bg-red-500 rounded-full text-white w-fit h-fit p-2 mt-8 text-xl">Delete order</a>
+    {% else %}
     <a href="{% url 'employee_cancel_order' order.order_number%}"
-        class="bg-red-500 rounded-full text-white w-fit h-fit p-2 mt-8 text-xl">Cancel order</a>
+    class="bg-red-500 rounded-full text-white w-fit h-fit p-2 mt-8 text-xl">Cancel order</a>
+    {% endif %}
+
 
     <div>
         <a class="rounded-lg bg-slate-300 dark:bg-gray-900 p-2 mx-auto mt-8 w-fit text-xl block"

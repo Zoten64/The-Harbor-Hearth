@@ -8,7 +8,7 @@ DELIVERY_METHOD = (("COUNTER", "Eat-in: Pick up at counter"),
                    ("TAKE-OUT", "Take-Out"))
 
 STATE = (("NOT-STARTED", "Not Started"), ("IN-PROGRESS", "In Progress"),
-         ("FINISHED", "finished"), ("CANCELLED", "Cancelled"))
+         ("FINISHED", "Finished"), ("CANCELLED", "Cancelled"))
 
 class Order(models.Model):
     '''
