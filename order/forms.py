@@ -11,8 +11,6 @@ class OrderEmail(forms.Form):
         attrs={"class": "field_text_input"}))
 
     class Meta:
-        fields = ('email',)
-        # This is the association between the model and the model form
         model = Order
     
 class OrderForm(forms.Form):
@@ -29,6 +27,4 @@ class OrderForm(forms.Form):
         "display: none;"}), label='', min_value=1, max_value=20, required=False)
 
     class Meta:
-        fields = ('order_info', 'delivery_method', 'table_number')
-        # This is the association between the model and the model form
         model = Order
