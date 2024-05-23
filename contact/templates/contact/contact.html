@@ -3,7 +3,16 @@
 
 <!--Displayed at the end of the title. Used to make the title dynamic-->
 {% block title %} Contact us {% endblock title %}
-
 <!--The content-->
 {% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Submit form">
+</form>
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class=" {{ message.tags }} mt-2 text-green-700 dark:text-green-400" {% endif %}> {{ message }} </li>
+    {% endfor %}
+</ul>
 {% endblock content %}

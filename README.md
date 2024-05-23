@@ -292,6 +292,7 @@ Blog page has been finished and viewing reviews is now possible. Clicking on a r
 | Django looks for home index template in the wrong folder | Change views path to home/index.html |
 | Template functions displaying as example { % block content % } instead of displaying the actual block content| Remove spaces between {} and % |
 | The resource from “http://127.0.0.1:8000/css/style.css” was blocked due to MIME type (“text/html”) mismatch (X-Content-Type-Options: nosniff) | Wrong path specified as CSS stylesheet |
+| "relation [model] does not exist" error | Make a new database as the last one stopped working properly and I couldn't figure out why. Not a big deal since it was all placeholder content|
 
 # Technologies and tools
 

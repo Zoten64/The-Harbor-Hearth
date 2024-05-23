@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from django.contrib.auth.models import User
 from order.models import Order
 from .models import Employee
-from contact.models import ContactForm
+from contact.models import ContactModel
 from .forms import Cancel, ChangeStatus, DeleteOrder
 from django.contrib import messages
 from django.core.mail import send_mail
@@ -127,7 +127,7 @@ def EmployeeDeleteOrderConfirm(request, order_number):
 
 def EmployeeContactForms(request):
     if EmployeeAuth(request):
-        contact_forms = ContactForm.objects.all()
+        contact_forms = ContactModel.objects.all()
         context = {"contact_forms": contact_forms}
 
         return render(request, 'employee_page/employee_contact_forms.html',

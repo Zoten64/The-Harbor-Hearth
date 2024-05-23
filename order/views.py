@@ -6,6 +6,8 @@ from .models import Order
 from .forms import OrderEmail, OrderForm
 
 # Create your views here.
+
+
 def OrderView(request):
 
     if request.method == 'POST':
@@ -23,17 +25,18 @@ def OrderView(request):
             table_number = order_post.cleaned_data['table_number']
 
             new_order = Order.objects.create(user=user,
-                order=order_info,
-                                             email=email, 
+                                             order=order_info,
+                                             email=email,
                                              delivery_method=delivery_method,
-                                             table_number=table_number)
+                                             table_number=table_number
+                                             )
             messages.success(request, 'Order placed!')
 
     order_form = OrderForm
     email_form = OrderEmail
     context = {
-        'email' : email_form,
-        'order_form' : order_form
+        'email': email_form,
+        'order_form': order_form
     }
 
     return render(request, 'order/order.html', context)
