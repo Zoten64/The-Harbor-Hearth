@@ -5,6 +5,7 @@
 {% url 'review' as reviews_url %}
 {% url 'blog' as blog_url %}
 {% url 'order' as order_url %}
+{% url 'contact' as contact_url %}
 {% url 'account_email' as account_email %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
@@ -65,7 +66,7 @@
                                 href="{% url 'review' %}" class="hover:pl-2 transition-all">Reviews</a>
                         </li>
                         <!--Contact page button. Currently doesn't work-->
-                        <li class="p-2"><a href="#" class="hover:pl-2 transition-all">Contact</a>
+                        <li class="p-2"><a href="{% url 'contact' %}" class="hover:pl-2 transition-all">Contact</a>
                         </li>
                         <!--Blog and news page button. If the user is on the home page the item will be underlined-->
                         <li class="p-2 {% if blog_url in request.path %}underline{% endif %}"><a href="{% url 'blog' %}"
@@ -138,7 +139,7 @@
             <!--Contact section-->
             <li class="justify-self-end mt-4 md:mt-0">
                 <p class="font-bold">Contact us</p>
-                <p class="underline"><a href="#" aria-label="A link to our contact form">Contact form</a></p>
+                <p class="underline"><a href="{% url 'contact' %}" aria-label="A link to our contact form">Contact form</a></p>
                 <p><a href="tel:+441635286716">+441635286716</a></p>
                 <p><a href="mailto:contact@theharborhearth.com">contact@theharborhearth.com</a></p>
             </li>

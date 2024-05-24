@@ -2,7 +2,7 @@
 {% load static %}
 
 <!--Displayed at the end of the title. Used to make the title dynamic-->
-{% block title %} Home {% endblock title %}
+{% block title %} Contact forms {% endblock title %}
 
 <!--The content-->
 {% block content %}
@@ -26,7 +26,7 @@
                     <p class="bg-red-500 rounded-full text-white w-fit p-2 self-start">Not answered</p>
                     <p class="self-end text-right opacity-50">{{order.date}}</p>
                 </div>
-                <a href="#"
+                <a href="{% url 'employee_contact_forms_details' form.id %}"
                     class="relative bottom-0 left-0 right-0 block w-full text-center pb-4 text-black dark:text-white hover:scale-110 transition-all cursor-pointer">
                     Open</a>
             </div>
@@ -50,9 +50,9 @@
                 </div>
                 <div class="grid grid-cols-2 mx-4">
                     <p class="bg-green-700 rounded-full text-white w-fit p-2 self-start">Answered</p>
-                    <p class="self-end text-right opacity-50">{{order.date}}</p>
+                    <p class="self-end text-right opacity-50">{{form.date}}</p>
                 </div>
-                <a href="#"
+                <a href="{% url 'employee_contact_forms_details' form.id %}"
                     class="relative bottom-0 left-0 right-0 block w-full text-center pb-4 text-black dark:text-white hover:scale-110 transition-all cursor-pointer">
                     Open</a>
             </div>

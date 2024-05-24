@@ -8,4 +8,5 @@ urlpatterns = [
     path('orders/<int:order_number>/cancel', views.EmployeeCancelOrderConfirm, name='employee_cancel_order'),
     path('orders/<int:order_number>/delete', views.EmployeeDeleteOrderConfirm, name='employee_delete_order'),
     path('contactforms/', views.EmployeeContactForms, name='employee_contact_forms'),
+    path('contactforms/<int:id>', views.EmployeeContactFormsDetails, name='employee_contact_forms_details'),
 ]

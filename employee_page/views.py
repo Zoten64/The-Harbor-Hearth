@@ -33,7 +33,7 @@ def EmployeeHome(request):
         user = request.user
         context = {'user': user,
                    'order_count': order_count,
-                   'contact_count' : unanswered_contact_forms_count}
+                   'contact_count': unanswered_contact_forms_count}
         return render(request, 'employee_page/employee_home.html', context)
 
 
@@ -135,6 +135,19 @@ def EmployeeContactForms(request):
         answered_contact_forms = ContactModel.objects.filter(answered=True)
         context = {"unanswered_contact_forms": unanswered_contact_forms,
                    "answered_contact_forms": answered_contact_forms}
+        
 
         return render(request, 'employee_page/employee_contact_forms.html',
+                      context)
+
+
+def EmployeeContactFormsDetails(request, id):
+    if EmployeeAuth(request):
+        contact_form = ContactModel.objects.all()
+        contact_form = get_object_or_404(contact_form, id=id)
+
+        context = {"contact_form" : contact_form}
+
+        return render(request,
+                      'employee_page/employee_contact_forms_detail.html',
                       context)
