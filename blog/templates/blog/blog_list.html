@@ -17,7 +17,7 @@ On medium devices there will be 2 columns and 3 rows, on large devices 3 columns
             <div
                 class="overflow-clip h-44 ease-in-out p-5 bg-gradient-to-t from-gray-300 to-slate-900 dark:from-gray-900 dark:to-slate-300 from-20% to-40% bg-clip-text text-transparent">
                 <h2 class="font-bold text-xl text-black dark:text-white"> {{post.title}} </h2>
-                <p> {{post.content}} </p>
+                <p> {{post.content|safe}} </p>
             </div>
             <a href="{% url 'blog_detail' post.url %}"
                 class="relative bottom-0 left-0 right-0 block w-full text-center pb-4 text-black dark:text-white hover:scale-110 transition-all cursor-pointer">

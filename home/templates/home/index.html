@@ -224,7 +224,7 @@
                 data-carousel-item>
                 <div>
                     <h2 class="font-bold text-xl text-black dark:text-white"> {{post.title}} </h2>
-                    <p> {{post.content}} </p>
+                    <p> {{post.content|safe}} </p>
                     <!--Make this a working link later-->
                     <a href="{% url 'blog_detail' post.url %}"
                         class="absolute bottom-0 left-0 right-0 block w-full text-center mb-4 text-black dark:text-white hover:scale-110 transition-all">
