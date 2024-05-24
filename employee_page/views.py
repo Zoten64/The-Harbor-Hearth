@@ -28,9 +28,12 @@ def EmployeeHome(request):
         unfinished_orders = Order.objects.filter(state="Not Started").count()
         in_progress_orders = Order.objects.filter(state="In progress").count()
         order_count = unfinished_orders + in_progress_orders
+        unanswered_contact_forms_count = ContactModel.objects.filter(
+            answered=False).count()
         user = request.user
         context = {'user': user,
-                   'order_count': order_count}
+                   'order_count': order_count,
+                   'contact_count' : unanswered_contact_forms_count}
         return render(request, 'employee_page/employee_home.html', context)
 
 
@@ -44,7 +47,7 @@ def EmployeeOrders(request):
         context = {"unfinished_orders": unfinished_orders,
                    "in_progress_orders": in_progress_orders,
                    "finished_orders": finished_orders,
-                   "cancelled_orders" : cancelled_orders}
+                   "cancelled_orders": cancelled_orders}
 
         return render(request, 'employee_page/employee_orders.html', context)
 
@@ -60,7 +63,7 @@ def EmployeeOrderDetail(request, order_number):
                 order.state = request.POST['state']
                 order.save()
                 messages.success(request, 'Status change successful')
-                
+
         form = ChangeStatus
 
         context = {
@@ -103,7 +106,8 @@ def EmployeeCancelOrderConfirm(request, order_number):
         }
         return render(request, "employee_page/employee_cancel_order.html",
                       context)
-    
+
+
 def EmployeeDeleteOrderConfirm(request, order_number):
     if EmployeeAuth(request):
         order = Order.objects.all()
@@ -129,8 +133,8 @@ def EmployeeContactForms(request):
     if EmployeeAuth(request):
         unanswered_contact_forms = ContactModel.objects.filter(answered=False)
         answered_contact_forms = ContactModel.objects.filter(answered=True)
-        context = {"unanswered_contact_forms" : unanswered_contact_forms,
-                   "answered_contact_forms" : answered_contact_forms}
+        context = {"unanswered_contact_forms": unanswered_contact_forms,
+                   "answered_contact_forms": answered_contact_forms}
 
         return render(request, 'employee_page/employee_contact_forms.html',
                       context)

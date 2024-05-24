@@ -11,7 +11,7 @@
 {% block content %}
 <h1 class="text-4xl text-center font-extrabold underline mx-2 mt-16 mb-8">Welcome {{ user }}! </h1>
 <h2 class="text-center mx-2">There are currently {{order_count}} unfinished orders.</h2>
-<h2 class="text-center mx-2">There are currently [placeholder] unanswered contact forms.</h2>
+<h2 class="text-center mx-2">There are currently {{contact_count}} unanswered contact forms.</h2>
 <div class="mx-auto w-fit my-8">
     <a class="rounded-lg text-black w-fit h-fit p-2 mt-8 bg-cyan-400 text-lg m-4" href="{% url 'employee_orders' %}">Orders</a>
     <a class="rounded-lg text-black w-fit h-fit p-2 mt-8 bg-cyan-400 text-lg m-4" href="{% url 'employee_contact_forms' %}">Contact forms</a>
