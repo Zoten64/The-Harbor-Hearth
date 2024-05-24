@@ -127,8 +127,10 @@ def EmployeeDeleteOrderConfirm(request, order_number):
 
 def EmployeeContactForms(request):
     if EmployeeAuth(request):
-        contact_forms = ContactModel.objects.all()
-        context = {"contact_forms": contact_forms}
+        unanswered_contact_forms = ContactModel.objects.filter(answered=False)
+        answered_contact_forms = ContactModel.objects.filter(answered=True)
+        context = {"unanswered_contact_forms" : unanswered_contact_forms,
+                   "answered_contact_forms" : answered_contact_forms}
 
         return render(request, 'employee_page/employee_contact_forms.html',
                       context)
