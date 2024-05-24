@@ -66,15 +66,16 @@
                                 href="{% url 'review' %}" class="hover:pl-2 transition-all">Reviews</a>
                         </li>
                         <!--Contact page button. Currently doesn't work-->
-                        <li class="p-2"><a href="{% url 'contact' %}" class="hover:pl-2 transition-all">Contact</a>
+                        <li class="p-2 {% if contact_url in request.path %}underline{% endif %}"><a
+                                href="{% url 'contact' %}" class="hover:pl-2 transition-all">Contact</a>
                         </li>
                         <!--Blog and news page button. If the user is on the home page the item will be underlined-->
                         <li class="p-2 {% if blog_url in request.path %}underline{% endif %}"><a href="{% url 'blog' %}"
                                 class="hover:pl-2 transition-all">Blog and news</a>
                         </li>
                         <!--Fix this link stuff later-->
-                        <li class="p-2 {% if account_email in request.path %}underline{% endif %}"><a href="{% url 'account_email' %}"
-                                class="hover:pl-2 transition-all">Account</a>
+                        <li class="p-2 {% if account_email in request.path %}underline{% endif %}"><a
+                                href="{% url 'account_email' %}" class="hover:pl-2 transition-all">Account</a>
                         </li>
                     </ul>
                 </li>
@@ -139,7 +140,8 @@
             <!--Contact section-->
             <li class="justify-self-end mt-4 md:mt-0">
                 <p class="font-bold">Contact us</p>
-                <p class="underline"><a href="{% url 'contact' %}" aria-label="A link to our contact form">Contact form</a></p>
+                <p class="underline"><a href="{% url 'contact' %}" aria-label="A link to our contact form">Contact
+                        form</a></p>
                 <p><a href="tel:+441635286716">+441635286716</a></p>
                 <p><a href="mailto:contact@theharborhearth.com">contact@theharborhearth.com</a></p>
             </li>

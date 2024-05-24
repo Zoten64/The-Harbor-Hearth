@@ -32,14 +32,24 @@ On medium devices there will be 2 columns and 3 rows, on large devices 3 columns
     </div>
     {% endfor %}
 </div>
+
+<div class="mx-auto w-fit">
+    <p>Do you have your own thoughts?</p>
+    {% if user.is_authenticated %}
+    <a class="bg-cyan-400 hover:bg-cyan-300 text-black rounded-lg p-2 block mx-auto w-fit" href="{% url 'write_review' %}">Leave your own review!</a>
+    {% else %}
+    <a class="bg-cyan-400 hover:bg-cyan-300 text-black rounded-lg p-2 block mx-auto w-fit" href="{% url 'account_email' %}">Log in to leave a review</a>
+    {% endif %}
+</div>
+
 {% if is_paginated %}
-<nav aria-label="Page navigation">
-    <ul class="grid grid-cols-2">
+<nav class="block w-fit mx-auto m-8" aria-label="Page navigation">
+    <ul class="inline">
         {% if page_obj.has_previous %}
-        <li class="rounded-lg bg-slate-300 dark:bg-gray-900 p-2 mx-4 justify-self-end w-fit"><a href="?page={{ page_obj.previous_page_number }}" class="page-link"> <i class="fa-solid fa-arrow-left"></i> PREV </a></li>
+        <li class="rounded-lg bg-slate-300 dark:bg-gray-900 p-2 mx-4 inline w-fit"><a href="?page={{ page_obj.previous_page_number }}" class="page-link"> <i class="fa-solid fa-arrow-left"></i> PREV </a></li>
         {% endif %}
         {% if page_obj.has_next %}
-        <li class="rounded-lg bg-slate-300 dark:bg-gray-900 p-2 mx-4 w-fit"><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT <i class="fa-solid fa-arrow-right"></i></a></li>
+        <li class="rounded-lg bg-slate-300 dark:bg-gray-900 p-2 mx-4 inline w-fit"><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT <i class="fa-solid fa-arrow-right"></i></a></li>
         {% endif %}
     </ul>
 </nav>

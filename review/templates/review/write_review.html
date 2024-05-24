@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!--Displayed at the end of the title. Used to make the title dynamic-->
+{% block title %} Write a review {% endblock title %}
+
+{% block content %}
+{% if review_exists %}
+<p>Review already exists on this account</p>
+{% else %}
+<form method="post">
+    {% csrf_token %}
+    {{form}}
+</form>
+{% endif %}
+{% endblock content %}

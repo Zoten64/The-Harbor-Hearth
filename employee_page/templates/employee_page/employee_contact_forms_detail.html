@@ -23,7 +23,8 @@
 
         </div>
     </div>
-    <div>
+    {% if contact_form.answered == False %}
+    <div class="mt-8">
         <form method="post">
             {% csrf_token %}
             {{form}}
@@ -32,9 +33,21 @@
 
         <ul class="messages">
             {% for message in messages %}
-            <li {% if message.tags %} class=" {{ message.tags }} text-green-700 dark:text-green-400" {% endif %}> {{ message }} </li>
+            <li {% if message.tags %} class=" {{ message.tags }} text-green-700 dark:text-green-400" {% endif %}> 
+                {{ message }} </li>
             {% endfor %}
         </ul>
+    </div>
+
+    {% else %}
+
+    <div class="rounded-lg bg-slate-300 dark:bg-gray-900 w-11/12 md:w-4/5 md:p-8 p-4 mt-8">
+        <h2 class="text-3xl font-bold">Response by {{contact_form.employee}}</h2>
+        <br>
+        <p class="whitespace-pre">{{contact_form.employee_response}}</p>
+        <br>
+
+        {% endif %}
     </div>
     <div>
         <a class="rounded-lg bg-slate-300 dark:bg-gray-900 p-2 mx-auto mt-8 w-fit text-xl block"
