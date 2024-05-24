@@ -1,5 +1,6 @@
 from django import forms
 from order.models import Order
+from contact.models import ContactModel
 
 STATE = (("NOT-STARTED", "Not Started"), ("IN-PROGRESS", "In Progress"),
          ("FINISHED", "Finished"))
@@ -11,7 +12,6 @@ class Cancel(forms.Form):
         max_length=200)
 
     class Meta:
-        fields = ('cancel_reason',)
         # This is the association between the model and the model form
         model = Order
 
@@ -21,7 +21,6 @@ class ChangeStatus(forms.Form):
                               choices=STATE, label='')
 
     class Meta:
-        fields = ('state',)
         # This is the association between the model and the model form
         model = Order
 
@@ -30,6 +29,12 @@ class DeleteOrder(forms.Form):
                     label='Confirm deletion')
 
     class Meta:
-        fields = ('delete_confirm',)
         # This is the association between the model and the model form
         model = Order
+
+class ContactResponse(forms.Form):
+    employee_response = forms.CharField(widget=forms.TextInput(
+        attrs={"class": "field_text_input"}), max_length=1500 ,label="")
+    class Meta:
+        # This is the association between the model and the model form
+        model = ContactModel

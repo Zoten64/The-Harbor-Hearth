@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from order.models import Order
 from .models import Employee
 from contact.models import ContactModel
-from .forms import Cancel, ChangeStatus, DeleteOrder
+from .forms import Cancel, ChangeStatus, DeleteOrder, ContactResponse
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.core.exceptions import PermissionDenied
@@ -146,7 +146,37 @@ def EmployeeContactFormsDetails(request, id):
         contact_form = ContactModel.objects.all()
         contact_form = get_object_or_404(contact_form, id=id)
 
-        context = {"contact_form" : contact_form}
+        if request.method == 'POST':
+            response_data = ContactResponse(request.POST)
+            if response_data.is_valid():
+                response = response_data.cleaned_data["employee_response"]
+                employee = request.user
+
+                contact_form.employee_response = response
+                contact_form.employee = employee
+                contact_form.save()
+
+                msg = f"Hello {contact_form.name}! {contact_form.employee} " \
+                "has answered your inquiry. \n" \
+                f"Your message: \n {contact_form.message} \n" \
+                f"Our answer: \n {contact_form.employee_response} \n" \
+                "We hope this response was helpful. If you need more " \
+                "assistance feel free to reach out again. \n" \
+                "Sincerely, the Harbour Hearth Team"
+
+                send_mail(
+                    "Your inquiry has been answered",
+                    msg,
+                    None,
+                    [contact_form.email],
+                    fail_silently=False,
+                )
+
+                messages.success(request, 'response sent')
+                
+        response_form = ContactResponse
+        context = {"contact_form" : contact_form,
+                   "form" : response_form}
 
         return render(request,
                       'employee_page/employee_contact_forms_detail.html',

@@ -33,7 +33,7 @@ def ContactView(request):
             "Please be patient for an answer. \n" \
             "Sincerely, The Harbour Hearth Team"
             send_mail(
-                "We've recieved your contact form",
+                "We've recieved your message",
                 msg,
                 None,
                 [email],
