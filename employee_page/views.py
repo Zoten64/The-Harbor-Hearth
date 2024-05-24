@@ -154,6 +154,7 @@ def EmployeeContactFormsDetails(request, id):
 
                 contact_form.employee_response = response
                 contact_form.employee = employee
+                contact_form.answered = True
                 contact_form.save()
 
                 msg = f"Hello {contact_form.name}! {contact_form.employee} " \

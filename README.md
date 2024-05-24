@@ -244,7 +244,7 @@ Milestones have been created in github. Some of the user stories were changed, a
 
 **Milestones/epics progress**
 
-<img src="documentation/epics_progress_07_05_2024.png.png">
+<img src="documentation/epics_progress_07_05_2024.png">
 
 **Backlog**
 
@@ -262,7 +262,7 @@ Home page has been finished and the menu page has been made. I still need to add
 
 **Milestones/epics progress**
 
-<img src="documentation/epics_progress_10_05_2024.png.png">
+<img src="documentation/epics_progress_10_05_2024.png">
 
 **Backlog**
 
@@ -270,6 +270,23 @@ Home page has been finished and the menu page has been made. I still need to add
 
 **Commentary:**
 Blog page has been finished and viewing reviews is now possible. Clicking on a review/blog preiew brings you to the full page with the details. Works on both the list pages and the home page. Account authentication has been set up and so has email verification and password reset.
+</details>
+
+<details>
+<summary> Progress 24/05/2024 </summary>
+
+**Milestones/epics progress**
+
+<img src="documentation/epics_progress_24_05_2024.png">
+
+**Backlog**
+
+<img src="documentation/backlog_progress_24_05_2024.png">
+
+**Commentary:**
+A lot has been done since the last update. Users can now order and send contact forms, employees can now view orders and contact forms, change order status, cancel orders, delete cancelled orders and answer contact forms. Reviews still needs to be done and the order page needs javascript functionality added to it and card information needs to be stored and retrieved when needed. A lot of things still needs a bunch of styling. 
+
+Summernote has been added to the admin page for blog posts. 
 </details>
 
 
