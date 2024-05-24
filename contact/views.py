@@ -26,6 +26,7 @@ def ContactView(request):
                 message = message,
             )
 
+            #The email that will be sent upon form submission
             msg = f"Hello {name}! Thank you for contacting us." \
             "Here's what you wrote: \n" \
             f"{message} \n" \

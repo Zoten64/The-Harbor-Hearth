@@ -151,10 +151,7 @@ As an admin you can create special accounts for employees where they have access
 
 18. As a customer I can contact the Harbor Hearth using a form on their website so I can have any inquires answered
     - AC1: The form should work 
-    - AC2: The form should have a category option so the right person can answer it
-    - AC3: The form should have a title, content and email field
-    - AC4: If the user is logged in the email should automatically be filled in with the option to change it
-    - AC5: A confirmation email should be sent to the customer upon submission
+    - AC2: A confirmation email should be sent to the customer upon submission
 
     Could have
 
