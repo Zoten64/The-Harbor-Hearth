@@ -64,9 +64,17 @@ hr{
     background-position: center;
 }
 
-/*ID classes*/
+.hero{
+    background-image: url('../images/hero.jpg');
+    background-size: 100%;
+    background-position: 30%;
+}
+
+/*Form classes*/
 
 .field_text_input{
+    padding: 2px;
+    width: 100%;
     background-color: #f8fafc;
     border: 1px solid black;
     color: #020617;

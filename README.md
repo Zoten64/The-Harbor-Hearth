@@ -392,6 +392,7 @@ pipdeptree was used to get a better look at the relationship between libraries a
 **Assets**
 
 - [Logo, modified in inkscape](https://www.freepik.com/free-vector/hand-drawn-beach-logo-template_26252522.htm#query=ocean%20logo&position=16&from_view=keyword&track=ais_user&uuid=7f17a4dc-ae89-4548-95a0-02b50afd77e2)
+- [Hero Image by StockSnap at StockVault](https://www.stockvault.net/photo/190026/dock#)
 
 **Inspiration**
 

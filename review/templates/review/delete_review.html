@@ -4,31 +4,31 @@
 {% block title %} Cancel Order {% endblock title %}
 
 {% block content %}
-<div class="m-8">
+<div class="mx-auto w-fit">
     <h1 class="text-xl font-bold my-4">
         Do you really want to delete your review?
     </h1>
-    <div class="m-8">
+    <div class="m-4">
         <p>By checking the box below you confirm that you:</p>
         <ul class="list-disc ml-8">
             <li>Want to delete the review</li>
             <li>Acknowledge that this cannot be undone</li>
         </ul>
     </div>
-    <form class="my-8" method="post">
+    <form class="my-8 mx-auto block w-fit" method="post">
         {% csrf_token %}
         {{form}}
-        <input class="rounded-lg bg-red-500 text-white p-2 m-4 w-fit text-xl block cursor-pointer" type="submit"
+        <input class="rounded-lg bg-red-500 text-white p-2 my-4 w-fit text-xl block cursor-pointer mx-auto" type="submit"
             value="Delete">
     </form>
 
-    <ul class="messages">
+    <ul class="messages text-center">
         {% for message in messages %}
-        <li {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+        <li {% if message.tags %} class=" {{ message.tags }} text-center" {% endif %}> {{ message }} </li>
         {% endfor %}
     </ul>
     <div>
-        <a class="rounded-lg bg-slate-300 dark:bg-gray-900 p-2 m-4 mt-40 w-fit text-xl block"
+        <a class="rounded-lg bg-cyan-400 text-black p-2 m-4 mt-40 w-fit text-xl block mx-auto"
             href="{% url 'my_review' %}"> Back </a>
     </div>
 

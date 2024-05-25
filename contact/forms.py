@@ -14,7 +14,7 @@ class ContactForm(forms.Form):
     preferred_contact = forms.ChoiceField(widget=forms.RadioSelect(
         attrs={"class": "my-2 border-solid"}), choices=PREFERRED_CONTACT, 
         label='Which contact method would you prefer we use?')
-    message = forms.CharField(widget=forms.TextInput(
+    message = forms.CharField(widget=forms.Textarea(
         attrs={"class": "field_text_input"}), max_length=1500)
 
     class Meta:

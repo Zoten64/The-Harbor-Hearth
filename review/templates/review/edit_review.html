@@ -5,13 +5,13 @@
 
 {% block content %}
 <h1 class="text-center font-bold underline text-2xl mt-2 text-black dark:text-white">Edit Review</h1>
-
+<div class="w-fit mx-auto my-8">
 <form method="post">
     {% csrf_token %}
     {{form}}
-    <input type="submit" value="Submit Review">
+    <input type="submit" value="Submit Review" class="rounded-lg bg-cyan-400 p-2 my-4 text-black">
 </form>
-
+</div>
 <!--If the user has just submitted a review they will be redirected here and a message will appear-->
 <ul class="messages">
     {% for message in messages %}

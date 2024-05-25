@@ -83,7 +83,7 @@ def EmployeeCancelOrderConfirm(request, order_number):
         if request.method == 'POST':
             cancel_reason = Cancel(request.POST)
             if cancel_reason.is_valid():
-                order.state = 'CANCELLED'
+                order.state = 'Cancelled'
                 order.cancel_reason = request.POST['cancel_reason']
                 order.save()
 

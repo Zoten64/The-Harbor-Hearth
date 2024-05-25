@@ -33,7 +33,7 @@ class DeleteOrder(forms.Form):
         model = Order
 
 class ContactResponse(forms.Form):
-    employee_response = forms.CharField(widget=forms.TextInput(
+    employee_response = forms.CharField(widget=forms.Textarea(
         attrs={"class": "field_text_input"}), max_length=1500 ,label="")
     class Meta:
         # This is the association between the model and the model form
