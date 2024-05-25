@@ -26,7 +26,7 @@ def EmployeeAuth(request):
 def EmployeeHome(request):
     if EmployeeAuth(request):
         unfinished_orders = Order.objects.filter(state="Not Started").count()
-        in_progress_orders = Order.objects.filter(state="In progress").count()
+        in_progress_orders = Order.objects.filter(state="In Progress").count()
         order_count = unfinished_orders + in_progress_orders
         unanswered_contact_forms_count = ContactModel.objects.filter(
             answered=False).count()
@@ -39,10 +39,10 @@ def EmployeeHome(request):
 
 def EmployeeOrders(request):
     if EmployeeAuth(request):
-        unfinished_orders = Order.objects.filter(state="NOT-STARTED")
-        in_progress_orders = Order.objects.filter(state="IN-PROGRESS")
-        finished_orders = Order.objects.filter(state="FINISHED")
-        cancelled_orders = Order.objects.filter(state="CANCELLED")
+        unfinished_orders = Order.objects.filter(state="Not Started")
+        in_progress_orders = Order.objects.filter(state="In Progress")
+        finished_orders = Order.objects.filter(state="Finished")
+        cancelled_orders = Order.objects.filter(state="Cancelled")
 
         context = {"unfinished_orders": unfinished_orders,
                    "in_progress_orders": in_progress_orders,

@@ -28,9 +28,11 @@ def OrderView(request):
             order = Order.objects.create(user=user,
                                              order=order_info,
                                              email=email,
+                                             state= "Not Started",
                                              delivery_method=delivery_method,
                                              table_number=table_number
                                              )
+            print(order.state)
             
             msg = "Your order has been placed. \n" \
             f"Order number: {order.order_number} \n" \

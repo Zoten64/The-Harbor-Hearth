@@ -15,7 +15,7 @@ class ReviewForm(forms.ModelForm):
         model = Review
         fields = ("rating", "title", "content")
 
-class DeleteReviewForm(forms.Form):
+class DeleteReviewForm(forms.Form): 
     delete_confirm = forms.BooleanField(widget=forms.CheckboxInput(), 
                     label='Confirm deletion')
 
