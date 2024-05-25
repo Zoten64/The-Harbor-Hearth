@@ -9,7 +9,6 @@ from .forms import OrderEmail, OrderForm
 
 
 def OrderView(request):
-
     if request.method == 'POST':
         order_post = OrderForm(request.POST)
         email_post = OrderEmail(request.POST)
@@ -32,7 +31,15 @@ def OrderView(request):
                                              )
             messages.success(request, 'Order placed!')
 
-    order_form = OrderForm
+    table = request.GET.get('table', '')
+
+    try:
+        table = int(table)
+        order_form = OrderForm(initial={'table_number': table,
+                               'delivery_method' : 'TABLE'})
+    except:
+        order_form = OrderForm
+        print("no worky")
     email_form = OrderEmail
     context = {
         'email': email_form,
