@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.core.exceptions import PermissionDenied
 from django.views import generic
+from django.contrib import messages
 from .models import Review
 from .forms import ReviewForm
 
@@ -36,6 +37,27 @@ def WriteReview(request):
             review = ''
             review_exists = False
         
+        if request.method == "POST":
+            review_post = ReviewForm(request.POST)
+            if review_post.is_valid():
+                author = request.user
+                rating = review_post.cleaned_data['rating']
+                title = review_post.cleaned_data['title']
+                content = review_post.cleaned_data['content']
+                
+                #checks one final time if the user has already submitted a
+                #review before creating one to prevent duplicates on reload
+                if Review.objects.filter(author=user).count() == 0:
+                    Review.objects.create(
+                        author=author,
+                        rating=rating,
+                        title=title,
+                        content=content,
+                    )
+                messages.success(request, 'Your review has been submitted')
+                #Redirect after post
+                redirect(WriteReview)
+
         form = ReviewForm
         context = {
             "review" : review, 

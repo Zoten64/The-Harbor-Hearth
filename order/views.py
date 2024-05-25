@@ -24,7 +24,7 @@ def OrderView(request):
             delivery_method = order_post.cleaned_data['delivery_method']
             table_number = order_post.cleaned_data['table_number']
 
-            new_order = Order.objects.create(user=user,
+            Order.objects.create(user=user,
                                              order=order_info,
                                              email=email,
                                              delivery_method=delivery_method,

@@ -11,6 +11,12 @@
 <form method="post">
     {% csrf_token %}
     {{form}}
+    <input type="submit" value="Submit Review">
 </form>
 {% endif %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class=" {{ message.tags }} mt-2 text-green-700 dark:text-green-400" {% endif %}> {{ message }} </li>
+    {% endfor %}
+</ul>
 {% endblock content %}
