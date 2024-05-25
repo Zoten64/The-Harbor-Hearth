@@ -5,13 +5,13 @@
 
 {% block content %}
 <div class="w-full grid justify-items-center my-16 grid-rows-2 grid-cols-1">
-    <div class="rounded-lg bg-slate-300 dark:bg-gray-900 w-11/12 md:w-4/5 md:p-8 p-4">
+    <div class="rounded-lg bg-white border-solid border-black border-2 dark:bg-gray-900 w-11/12 md:w-4/5 md:p-8 p-4">
         <h2 class="font-bold text-xl text-black dark:text-white pb-4"> {{post.title}} </h2>
         <p> {{ post.content|safe }} </p>
         <p class="mt-8"> Created on: {{post.date}} </p>
     </div>
     <div class="content-end">
-        <a class="rounded-lg bg-slate-300 dark:bg-gray-900 p-2 mx-4 justify-self-end w-fit text-xl" href="{% url 'blog' %}"> Back </a>
+        <a class="rounded-lg bg-cyan-400 p-2 mx-4 justify-self-end w-fit text-xl" href="{% url 'blog' %}"> Back </a>
     </div>
 </div>
 {% endblock content %}

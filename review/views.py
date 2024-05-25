@@ -24,18 +24,15 @@ def ReviewDetail(request, url):
     return render(request, 'review/review_detail.html', context)
 
 def WriteReview(request):
+    # Only logged in users can leave a review
     if request.user.is_authenticated:
         user = request.user
         # If the user has already written a review they won't be able to write
         # Another one. However they will be able to edit/delete their review
-        # If the review exists the code will run without problems.
-        # If the review doesn't exist the code will throw an error
-        try:
-            review = Review.objects.get(author=user)
-            review_exists = True
-        except:
-            review = ''
-            review_exists = False
+        # If there is more than 0 reviews from the logged in user the user will
+        # be redirected to the /my_reviews page. Otherwise the code continues
+        if Review.objects.filter(author=user).count() > 0:
+            return redirect(MyReviews)
         
         if request.method == "POST":
             review_post = ReviewForm(request.POST)
@@ -56,15 +53,34 @@ def WriteReview(request):
                     )
                 messages.success(request, 'Your review has been submitted')
                 #Redirect after post
-                redirect(WriteReview)
+                return redirect(MyReviews)
 
         form = ReviewForm
         context = {
-            "review" : review, 
-            "review_exists" : review_exists,
             "form" : form 
             }
         return render(request, 'review/write_review.html', context)
     else:
+        #If the user accesses this page without being logged in
+        #A 403 error will be raised
         raise PermissionDenied()
+    
+def MyReviews(request):
+    if request.user.is_authenticated:
+        user = request.user
+
+        try:
+            review = Review.objects.get(author=user)
+            review_exists = True
+        except:
+            review = ''
+            review_exists = False
+        context = {"review" : review,
+                   "review_exists" : review_exists}
+        return render(request, 'review/my_review.html', context)
+    else:
+        #If the user accesses this page without being logged in
+        #A 403 error will be raised
+        raise PermissionDenied()
+
 

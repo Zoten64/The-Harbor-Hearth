@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Your review {% endblock title %}
+
+{% block content %}
+<h1 class="text-center font-bold underline text-2xl mt-2 text-black dark:text-white">Your Review</h1>
+{% if review_exists %}
+    <!--If the user has just submitted a review they will be redirected here and a message will appear-->
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class=" {{ message.tags }} mt-2 text-green-700 dark:text-green-400 text-center" {% endif %}> {{ message }} </li>
+        {% endfor %}
+    </ul>
+
+    <div class="w-full grid justify-items-center my-16 grid-rows-2 grid-cols-1">
+        <div class="rounded-lg bg-white border-solid border-black border-2 dark:bg-gray-900 w-11/12 md:w-4/5 md:p-8 p-4">
+            <h2 class="font-bold text-xl text-black dark:text-white pb-4"> {{review.title}} </h2>
+            <!--A string is generated based on the number in review.rating to be iterated over as review.rating is an int
+                    and int is not iterable-->
+            {% for star in "x"|rjust:review.rating %}
+            <span class="text-yellow-400"><i class="fa-solid fa-star"></i></span>
+            {% endfor %}
+            <p class="text-black dark:text-white py-4"> {{review.author}} wrote: </p>
+            <p> {{review.content}} </p>
+
+            {% if review.approved == False %}
+            <p class="text-red-800 dark:text-red-500">Your review is awaiting approval. Please be patient</p>
+            {% endif %}
+        </div>
+        <div class="content-end">
+            place options here later
+        </div>
+    </div>
+{% else %}
+<div>
+<h2 h1 class="text-4xl text-center font-extrabold underline mt-16 mb-8">Seems like you haven't written a review</h2>
+<a class="bg-cyan-400 hover:bg-cyan-300 text-black rounded-lg p-2 block mx-auto w-fit" href="{% url 'write_review' %}">Write a review</a>
+</div>
+{% endif %}
+{% endblock content %}
