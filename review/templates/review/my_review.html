@@ -28,8 +28,9 @@
             <p class="text-red-800 dark:text-red-500">Your review is awaiting approval. Please be patient</p>
             {% endif %}
         </div>
-        <div class="content-end">
-            place options here later
+        <div class="mx-auto w-fit my-8">
+            <a class="rounded-lg text-black w-fit h-fit p-2 mt-8 bg-cyan-400 text-lg m-4" href="{% url 'edit_review' %}">Edit review</a>
+            <a class="rounded-lg text-white w-fit h-fit p-2 mt-8 bg-red-500  text-lg m-4" href="{% url 'delete_review' %}">Delete review</a>
         </div>
     </div>
 {% else %}

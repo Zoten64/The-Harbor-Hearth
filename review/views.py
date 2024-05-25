@@ -3,7 +3,7 @@ from django.core.exceptions import PermissionDenied
 from django.views import generic
 from django.contrib import messages
 from .models import Review
-from .forms import ReviewForm
+from .forms import ReviewForm, DeleteReviewForm
 
 # Create your views here.
 class ReviewList(generic.ListView):
@@ -82,5 +82,51 @@ def MyReviews(request):
         #If the user accesses this page without being logged in
         #A 403 error will be raised
         raise PermissionDenied()
+    
+def EditReview(request):
+    if request.user.is_authenticated:
+        user = request.user
+        try:
+            review = Review.objects.get(author=user)
+        except:
+            return redirect(MyReviews)
 
+        if request.method == "POST":
+            review_form = ReviewForm(instance=review, data=request.POST)
+            if review_form.is_valid():
+                review_form.save()
+                messages.success(request, 'Your review has been edited')
+                #Redirect after post
+                return redirect(MyReviews)
+        else:
+            review_form = ReviewForm(instance=review)
+        context = {
+            "form" : review_form 
+            }
+        return render(request, 'review/edit_review.html', context)
+    else:
+        #If the user accesses this page without being logged in
+        #A 403 error will be raised
+        raise PermissionDenied()
 
+def DeleteReview(request):
+    if request.user.is_authenticated:
+        user = request.user
+        try:
+            review = Review.objects.get(author=user)
+        except:
+            return redirect(MyReviews)
+
+        if request.method == "POST":
+            delete_review = DeleteReviewForm(request.POST)
+            if delete_review.is_valid():
+                review.delete()
+                messages.success(request, 'Deletion successful')
+
+        form = DeleteReviewForm
+        context = {"form" : form}
+        return render(request, 'review/delete_review.html', context)
+    else:
+        #If the user accesses this page without being logged in
+        #A 403 error will be raised
+        raise PermissionDenied()
