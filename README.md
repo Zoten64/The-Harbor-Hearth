@@ -309,6 +309,7 @@ Summernote has been added to the admin page for blog posts.
 | The resource from “http://127.0.0.1:8000/css/style.css” was blocked due to MIME type (“text/html”) mismatch (X-Content-Type-Options: nosniff) | Wrong path specified as CSS stylesheet |
 | "relation [model] does not exist" error | Make a new database as the last one stopped working properly and I couldn't figure out why. Not a big deal since it was all placeholder content|
 | review model submits duplicate upon page reload | Create an extra check to make sure that the user has not sent a review before creating the object in the database and reload the page |
+| Order not placing if the user is logged in | Change the way valid forms are checked. Email validity is only checked if the user is not logged in |
 
 # Technologies and tools
 
