@@ -1,3 +1,4 @@
+"""Admin page configuration"""
 from django.contrib import admin
 from .models import Menu
 

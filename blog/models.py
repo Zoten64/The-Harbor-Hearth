@@ -1,5 +1,6 @@
-from django.db import models
+"""Database models here"""
 import uuid
+from django.db import models
 
 # Create your models here.
 
@@ -16,7 +17,9 @@ class Post(models.Model):
     home_page = models.BooleanField(default=False)
 
     class Meta:
+        """Ordering in the admin panel"""
         ordering = ["-date"]
 
     def __str__(self):
+        """How the instance will be displayed in the admin panel"""
         return f"{self.title} | {self.date}"

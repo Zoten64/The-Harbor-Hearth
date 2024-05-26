@@ -1,9 +1,11 @@
+"""Menu views"""
 from django.shortcuts import render
 from .models import Menu
 
 # Create your views here.
 
-def MenuList(request):
+def menu_list(request):
+    """lists the menu"""
     meals = Menu.objects.filter(category="Meal")
     drinks = Menu.objects.filter(category="Drink")
     desserts = Menu.objects.filter(category="Dessert")

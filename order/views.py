@@ -1,6 +1,5 @@
+"""Order views"""
 from django.shortcuts import render, redirect
-from django.views import generic
-from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.mail import send_mail
 from .models import Order
@@ -9,7 +8,8 @@ from .forms import OrderEmail, OrderForm
 # Create your views here.
 
 
-def OrderView(request):
+def order_view(request):
+    """Order page view"""
     if request.method == 'POST':
         order_post = OrderForm(request.POST)
         email_post = OrderEmail(request.POST)
@@ -33,7 +33,7 @@ def OrderView(request):
                                              table_number=table_number
                                              )
             print(order.state)
-            
+
             msg = "Your order has been placed. \n" \
             f"Order number: {order.order_number} \n" \
             f"Your order: \n {order.order} \n" \
@@ -46,15 +46,17 @@ def OrderView(request):
                     fail_silently=False,
                 )
             messages.success(request, 'Order placed!')
-            return redirect(ConfirmOrder)
+            return redirect(confirm_order)
 
+    #Get table number from url
     table = request.GET.get('table', '')
 
+    #If table cannot be converted to an int it is not valid
     try:
         table = int(table)
         order_form = OrderForm(initial={'table_number': table,
                                'delivery_method' : 'TABLE'})
-    except:
+    except ValueError:
         order_form = OrderForm
     email_form = OrderEmail
     context = {
@@ -64,5 +66,6 @@ def OrderView(request):
 
     return render(request, 'order/order.html', context)
 
-def ConfirmOrder(request):
+def confirm_order(request):
+    """Order confirm page"""
     return render(request, 'order/order_confirm.html')

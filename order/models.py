@@ -1,10 +1,11 @@
+"""Order model"""
 from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
 
-DELIVERY_METHOD = (("COUNTER", "Eat-in: Pick up at counter"), 
-                   ("TABLE", "Eat-in: Table delivery"), 
+DELIVERY_METHOD = (("COUNTER", "Eat-in: Pick up at counter"),
+                   ("TABLE", "Eat-in: Table delivery"),
                    ("TAKE-OUT", "Take-Out"))
 
 STATE = (("Not Started", "Not Started"), ("In Progress", "In Progress"),
@@ -14,11 +15,11 @@ class Order(models.Model):
     '''
     Model for adding orders to the database
     '''
-    user = models.ForeignKey(User, on_delete=models.CASCADE, 
+    user = models.ForeignKey(User, on_delete=models.CASCADE,
                              related_name="order_user", blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
     order_number = models.AutoField(primary_key=True)
-    delivery_method = models.CharField(choices=DELIVERY_METHOD, 
+    delivery_method = models.CharField(choices=DELIVERY_METHOD,
                                        default=0)
     table_number = models.IntegerField(blank=True, null=True)
     order = models.TextField()

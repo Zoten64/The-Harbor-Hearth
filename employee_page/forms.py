@@ -1,3 +1,4 @@
+"""Employee only forms"""
 from django import forms
 from order.models import Order
 from contact.models import ContactModel
@@ -7,8 +8,9 @@ STATE = (("NOT-STARTED", "Not Started"), ("IN-PROGRESS", "In Progress"),
 
 
 class Cancel(forms.Form):
+    """Form for cancelling orders"""
     cancel_reason = forms.CharField(widget=forms.TextInput(
-        attrs={"class": "field_text_input"}), label="Cancel reason", 
+        attrs={"class": "field_text_input"}), label="Cancel reason",
         max_length=200)
 
     class Meta:
@@ -17,6 +19,7 @@ class Cancel(forms.Form):
 
 
 class ChangeStatus(forms.Form):
+    """Form for changing order status"""
     state = forms.ChoiceField(widget=forms.RadioSelect(attrs={"class": "my-2"}),
                               choices=STATE, label='')
 
@@ -25,7 +28,8 @@ class ChangeStatus(forms.Form):
         model = Order
 
 class DeleteOrder(forms.Form):
-    delete_confirm = forms.BooleanField(widget=forms.CheckboxInput(), 
+    """Form for deleting orders"""
+    delete_confirm = forms.BooleanField(widget=forms.CheckboxInput(),
                     label='Confirm deletion')
 
     class Meta:
@@ -33,6 +37,7 @@ class DeleteOrder(forms.Form):
         model = Order
 
 class ContactResponse(forms.Form):
+    """Response to customer contact forms"""
     employee_response = forms.CharField(widget=forms.Textarea(
         attrs={"class": "field_text_input"}), max_length=1500 ,label="")
     class Meta:

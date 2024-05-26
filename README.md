@@ -515,7 +515,46 @@ Note: Performance suffers slightly for the same reason above
 <img src="documentation/lighthouse/login.png">
 </details>
 
+## PEP8
 
+Pylint-django has been used here to easily validate directories
+Django was not configured messages aren't important as it has not bearing on the project. This arises from pylint-django wanting to check foreign key relationships
+User model imported from django messages aren't important either
+
+<details>
+<summary> home </summary>
+<img src="documentation/pep8/home.png">
+</details>
+
+<details>
+<summary> menu </summary>
+<img src="documentation/pep8/menu.png">
+</details>
+
+<details>
+<summary> order </summary>
+<img src="documentation/pep8/order.png">
+</details>
+
+<details>
+<summary> review </summary>
+<img src="documentation/pep8/review.png">
+</details>
+
+<details>
+<summary> blog </summary>
+<img src="documentation/pep8/blog.png">
+</details>
+
+<details>
+<summary> contact </summary>
+<img src="documentation/pep8/contact.png">
+</details>
+
+<details>
+<summary> contact </summary>
+<img src="documentation/pep8/employee_page.png">
+</details>
 
 # Deployment
 
