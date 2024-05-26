@@ -479,6 +479,43 @@ pipdeptree was used to get a better look at the relationship between libraries a
 <img src="documentation/wave_accessibility/sign_in.png">
 </details>
 
+## Lighthouse
+
+<details>
+<summary> Home </summary>
+<img src="documentation/lighthouse/home.png">
+Note: I've done as much as I can to try and optimize the home page further, but it comes down to using flowbite with django which makes me unable to compress it in the way I would be able to with Node.JS, and that is on me for not realising earlier
+</details>
+
+<details>
+<summary> Menu </summary>
+<img src="documentation/lighthouse/menu.png">
+Note: Performance suffers slightly for the same reason above
+</details>
+
+<details>
+<summary> Reviews </summary>
+<img src="documentation/lighthouse/reviews.png">
+<img src="documentation/lighthouse/review_details.png">
+</details>
+
+<details>
+<summary> Contact </summary>
+<img src="documentation/lighthouse/contact.png">
+</details>
+
+<details>
+<summary> Blog </summary>
+<img src="documentation/lighthouse/blog.png">
+<img src="documentation/lighthouse/blog_details.png">
+</details>
+
+<details>
+<summary> login </summary>
+<img src="documentation/lighthouse/login.png">
+</details>
+
+
 
 # Deployment
 
