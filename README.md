@@ -417,11 +417,26 @@ pipdeptree was used to get a better look at the relationship between libraries a
 <details>
 <summary> Blog </summary>
 <img src="documentation/html_validation/blog.png">
+<img src="documentation/html_validation/blog_details.png">
 </details>
 
 <details>
 <summary> Log in </summary>
 <img src="documentation/html_validation/login.png">
+</details>
+
+## CSS Jigsaw Validator
+
+<details>
+<summary> CSS Jigsaw </summary>
+<img src="documentation/css_validation.png">
+</details>
+
+## JSHint
+
+<details>
+<summary> JSHint </summary>
+<img src="documentation/javascript_validation.png">
 </details>
 
 # Deployment
