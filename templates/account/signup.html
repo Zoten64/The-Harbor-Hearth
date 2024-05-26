@@ -14,16 +14,14 @@
             {% csrf_token %}
             {{ form.as_p }}
             {% if redirect_field_value %}
-            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
             {% endif %}
             <button class="rounded-lg bg-cyan-400 p-2 my-8 mx-auto block justify-self-end w-fit text-xl text-black"
-            type="submit">{% trans "Sign Up" %}</button>
-
+            type="submit">Sign Up</button>
+        </form>
     <div class="my-4">
-        {% blocktrans %}
         <h2 class="text-center">Already have an account?</h2>
         <a class="text-center underline block" href="{{ login_url }}">Sign in here</a>
-        {% endblocktrans %}
     </div>
 </div>
 {% endblock content %}

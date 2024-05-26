@@ -399,8 +399,23 @@ pipdeptree was used to get a better look at the relationship between libraries a
 </details>
 
 <details>
+<summary> Menu </summary>
+<img src="documentation/html_validation/menu.png">
+</details>
+
+<details>
 <summary> Reviews </summary>
-<img src="documentation/html_validation/home.png">
+<img src="documentation/html_validation/reviews.png">
+</details>
+
+<details>
+<summary> Contact </summary>
+<img src="documentation/html_validation/contact.png">
+</details>
+
+<details>
+<summary> Blog </summary>
+<img src="documentation/html_validation/blog.png">
 </details>
 
 
