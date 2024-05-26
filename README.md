@@ -1,6 +1,8 @@
 # The Harbor Hearth
 ### Set sail for deliciousness
 
+<img src="documentation/readmecover.png">
+
 [Deployed website](https://zoten64-the-harbour-hearth-cd54b5ce5a13.herokuapp.com/)
 
 ## Table of Contents:
@@ -26,12 +28,11 @@ The goal of this project is to put my knowledge of HTML, CSS, JS, Python, Django
 as push myself to learn more.
 
 The Harbor Hearth is a fictional bistro nearby a vacation resort located at the west coast of England. They offer online ordering and a digital menu. Clients can
-review the bakery, create an account to be recieve loyalty points with every order that can be exchanged for goods. Making an account will also let you take part of deals
-and save your payment information for faster ordering. Though an account is not required for ordering as that may be frustrating for users.
+review the bistro and create an account. Though an account is not required for ordering as that may be frustrating for users.
 
 The website also features a blog where the admins can post news, changes and other relevant information. 
 
-As an admin you can create special accounts for employees where they have access to a page with pending orders with the ability to cancel. They also have access to answer and approve questions as well as delete inappropriate ones. 
+As an admin you can create special accounts for employees where they have access to a page with pending orders with the ability to cancel. They also have access to answer questions
 
 
 # User stories
@@ -316,6 +317,34 @@ All the user stories have been completed
 
 # Wireframes
 
+<details>
+<summary> home </summary>
+<img src="documentation/wireframes/the_harbour_hearth_home.png">
+</details>
+
+<details>
+<summary> menu </summary>
+<img src="documentation/wireframes/the_harbour_hearth_menu.png">
+</details>
+
+<details>
+<summary> reviews </summary>
+<img src="documentation/wireframes/the_harbour_hearth_reviews.png">
+<img src="documentation/wireframes/the_harbour_hearth_review_detail.png">
+</details>
+
+<details>
+<summary> blog </summary>
+<img src="documentation/wireframes/the_harbour_hearth_blog.png">
+<img src="documentation/wireframes/the_harbour_hearth_blog_detail.png">
+</details>
+
+<details>
+<summary> menu </summary>
+<img src="documentation/wireframes/the_harbour_hearth_contact.png">
+</details>
+
+
 # User manual
 
 # Features
@@ -355,6 +384,8 @@ All the user stories have been completed
     - Used to make environmental variables and to import them
 - Pathlib
     - For dynamic paths. 
+- uuid
+    - Used on blog and reviews
 
 **3rd Party:**
 
