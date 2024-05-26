@@ -4,6 +4,10 @@
 <!--Displayed at the end of the title. Used to make the title dynamic-->
 {% block title %} Home {% endblock title %}
 
+{% block head_extras %}
+<link rel="preload" as="image" href="{% static 'images/hero.webp'%}">
+{% endblock head_extras %}
+
 <!--The content-->
 {% block content %}
 
