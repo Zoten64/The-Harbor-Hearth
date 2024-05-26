@@ -82,6 +82,26 @@ hr{
     display: block;
 }
 
+.account_fields input[type=text],
+.account_fields input[type=email],
+.account_fields input[type=password]{
+    padding: 2px;
+    width: 100%;
+    background-color: #f8fafc;
+    border: 1px solid black;
+    color: #020617;
+    border-radius: 10px;
+    display: block;
+}
+
+/*Allauth style overrides*/
+.helptext{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
 /*Media Query: Tablets and larger (768px and up)*/
 @media screen and (min-width: 768px) {
     .location-contact{

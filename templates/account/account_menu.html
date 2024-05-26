@@ -1,0 +1,25 @@
+<div class="mt-8">
+    <hr class="border-b-2 border-slate-900 my-4 dark:border-slate-200 lg max-w-screen-md md:mx-auto sm:mx-4">
+    <p class="text-center font-bold text-lg">Actions</p>
+    <ul class="text-center underline">
+        {% if user.is_authenticated %}
+            <li>
+                <a href="{% url 'account_email' %}">Change Email</a>
+            </li>
+            <li>
+                <a href="{% url 'account_change_password' %}">Change Password</a>
+            </li>
+            <li>
+                <a href="{% url 'account_logout' %}">Sign Out</a>
+            </li>
+        {% else %}
+            <li>
+                <a href="{% url 'account_login' %}">Sign In</a>
+            </li>
+            <li>
+                <a href="{% url 'account_signup' %}">Sign Up</a>
+            </li>
+        {% endif %}
+    </ul>
+    <hr class="border-b-2 border-slate-900 my-4 dark:border-slate-200 lg max-w-screen-md md:mx-auto sm:mx-4">
+</div>

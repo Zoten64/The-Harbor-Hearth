@@ -2,27 +2,29 @@
 {% load static %}
 
 {% load i18n %}
-{% load account socialaccount %}
 
 <!--Displayed at the end of the title. Used to make the title dynamic-->
-{% block title %} Account {% endblock title %}
+{% block title %} Sign In {% endblock title %}
 
 <!--The content-->
 {% block content %}
+<div class="max-w-md mx-auto">
+    <h1 class="text-4xl text-center font-extrabold underline mt-16 mb-8"> Sign In</h1>
 
-<h3>{% trans "Sign In" %}</h3>
-
-{% blocktrans %}
-<a class="link" href="{{ signup_url }}">sign up</a>
-{% endblocktrans %}
-
-<form class="login" method="POST" action="{% url 'account_login' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    {% if redirect_field_value %}
-    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-    {% endif %}
-    <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
-</form>
-
+    <form class="login account_fields mx-4" method="POST" action="{% url 'account_login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <button class="rounded-lg bg-cyan-400 p-2 my-8 mx-auto block justify-self-end w-fit text-xl text-black"
+            type="submit">{% trans "Sign In" %}</button>
+    </form>
+    <div class="my-4">
+        {% blocktrans %}
+        <h2 class="text-center">Don't have an account?</h2>
+        <a class="text-center underline block" href="{{ signup_url }}">Sign up</a>
+        {% endblocktrans %}
+    </div>
+</div>
 {% endblock content %}
