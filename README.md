@@ -52,7 +52,7 @@ As an admin you can create special accounts for employees where they have access
 
     Must have
 
-3.  As a customer I can order and pay online so I don't have to wait in line at the counter to do so
+3.  As a customer I can order online so I don't have to wait in line at the counter to do so
     - AC1: The website should have an option to order
     - AC2: The customer should be given a short and easy to remember order number
 
@@ -208,15 +208,23 @@ As an admin you can create special accounts for employees where they have access
 
 1. Ordering and the home page (Core functionality)
     - Ordering and home page functionality, including the menu.
+    - User Story Numbers: 1, 2, 3, 4, 5, 6
 
 2. User accounts
     - Anything related to user accounts, from critical things like account details and small things like deals and points
+    - User Story Numbers: 8, 9, 10, 11, 12
 
 3. Employee access
     - Employee dashboard
+    - User Story Numbers: 19, 20, 23
 
 4. Admin panel
     - Things only the admin can do
+    - User Story Numbers: 22, 25, 26
+
+5. News, reviews and contact
+    - Things that can give customers a better idea of the experience at The Harbour Hearth
+    - User Story Numbers: 7, 13, 14, 18, 21, 24
 
 # Progress Documentation
 
@@ -286,6 +294,21 @@ Blog page has been finished and viewing reviews is now possible. Clicking on a r
 A lot has been done since the last update. Users can now order and send contact forms, employees can now view orders and contact forms, change order status, cancel orders, delete cancelled orders and answer contact forms. Reviews still needs to be done and the order page needs javascript functionality added to it and card information needs to be stored and retrieved when needed. A lot of things still needs a bunch of styling. 
 
 Summernote has been added to the admin page for blog posts. 
+</details>
+
+<details>
+<summary> Progress 26/05/2024 </summary>
+
+**Milestones/epics progress**
+
+<img src="documentation/epics_progress_26_05_2024.png">
+
+**Backlog**
+
+<img src="documentation/backlog_progress_26_05_2024.png">
+
+**Commentary:**
+All the user stories have been completed
 </details>
 
 
@@ -368,6 +391,12 @@ pipdeptree was used to get a better look at the relationship between libraries a
 # Technical design
 
 # Validation and testing
+
+**HTML**
+<details>
+<summary> Home </summary>
+<img src="documentation/html_validation/home.png">
+</details>
 
 # Deployment
 

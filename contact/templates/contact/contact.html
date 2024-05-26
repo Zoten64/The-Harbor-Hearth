@@ -16,8 +16,7 @@
     <!--Messages-->
     <ul class="messages">
         {% for message in messages %}
-        <li {% if message.tags %} class=" {{ message.tags }} mt-2 text-green-700 dark:text-green-400 text-center" {%
-            endif %}> {{ message }} </li>
+        <li {% if message.tags %} class=" {{ message.tags }} mt-2 text-green-700 dark:text-green-400 text-center" {% endif %}> {{ message }} </li>
         <li><a class="rounded-lg text-black w-fit h-fit p-2 mt-8 bg-cyan-400 text-lg m-auto block"
                 href="{% url 'home' %}">Home</a></li>
         {% endfor %}

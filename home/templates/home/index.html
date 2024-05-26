@@ -30,7 +30,8 @@
     <h2 class="font-bold text-2xl text-black dark:text-white text-center mb-4">Menu</h2>
     <!--list of tab buttons to toggle between displaying the meals, drinks and desserts. data-tabs-active-classes adds styling to active classes-->
     <ul class="menu-list" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist"
-        data-tabs-active-classes="text-black dark:text-white underline">
+        data-tabs-active-classes="text-black dark:text-white underline"
+        data-tabs-inactive-classes="text-black dark:text-white no-underline">
         <!--Each li item apart of this list below here is a button for changign the menu displayed-->
         <!--data-tabs-target targets the div with the specified id. This applies to all list items below-->
         <li class="flex" role="presentation">
@@ -157,7 +158,8 @@
 <!--Reviews section-->
 <section class="my-8">
     <!--headline-->
-    <h1 class="text-center font-bold underline text-2xl mt-2 text-black dark:text-white">Don't just take our word for it</h1>
+    <h1 class="text-center font-bold underline text-2xl mt-2 text-black dark:text-white">Don't just take our word for it
+    </h1>
     <h2 class="text-center text-xl text-black dark:text-white">See what others are thinking</h2>
     <!--Flowbite carousel. See documentation linked in readme-->
     <div id="reviews-carousel" class="relative max-w-screen-md m-auto" data-carousel="static">

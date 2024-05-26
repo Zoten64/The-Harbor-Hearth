@@ -34,20 +34,9 @@ hr{
     border-style: solid;
 }
 
-/*Classes*/
+/*header*/
 /*Navigation elements have been split up into 3, each one getting an equal amount of space*/
 .main-navigation{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.nav-grid-item{
-    display: grid;
-    justify-self: center;
-}
-
-/*Social media section contains 2 elements.*/
-.social-media{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -57,6 +46,9 @@ hr{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+/*Main*/
+
+/*Home page*/
 
 .logo-home{
     background-image: url('../images/harborhearthlogo.svg');
@@ -68,6 +60,13 @@ hr{
     background-image: url('../images/hero.jpg');
     background-size: 100%;
     background-position: 30%;
+}
+
+/*Footer*/
+/*Social media section contains 2 elements.*/
+.social-media{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 /*Form classes*/
@@ -82,6 +81,7 @@ hr{
     display: block;
 }
 
+/*All text type input fields. Used on account forms*/
 .account_fields input[type=text],
 .account_fields input[type=email],
 .account_fields input[type=password]{
@@ -110,10 +110,3 @@ hr{
         grid-template-columns: 1fr 1fr;
     } 
 }
-
-/*Darkmode*/
-@media (prefers-color-scheme: dark){
-
-}
-
-/*text-slate-950 bg-slate-50 dark:bg-gray-950 dark:text-slate-100*/
