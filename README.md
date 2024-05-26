@@ -315,6 +315,30 @@ All the user stories have been completed
 
 # Design
 
+The harbor hearth is an ocean/shore themed bistro and therefor the accent colors of the website are a nice cyan color that contrasts well with both dark and light mode. Specifically I used cyan-400 from tailwindCSS which in hex code is the color #22d3ee. Below is a list of all the main colors in both tailwindCSS classes and hex code:
+
+**Light mode**
+
+- Background: cyan-50 | #ecfeff
+- Text: slate-950 | #020617
+- Heading text: Black
+- Accent: cyan-400 | #22d3ee
+
+**Dark mode**
+- Background: gray-950 | #030712
+- Text: slate-100 | #f1f5f9
+- Heading text: White
+- Accent: cyan-400 | #22d3ee
+
+**Font**
+
+- Roboto
+- Font awesome for icons
+
+**Logo**
+
+The logo is a free vector file I found online and modified slightly to fit my color scheme. See credits
+
 # Wireframes
 
 <details>
