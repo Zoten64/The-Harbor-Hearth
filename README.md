@@ -439,6 +439,47 @@ pipdeptree was used to get a better look at the relationship between libraries a
 <img src="documentation/javascript_validation.png">
 </details>
 
+## WAVE Accessibility
+
+<details>
+<summary> Home </summary>
+<img src="documentation/wave_accessibility/home.png">
+</details>
+
+<details>
+<summary> Home </summary>
+<img src="documentation/wave_accessibility/menu.png">
+</details>
+
+
+<details>
+<summary> Reviews </summary>
+<img src="documentation/wave_accessibility/reviews.png">
+<img src="documentation/wave_accessibility/review_details.png">
+</details>
+
+<details>
+<summary> Contact </summary>
+<img src="documentation/wave_accessibility/contact.png">
+</details>
+
+<details>
+<summary> Contact </summary>
+<img src="documentation/wave_accessibility/contact.png">
+</details>
+
+<details>
+<summary> Blog </summary>
+<img src="documentation/wave_accessibility/blog.png">
+<img src="documentation/wave_accessibility/blog_details.png">
+</details>
+
+<details>
+<summary> Log In </summary>
+<img src="documentation/wave_accessibility/sign_in.png">
+</details>
+
+
 # Deployment
 
 # Credits
