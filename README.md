@@ -17,7 +17,7 @@
 * [Features](#features)
 * [Bugs and fixes](#bugs-and-fixes)
 * [Technologies and tools](#technologies-and-tools)
-* [Technical Design](#technical-design)
+* [Database Design](#database-design)
 * [Validation and testing](#validation-and-testing)
 * [Deployment](#deployment)
 * [Credits](#credits)
@@ -391,6 +391,12 @@ All the user stories have been completed
 
 - Django
     - Backend is built using Django
+- django-allauth
+    - Used for account handling
+- django-appconf
+    - dependency
+- django-summernote
+    - Used for formatted blog posts
 - dj-database-url
     - Used to parse the database access url for use within the application
 - gunicorn
@@ -407,6 +413,36 @@ All the user stories have been completed
     - Dependency for dj-database-url
 - tzdata
     - Django dependency
+- bleach
+    - summernote dependency
+- six
+    - bleach dependency
+- webencodings
+    - bleach dependency
+- pylint-django
+    - pylint plugin
+- pylint
+    - PEP8 validation tool
+- pylint-plugin-utils
+    - pylint-django dependency
+- astroid
+    - pylint dependency
+- colorama
+    - pylint dependency
+- dill
+    - pylint dependency
+- isort
+    - pylint dependency
+- mccabe
+    - pylint dependency
+- platformdirs
+    - pylint dependency
+- platformdirs
+    - pylint dependency
+- tomlkit
+    - pylint dependency
+- pytailwindcss
+    - Used to compress TailwindCSS and remove unused classes for better performance
 
 **Note:**
 
@@ -419,7 +455,134 @@ pipdeptree was used to get a better look at the relationship between libraries a
 - Flowbite
     - Open source components
 
-# Technical design
+
+# Database design
+<img src="documentation/database diagram.png">
+
+**Models**
+
+Format: [name] [type]
+
+Review 
+
+- rating int
+
+- title charfield
+
+- author oneToOneField
+
+- content text
+
+- url uuid
+
+- approved boolean
+
+- featured boolean
+
+
+Users
+- id autofield [primary key]
+
+- email email 
+
+- first_name charfield
+
+- last_name charfield
+
+- username charfield
+
+- password encrypted
+
+- active bool
+
+- staff bool
+
+- superuser bool
+
+- date_joined dateTime
+
+- last_login dateTime
+
+
+Order
+- user foreignKey
+
+- email email
+
+- order_number autofield
+
+- delivery_method choicefield
+
+- table_number int
+
+- order charfield
+
+- state choiceField
+
+- date dateField
+
+- cancel_reason charfield
+
+
+Employee
+- user oneToOneField
+
+
+Menu
+- category choiceField
+
+- name charfield
+
+- description charfied
+
+- ingridients charfield
+
+- price float
+
+- vegan bool
+
+- nuts bool
+
+- gluten bool
+
+- eggs bool
+
+
+Contact 
+
+- name charfield
+
+- email email
+
+- phone_number charfield
+
+- preferred_contact choicefield
+
+- message charfield
+
+- date datetime
+
+- answered bool
+
+- employee_response charfield
+
+- employee foreignKey
+
+
+Post
+
+- title charfield
+
+- content charfield
+
+- date datetime
+
+- url uuid
+
+- update_date datetime
+
+- home_page bool
+
 
 # Validation and testing
 
@@ -588,6 +751,127 @@ User model imported from django messages aren't important either
 </details>
 
 # Deployment
+
+**Deploying and accessing the website**
+
+Prerequisities:
+- Have a Heroku account with billing information
+- Having a project to deploy pushed to github
+
+Steps:
+
+Creating the app:
+
+
+- From the dashboard (First page after logging in), click "new" button on the top right
+- Click "Create new app"
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/heroku_deploy/step1.png" width="1000">
+</details>
+
+<br>
+
+- Give it a name and a region (I chose Europe as I am in Europe)
+- Click "Create App"
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/heroku_deploy/step2.png" width="1000">
+</details>
+
+<br>
+
+- You will be taken to the "Deploy" tab in your project. From there, under "Deployment method", click "Github".
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/heroku_deploy/step3.png" width="1000">
+</details>
+
+<br>
+
+- Enter the name of your repository and click "search"
+- Click "connect" besides the repository you want to deploy
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/heroku_deploy/step4.png" width="1000">
+</details>
+
+<br>
+
+- Now go to settings and scroll down to "buildpacks"
+- Click "Add buildpacks"
+- Select the buildpack you want to use. I will use Node.js
+- You can now see what buildpacks are installed
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/heroku_deploy/step5.png" width="1000">
+<img src="documentation/heroku_deploy/step6.png" width="1000">
+</details>
+
+<br>
+
+(Optional) If you have any environment variables that needs to be added, such as credentials, you'll do that here:
+
+
+- Scroll up slightly and click "Reveal config vars"
+- There should be two fields, one with the placeholder "Key" and one with "Value"
+- Enter your variable name and the value of that variable
+- Click "Add"
+- You should now see the variable in the list.
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/heroku_deploy/optional_env_var.png" width="1000">
+</details>
+
+<br>
+
+Deploying: 
+
+- At the very bottom, click "Deploy Branch"
+- Wait for the project to be built
+- When done a button at the bottom with the text "view" should appear
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/heroku_deploy/step7.png" width="1000">
+</details>
+
+<br>
+
+To access your app at any time, there's a button on the top of the same page called "open app"
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/heroku_deploy/step8.png" width="1000">
+</details>
+
+<br>
+
+
+**How to fork the project**
+
+- Navigate to the github repository (You're probably here already)
+- In the right corner click fork and choose a name
+
+**How to clone the project**
+
+Prerequisities:
+
+- Have git downloaded and configured
+
+steps:
+
+- Go to the repository (You're probably here already)
+- Click the code button
+- Copy the url
+- Open git and change the directory to the parent directory that you want the project to clone to
+- Write "git clone [the link you just copied]", in this case "git clone https://github.com/Zoten64/The-Harbor-Hearth.git"
 
 # Credits
 
