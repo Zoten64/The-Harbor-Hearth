@@ -4,16 +4,15 @@
 {% block title %} Delete account {% endblock title %}
 
 {% block content %}
+<!--Users are redirected here when their account has been deleted-->
 <div class="mx-auto w-fit">
-
     <h1 class="text-xl font-bold my-4 text-center">
         Your account has been deleted
     </h1>
-
+    <!--Back home button-->
     <div>
         <a class="rounded-lg bg-cyan-400 text-black p-2 m-4 mt-40 w-fit text-xl block mx-auto"
             href="{% url 'home' %}"> Home </a>
     </div>
-
 </div>
 {% endblock content %}

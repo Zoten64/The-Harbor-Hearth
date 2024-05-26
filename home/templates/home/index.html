@@ -13,14 +13,13 @@
     <div class="h-32 bg-cyan-400 hero"></div>
     <div class="relative bottom-16">
         <!--Logo will be placed inside later-->
-        <div class="logo-home border-8 border-cyan-100 dark:border-gray-950 rounded-full h-32 w-32 bg-cyan-400 m-auto border-solid"
-            aria-label="The harbor hearth logo">
+        <div
+            class="logo-home border-8 border-cyan-100 dark:border-gray-950 rounded-full h-32 w-32 bg-cyan-400 m-auto border-solid">
         </div>
         <h1 class="text-center font-bold underline text-2xl mt-2 text-black dark:text-white">The Harbor Hearth</h1>
         <h2 class="text-center text-xl text-black dark:text-white">Set sail for deliciousness</h2>
-        <p class="text-center my-2 mx-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean imperdiet diam
-            eget
-            mauris convallis venenatis</p>
+        <p class="text-center my-2 mx-4">At the Harbour Hearth you can always be sure you'll have a warm meal, whether
+            you're back from a boat trip or just passing by.</p>
     </div>
 </section>
 <hr class="border-b-2 border-slate-900 my-4 dark:border-slate-200 lg max-w-screen-md md:mx-auto sm:mx-4">
@@ -31,24 +30,24 @@
     <h2 class="font-bold text-2xl text-black dark:text-white text-center mb-4">Menu</h2>
     <!--list of tab buttons to toggle between displaying the meals, drinks and desserts. data-tabs-active-classes adds styling to active classes-->
     <ul class="menu-list" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist"
-        data-tabs-active-classes="text-black dark:text-white underline" aria-labelledby="Category selector">
+        data-tabs-active-classes="text-black dark:text-white underline">
         <!--Each li item apart of this list below here is a button for changign the menu displayed-->
         <!--data-tabs-target targets the div with the specified id. This applies to all list items below-->
         <li class="flex" role="presentation">
             <button class="self-center w-full text-center" id="meals-tab" data-tabs-target="#meals" type="button"
-                role="tab" aria-controls="Meals" aria-label="Meals tab in the menu section">
+                role="tab" aria-label="Meals tab in the menu section">
                 Meals
             </button>
         </li>
         <li class="flex" role="presentation">
             <button class="self-center w-full text-center" id="drinks-tab" data-tabs-target="#drinks" type="button"
-                role="tab" aria-controls="Drinks" aria-label="Meals tab in the menu section">
+                role="tab" aria-label="Meals tab in the menu section">
                 Drinks
             </button>
         </li>
         <li class="flex" role="presentation">
             <button class="self-center w-full text-center" id="dessert-tab" data-tabs-target="#dessert" type="button"
-                role="tab" aria-controls="Dessert" aria-label="Meals tab in the menu section">
+                role="tab" aria-label="Meals tab in the menu section">
                 Dessert
             </button>
         </li>
@@ -157,13 +156,14 @@
 <hr class="border-b-2 border-slate-900 my-4 dark:border-slate-200 lg max-w-screen-md md:mx-auto sm:mx-4">
 <!--Reviews section-->
 <section class="my-8">
-    <h1 class="text-center font-bold underline text-2xl mt-2 text-black dark:text-white">Don't just take our word for it
-    </h1>
+    <!--headline-->
+    <h1 class="text-center font-bold underline text-2xl mt-2 text-black dark:text-white">Don't just take our word for it</h1>
     <h2 class="text-center text-xl text-black dark:text-white">See what others are thinking</h2>
-
-    <div id="default-carousel" class="relative max-w-screen-md m-auto" data-carousel="static">
+    <!--Flowbite carousel. See documentation linked in readme-->
+    <div id="reviews-carousel" class="relative max-w-screen-md m-auto" data-carousel="static">
         <!-- Carousel wrapper -->
-        <div class="relative h-80 md:h-72 overflow-hidden rounded-lg m-5 md:mx-20 bg-white border-solid border-black border-2 dark:bg-gray-900">
+        <div
+            class="relative h-80 md:h-72 overflow-hidden rounded-lg m-5 md:mx-20 bg-white border-solid border-black border-2 dark:bg-gray-900">
             <!--For each featured review a new carousel item will be made-->
             {% for review in reviews %}
             <!--The text will fade when it gets too long to make some contrast between text and buttons on mobile-->
@@ -187,6 +187,7 @@
             {% endfor %}
         </div>
         <!-- Slider controls -->
+        <!--Previous button-->
         <button type="button"
             class="absolute top-0 start-0 z-30 flex items-end md:items-center md:justify-center h-full px-4 cursor-pointer group focus:outline-none"
             data-carousel-prev>
@@ -196,6 +197,7 @@
                 <span class="sr-only">Previous</span>
             </span>
         </button>
+        <!--Next button-->
         <button type="button"
             class="absolute top-0 end-0 z-30 flex items-end md:items-center md:justify-center h-full px-4 cursor-pointer group focus:outline-none"
             data-carousel-next>
@@ -211,12 +213,14 @@
 <hr class="border-b-2 border-slate-900 my-4 dark:border-slate-200 lg max-w-screen-md md:mx-auto sm:mx-4">
 <!--News section-->
 <section class="my-8">
+    <!--headline-->
     <h1 class="text-center font-bold underline text-2xl mt-2 text-black dark:text-white">See what's new
     </h1>
-
-    <div id="default-carousel" class="relative max-w-screen-md m-auto" data-carousel="static">
+    <!--Flowbite carousel. See documentation linked in readme-->
+    <div id="news-carousel" class="relative max-w-screen-md m-auto" data-carousel="static">
         <!-- Carousel wrapper -->
-        <div class="relative h-80 md:h-72 overflow-hidden rounded-lg m-5 md:mx-20 bg-white border-solid border-black border-2 dark:bg-gray-900">
+        <div
+            class="relative h-80 md:h-72 overflow-hidden rounded-lg m-5 md:mx-20 bg-white border-solid border-black border-2 dark:bg-gray-900">
             <!--For each featured review a new carousel item will be made-->
             {% for post in posts %}
             <!--The text will fade when it gets too long to make some contrast between text and buttons on mobile-->
@@ -228,12 +232,14 @@
                     <!--Make this a working link later-->
                     <a href="{% url 'blog_detail' post.url %}"
                         class="absolute bottom-0 left-0 right-0 block w-full text-center mb-4 text-black dark:text-white hover:scale-110 transition-all">
-                        Read more</a>
+                        Read more
+                    </a>
                 </div>
             </div>
             {% endfor %}
         </div>
         <!-- Slider controls -->
+        <!--Previous button-->
         <button type="button"
             class="absolute top-0 start-0 z-30 flex items-end md:items-center md:justify-center h-full px-4 cursor-pointer group focus:outline-none"
             data-carousel-prev>
@@ -243,6 +249,7 @@
                 <span class="sr-only">Previous</span>
             </span>
         </button>
+        <!--Next button-->
         <button type="button"
             class="absolute top-0 end-0 z-30 flex items-end md:items-center md:justify-center h-full px-4 cursor-pointer group focus:outline-none"
             data-carousel-next>

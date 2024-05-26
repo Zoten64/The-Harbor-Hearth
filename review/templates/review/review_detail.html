@@ -4,17 +4,22 @@
 {% block title %} Reviews {% endblock title %}
 
 {% block content %}
+<!--Centers the content and adds margin to the y axis-->
 <div class="w-full grid justify-items-center my-16 grid-rows-2 grid-cols-1">
+    <!--The "card" with the review on it-->
     <div class="rounded-lg bg-white border-solid border-black border-2 dark:bg-gray-900 w-11/12 md:w-4/5 md:p-8 p-4">
+        <!--Title-->
         <h2 class="font-bold text-xl text-black dark:text-white pb-4"> {{review.title}} </h2>
         <!--A string is generated based on the number in review.rating to be iterated over as review.rating is an int
                 and int is not iterable-->
         {% for star in "x"|rjust:review.rating %}
         <span class="text-yellow-400"><i class="fa-solid fa-star"></i></span>
         {% endfor %}
+        <!--Author + content-->
         <p class="text-black dark:text-white py-4"> {{review.author}} wrote: </p>
         <p> {{review.content}} </p>
     </div>
+    <!--Back button-->
     <div class="content-end">
         <a class="rounded-lg bg-cyan-400 p-2 mx-4 justify-self-end w-fit text-xl" href="{% url 'review' %}"> Back </a>
     </div>

@@ -5,38 +5,49 @@
 
 {% block content %}
 <h1 class="text-center font-bold underline text-2xl mt-2 text-black dark:text-white">Your Review</h1>
+<!--If the user has written a review-->
 {% if review_exists %}
-    <!--If the user has just submitted a review they will be redirected here and a message will appear-->
-    <ul class="messages">
-        {% for message in messages %}
-        <li {% if message.tags %} class=" {{ message.tags }} mt-2 text-green-700 dark:text-green-400 text-center" {% endif %}> {{ message }} </li>
-        {% endfor %}
-    </ul>
-
-    <div class="w-full grid justify-items-center my-16 grid-rows-2 grid-cols-1">
-        <div class="rounded-lg bg-white border-solid border-black border-2 dark:bg-gray-900 w-11/12 md:w-4/5 md:p-8 p-4">
-            <h2 class="font-bold text-xl text-black dark:text-white pb-4"> {{review.title}} </h2>
-            <!--A string is generated based on the number in review.rating to be iterated over as review.rating is an int
+<!--If the user has just submitted a review they will be redirected here and a message will appear-->
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class=" {{ message.tags }} mt-2 text-green-700 dark:text-green-400 text-center" {% endif
+        %}> {{ message }} </li>
+    {% endfor %}
+</ul>
+<!--Centers it-->
+<div class="w-full grid justify-items-center my-16 grid-rows-2 grid-cols-1">
+    <!--"Card" with review on it-->
+    <div class="rounded-lg bg-white border-solid border-black border-2 dark:bg-gray-900 w-11/12 md:w-4/5 md:p-8 p-4">
+        <h2 class="font-bold text-xl text-black dark:text-white pb-4"> {{review.title}} </h2>
+        <!--A string is generated based on the number in review.rating to be iterated over as review.rating is an int
                     and int is not iterable-->
-            {% for star in "x"|rjust:review.rating %}
-            <span class="text-yellow-400"><i class="fa-solid fa-star"></i></span>
-            {% endfor %}
-            <p class="text-black dark:text-white py-4"> {{review.author}} wrote: </p>
-            <p> {{review.content}} </p>
-
-            {% if review.approved == False %}
-            <p class="text-red-800 dark:text-red-500">Your review is awaiting approval. Please be patient</p>
-            {% endif %}
-        </div>
-        <div class="mx-auto w-fit my-8">
-            <a class="rounded-lg text-black w-fit h-fit p-2 mt-8 bg-cyan-400 text-lg m-4" href="{% url 'edit_review' %}">Edit review</a>
-            <a class="rounded-lg text-white w-fit h-fit p-2 mt-8 bg-red-500  text-lg m-4" href="{% url 'delete_review' %}">Delete review</a>
-        </div>
+        {% for star in "x"|rjust:review.rating %}
+        <span class="text-yellow-400"><i class="fa-solid fa-star"></i></span>
+        {% endfor %}
+        <!--Author-->
+        <p class="text-black dark:text-white py-4"> {{review.author}} wrote: </p>
+        <p> {{review.content}} </p>
+        <!--If the review isn't approved this will show up-->
+        {% if review.approved == False %}
+        <p class="text-red-800 dark:text-red-500">Your review is awaiting approval. Please be patient</p>
+        {% endif %}
     </div>
+    <!--Center these buttons-->
+    <div class="mx-auto w-fit my-8">
+        <!--Edit review button-->
+        <a class="rounded-lg text-black w-fit h-fit p-2 mt-8 bg-cyan-400 text-lg m-4"
+            href="{% url 'edit_review' %}">Edit review</a>
+        <!--Delete review button-->
+        <a class="rounded-lg text-white w-fit h-fit p-2 mt-8 bg-red-500  text-lg m-4"
+            href="{% url 'delete_review' %}">Delete review</a>
+    </div>
+</div>
 {% else %}
+<!--If the user has not written a review this will show instead-->
 <div>
-<h2 h1 class="text-4xl text-center font-extrabold underline mt-16 mb-8">Seems like you haven't written a review</h2>
-<a class="bg-cyan-400 hover:bg-cyan-300 text-black rounded-lg p-2 block mx-auto w-fit" href="{% url 'write_review' %}">Write a review</a>
+    <h2 h1 class="text-4xl text-center font-extrabold underline mt-16 mb-8">Seems like you haven't written a review</h2>
+    <a class="bg-cyan-400 hover:bg-cyan-300 text-black rounded-lg p-2 block mx-auto w-fit"
+        href="{% url 'write_review' %}">Write a review</a>
 </div>
 {% endif %}
 {% endblock content %}

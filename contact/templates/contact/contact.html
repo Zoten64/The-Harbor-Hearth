@@ -7,18 +7,23 @@
 {% block content %}
 <h1 class="text-center font-bold underline text-2xl mt-2 text-black dark:text-white">Contact us</h1>
 <div class="w-fit mx-auto my-8">
-<form method="post">
-    {% csrf_token %}
-    {{form}}
-    <input type="submit" value="Submit form" class="rounded-lg bg-cyan-400 p-2 my-4 text-black">
-</form>
-<ul class="messages">
-    {% for message in messages %}
-    <li {% if message.tags %} class=" {{ message.tags }} mt-2 text-green-700 dark:text-green-400 text-center" {% endif %}> {{ message }} </li>
-    <li><a class="rounded-lg text-black w-fit h-fit p-2 mt-8 bg-cyan-400 text-lg m-auto block" href="{% url 'home' %}">Home</a></li>
-    {% endfor %}
-</ul>
+    <!--The contact form-->
+    <form method="post">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Submit form" class="rounded-lg bg-cyan-400 p-2 my-4 text-black">
+    </form>
+    <!--Messages-->
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class=" {{ message.tags }} mt-2 text-green-700 dark:text-green-400 text-center" {%
+            endif %}> {{ message }} </li>
+        <li><a class="rounded-lg text-black w-fit h-fit p-2 mt-8 bg-cyan-400 text-lg m-auto block"
+                href="{% url 'home' %}">Home</a></li>
+        {% endfor %}
+    </ul>
 </div>
+<!--Contact alternatives-->
 <div class="w-fit mx-auto opacity-70 my-8">
     <p>You can also contact us through email or by giving us a call:</p>
     <p>Phone: <a href="tel:+441635286716">+441635286716</a></p>

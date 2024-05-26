@@ -39,7 +39,7 @@
     <!--The content that will be displayed based on the tab selected-->
     <div id="default-tab-content">
         <!--Each meal in the database is listed here-->
-        <div id="meals" role="tabpanel" class="hidden" aria-labelledby="meals-tab">
+        <div id="meals" role="tabpanel" class="hidden">
             {% for item in meals %}
             <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
             <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} | {{ item.price }}£</h2>
@@ -71,7 +71,7 @@
             {% endfor %}
         </div>
         <!--Each drink in the database is listed here-->
-        <div id="drinks" role="tabpanel" class="hidden" aria-labelledby="drinks-tab">
+        <div id="drinks" role="tabpanel" class="hidden">
             {% for item in drinks %}
             <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
             <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} | {{ item.price }}£ </h2>
@@ -102,7 +102,7 @@
             {% endfor %}
         </div>
         <!--Each dessert in the database is listed here-->
-        <div id="dessert" role="tabpanel" class="hidden" aria-labelledby="dessert-tab">
+        <div id="dessert" role="tabpanel" class="hidden">
             {% for item in desserts %}
             <hr class="border-b-2 my-4 lg border-slate-700 dark:border-slate-400">
             <h2 class="font-bold text-lg text-black dark:text-white"> {{ item.name }} | {{ item.price }}£</h2>
@@ -133,12 +133,14 @@
             {% endfor %}
         </div>
     </div>
+    <!--Divider-->
     <hr class="border-b-2 border-slate-900 my-4 dark:border-slate-200 lg max-w-screen-md md:mx-auto sm:mx-4">
     <h2 class="text-center text-xl text-black dark:text-white">Do you have questions about allergies?</h2>
-    <!--Redirect to the contact page later-->
-    <p class="text-center my-2 mx-4">Ask our staff or <a href="#" class="underline">contact us</a></p>
+    <!--Redirect to the contact page-->
+    <p class="text-center my-2 mx-4">Ask our staff or <a href="{% url 'contact' %}" class="underline">contact us</a></p>
 </section>
 <hr class="border-b-2 border-slate-900 my-4 dark:border-slate-200 lg max-w-screen-md md:mx-auto sm:mx-4">
+<!--Order button-->
 <section class="mb-8">
     <h2 class="text-center text-xl text-black dark:text-white">Ready to order?</h2>
     <a href="{% url 'order' %}" class="block bg-cyan-400 hover:bg-cyan-300 text-black rounded-lg p-3 hover:rounded-xl hover:scale-110 transition-all w-32 mx-auto my-4 text-center">

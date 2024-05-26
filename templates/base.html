@@ -28,9 +28,9 @@
     <meta name="theme-color" content="#ffffff">
 
     <!--Flowbite CSS-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet">
     <!--Local Tailwind-->
-    <link href="{% static 'tailwindcss/output.css' %}" rel="stylesheet" />
+    <link href="{% static 'tailwindcss/output.css' %}" rel="stylesheet">
     <!--Personal CSS-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
@@ -79,14 +79,14 @@
                         </li>
                     </ul>
                 </li>
-
+                <!--The logo is visible on all pages but the home page due to lack of header space. The home page has the logo on the page itself-->
                 <li class="justify-self-end self-center">
                     {% if request.path != home_url %}
                     <a href="{% url 'home' %}"><img class="h-12" src="{% static 'images/harborhearthlogo.svg' %}"
                             alt="The harbour hearth logo"></a>
 
                     {% endif %}
-                    <!--Order now call to action button-->
+                    <!--Order now call to action button on the home page-->
                     {% if request.path == home_url %}
 
                     <a href="{% url 'order' %}"
@@ -95,7 +95,6 @@
                     </a>
                     {% endif %}
                 </li>
-
             </ul>
         </nav>
     </header>
@@ -133,9 +132,9 @@
             <!--Adress section-->
             <li>
                 <p class="font-bold">Find us</p>
-                <p>Address</p>
-                <p>city postcode</p>
-                <p>country</p>
+                <p>38A Oak End Way</p>
+                <p>Gerrards Cross SL9 8BR</p>
+                <p>United Kingdom</p>
             </li>
             <!--Contact section-->
             <li class="justify-self-end mt-4 md:mt-0">
@@ -156,6 +155,7 @@
     <!--Flowbite script-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 
+    <!--Any extra linked scripts in specific templates show here-->
     {% block script %}
     {% endblock script %}
 </body>

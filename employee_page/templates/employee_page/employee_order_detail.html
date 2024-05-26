@@ -7,15 +7,20 @@
 
 {% block content %}
 <div class="w-full flex items-center mt-16 flex-col">
+    <!--Card with the info on it-->
     <div class="rounded-lg bg-white border-solid border-black border-2 dark:bg-gray-900 w-11/12 md:w-4/5 md:p-8 p-4">
+        <!--Order number-->
         <h2 class="text-3xl font-bold">{{order.order_number}}</h2>
+        <!--Delivery method-->
         <h3 class="text-xl">{{order.delivery_method}}</h3>
+        <!--If the method is table delivery the table number will show-->
         {% if order.delivery_method == 'TABLE' %}
         <h3 class="text-xl">Table number: {{order.table_number}}</h3>
         {% endif %}
 
+        <!--Allow whitespace-->
         <p class="whitespace-pre">{{order.order}}</p>
-
+        <!--Status-->
         <div class="mt-4">
             {% if order.state == 'Finished' %}
             <p class="bg-green-700 rounded-full text-white w-fit p-2 self-start">Finished</p>
@@ -31,16 +36,21 @@
             {% endif %}
 
         </div>
+        <!--Dropdown for changing the status of the order-->
         <div class="flex">
+            <!--Dropdown button-->
             <button class="bg-slate-400 dark:bg-gray-800 mt-4 p-2 rounded-xl" id="dropdownDefaultButton"
                 data-dropdown-toggle="order-status" type="button" data-dropdown-offset-distance=10
                 aria-label="order-status-button" class="mt-4 text-left">
                 {% if order.state == 'Cancelled' %}
+                <!--If the order is cancelled this text will be shown on the dropdown-->
                 Reopen and set status
                 {% else %}
+                <!--If the order is not cancelled this text will be shown on the dropdown-->
                 Change status
                 {% endif %}
             </button>
+            <!--The options for changing the status-->
             <form id="order-status" method="post"
                 class="hidden left-0 bg-slate-400 dark:bg-gray-800 shadow-xl shadow-slate-200 dark:shadow-slate-950 rounded-lg p-4">
                 {% csrf_token %}
@@ -48,8 +58,10 @@
                 <input class="bg-slate-500 dark:bg-gray-700 mt-4 p-2 rounded-xl cursor-pointer" type="submit"
                     value="Change">
             </form>
+            <!--Order date-->
             <p class="grow text-right opacity-50 mt-4">{{order.date}}</p>
         </div>
+        <!--Messages-->
         <ul class="messages">
             {% for message in messages %}
             <li {% if message.tags %} class=" {{ message.tags }} mt-2 text-green-700 dark:text-green-400" {% endif %}>
@@ -57,6 +69,7 @@
             {% endfor %}
         </ul>
     </div>
+    <!--If the order is cancelled it can be deleted. Otherwise the button will be "cancel" instead-->
     {% if order.state == 'Cancelled' %}
     <a href="{% url 'employee_delete_order' order.order_number%}"
         class="bg-red-500 rounded-full text-white w-fit h-fit p-2 mt-8 text-xl">Delete order</a>
@@ -65,9 +78,9 @@
         class="bg-red-500 rounded-full text-white w-fit h-fit p-2 mt-8 text-xl">Cancel order</a>
     {% endif %}
 
-
+    <!--Back button-->
     <div>
-        <a class="rounded-lg bg-slate-300 dark:bg-gray-900 p-2 mx-auto mt-8 w-fit text-xl block"
+        <a class="rounded-lg bg-cyan-400 text-black  m-4 p-2 mx-auto mt-8 w-fit text-xl block"
             href="{% url 'employee_orders' %}"> Back </a>
     </div>
 </div>

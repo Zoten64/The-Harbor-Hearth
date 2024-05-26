@@ -4,16 +4,23 @@
 {% block title %} Answer contact form {% endblock title %}
 
 {% block content %}
+<!--Centers-->
 <div class="w-full flex items-center mt-16 flex-col">
+    <!--card with the filled in contact form-->
     <div class="rounded-lg bg-white border-solid border-black border-2 dark:bg-gray-900 w-11/12 md:w-4/5 md:p-8 p-4">
+        <!--The text-->
         <h2 class="text-3xl font-bold">From: {{contact_form.name}}</h2>
         <a class="text-lg block" href="mailto:{{contact_form.email}}">Email: {{contact_form.email}}</a>
         <a class="text-lg block" href="tel:{{contact_form.phone_number}}">Phone: {{contact_form.phone_number}}</a>
         <p class="text-lg block">Preferred contact method: {{contact_form.preferred_contact}}</p>
         <br>
+        <!--Allows whitespace-->
         <p class="whitespace-pre">{{contact_form.message}}</p>
+        <!--Spacing-->
         <br>
+        <!--Date-->
         <p class="opacity-50 mt-4">sent on: {{contact_form.date}}</p>
+        <!--Status-->
         <div class="mt-4">
             {% if contact_form.answered == True %}
             <p class="bg-green-700 rounded-full text-white w-fit p-2 self-start">Answered</p>
@@ -23,26 +30,31 @@
 
         </div>
     </div>
+    <!--If the form hasn't been answered there will be the option to do so-->
     {% if contact_form.answered == False %}
-    <div class="rounded-lg bg-white border-solid border-black border-2 dark:bg-gray-900 w-11/12 md:w-4/5 md:p-8 p-4 mt-8">
+    <div
+        class="rounded-lg bg-white border-solid border-black border-2 dark:bg-gray-900 w-11/12 md:w-4/5 md:p-8 p-4 mt-8">
         <h2 class="text-xl font-bold mb-4">Give a response:</h2>
+        <!--If the customer prefers phone contacts this will show up-->
         {% if contact_form.preferred_contact == "PHONE" %}
-        <p class="mb-4">NOTE: This customer prefers phone contact. Try to call them before you answer here. Once you've done that please write a summary here instead.</p>
+        <p class="mb-4">NOTE: This customer prefers phone contact. Try to call them before you answer here. Once you've
+            done that please write a summary here instead.</p>
         {% endif %}
-        <form method="post"> 
+        <!--The form added by django-->
+        <form method="post">
             {% csrf_token %}
             {{form}}
             <input type="submit" value="Submit Response" class="rounded-lg bg-cyan-400 p-2 my-4 text-black">
         </form>
-
+        <!--Messages-->
         <ul class="messages">
             {% for message in messages %}
-            <li {% if message.tags %} class=" {{ message.tags }} text-green-700 dark:text-green-400" {% endif %}> 
+            <li {% if message.tags %} class=" {{ message.tags }} text-green-700 dark:text-green-400" {% endif %}>
                 {{ message }} </li>
             {% endfor %}
         </ul>
     </div>
-
+    <!--If the form has been answered the response will be shown here-->
     {% else %}
 
     <div class="rounded-lg bg-white border-solid border-black border-2 dark:bg-gray-900 w-11/12 md:w-4/5 md:p-8 p-4 mt-8">
@@ -50,11 +62,11 @@
         <br>
         <p class="whitespace-pre">{{contact_form.employee_response}}</p>
         <br>
-
-        {% endif %}
     </div>
+    {% endif %}
+    <!--Back-->
     <div>
-        <a class="rounded-lg bg-white border-solid border-black border-2 dark:bg-gray-900 p-2 mx-auto my-8 w-fit text-xl block"
+        <a class="rounded-lg bg-cyan-400  p-2 mx-auto my-8 w-fit text-xl block"
             href="{% url 'employee_contact_forms' %}"> Back </a>
     </div>
 </div>

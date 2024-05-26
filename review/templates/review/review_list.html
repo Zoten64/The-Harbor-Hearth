@@ -8,7 +8,6 @@
 <h1 class="text-center font-bold underline text-2xl mt-2 text-black dark:text-white">Reviews</h1>
 <!--on medium devices and above the container will be a grid. On small devices it will display beneath each other.
 On medium devices there will be 2 columns and 3 rows, on large devices 3 columns and 2 rows.-->
-
 <div class="md:flex md:flex-wrap sm:block">
     {% for review in review_list %}
     <div class="lg:w-1/3 md:w-1/2">
@@ -32,22 +31,27 @@ On medium devices there will be 2 columns and 3 rows, on large devices 3 columns
     </div>
     {% endfor %}
 </div>
-
+<!--Write your own review button-->
 <div class="mx-auto w-fit">
     <p>Do you have your own thoughts?</p>
     {% if user.is_authenticated %}
+    <!--If the user is logged in-->
     <a class="bg-cyan-400 hover:bg-cyan-300 text-black rounded-lg p-2 block mx-auto w-fit" href="{% url 'write_review' %}">Leave your own review!</a>
     {% else %}
+    <!--If the user is not logged in-->
     <a class="bg-cyan-400 hover:bg-cyan-300 text-black rounded-lg p-2 block mx-auto w-fit" href="{% url 'account_email' %}">Log in to leave a review</a>
     {% endif %}
 </div>
 
+<!--If there's more than one page there will be previous and next buttons-->
 {% if is_paginated %}
 <nav class="block w-fit mx-auto m-8" aria-label="Page navigation">
     <ul class="inline">
+        <!--If there's a previous page show the previous button-->
         {% if page_obj.has_previous %}
         <li class="rounded-lg bg-cyan-400 p-2 mx-4 inline w-fit"><a href="?page={{ page_obj.previous_page_number }}" class="page-link"> <i class="fa-solid fa-arrow-left"></i> PREV </a></li>
         {% endif %}
+        <!--If there's a next page show the next button-->
         {% if page_obj.has_next %}
         <li class="rounded-lg bg-cyan-400 p-2 mx-4 inline w-fit"><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT <i class="fa-solid fa-arrow-right"></i></a></li>
         {% endif %}
