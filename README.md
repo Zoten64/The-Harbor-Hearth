@@ -339,6 +339,53 @@ The harbor hearth is an ocean/shore themed bistro and therefor the accent colors
 
 The logo is a free vector file I found online and modified slightly to fit my color scheme. See credits
 
+**Layout**
+
+The header consists of:
+
+- Header with dropdown menu
+- logo/order now button on the right side of the header
+
+The Footet consists of:
+
+- Footer with links to social media
+- Footer with location and contact information
+
+The homepage layout consists of:
+- Carousel items on the home page to get a preview of the reviews and news section
+- Menu with toggleable tabs to display either meals, drinks or desserts
+
+
+The menu page layout consists of:
+- A menu with toggleable tabs
+- An order now button at the bottom of the page
+- Link to contact page
+
+The reviews page consists of:
+- Multiple cards spread out over the pages with a preview of the review
+- Next and Previous buttons for pagination navigation
+- A write review button if you're logged in, otherwise a "log in to write review" button
+
+The contact page consists of:
+- Contact form
+- Small paragraph of alternative contact methods with links to email and phone number
+
+The blog and news page consists of:
+- Multiple cards spread out over the pages with a preview of the post
+- Next and Previous buttons for pagination navigation
+
+The employee pages consists of:
+- Home page with buttons to the view orders and contact forms pages
+- Page to view orders categorized into "not started", "in progress", "finished" and cancelled
+- Order details page
+- Contact forms page with cards of previews of contact forms categorized into "answered" and "not answered"
+- Contact forms detail page with the option to respond to the form if it has not been answered yet
+
+The account page consists of:
+- Login page by default
+- Sign up page via a link
+- Account page where you can change your details and delete your account
+
 # Wireframes
 
 <details>
@@ -368,15 +415,146 @@ The logo is a free vector file I found online and modified slightly to fit my co
 <img src="documentation/wireframes/the_harbour_hearth_contact.png">
 </details>
 
-
-# User manual
-
 # Features
+
+**Dropdown menu**
+
+The main navigation consist of a dropdown menu with all the pages (excluding the employee only page to keep out visitors).
+
+<img src="documentation/features/features1.png">
+
+**Footer with social media, contact info and location**
+
+<img src="documentation/features/features2.png">
+
+**Menu on the home page and menu page**
+
+The menu features 3 clickable tabs. Meals, Drinks and Desserts
+
+<img src="documentation/features/features3.png">
+
+**Home page Carousels of previews of reviews and news**
+
+<img src="documentation/features/features4.png">
+
+
+**Order now button**
+
+<img src="documentation/features/features5.png">
+
+**Reviews page**
+
+The website features a reviews page with both paginated reviews and review details. It also features a button for writing your own review if you're logged in. Otherwise it has a button for logging in if you want to write a review
+
+<img src="documentation/features/features6.png">
+
+<img src="documentation/features/features6-2.png">
+
+
+**Contact form**
+
+The contacts page features a form for contacting the Harbour Hearth team.
+
+<img src="documentation/features/features7.png">
+
+**Blog and news page**
+
+The website features a blog and news page with both paginated reviews and post details. 
+
+<img src="documentation/features/features8.png">
+
+<img src="documentation/features/features8-2.png">
+
+**Sign in page**
+
+<img src="documentation/features/features9.png">
+
+**Sign up page**
+
+<img src="documentation/features/features10.png">
+
+**Account page**
+
+The account page features email confirmation, a link to "my reviews", "change email", "change password" and delete account
+
+<img src="documentation/features/features11.png">
+
+**Delete account**
+
+To delete your account you need to check a box to confirm deletion
+
+<img src="documentation/features/features12.png">
+
+**Order online**
+
+The website features a way to order online. This was originally meant to be more of a "select your items" type of ordering system, but because of a lack of time I opted for a text box for the time being. And well.. in the future as well. The table number field only shows up (and becomes required) once table delivery is choosen.
+Upon ordering an email will be sent to the user.
+If the user is logged in the email will be filled in automatically
+
+<img src="documentation/features/features13.png">
+
+
+**Table QR codes**
+
+The user can scan a code on their table to automatically be sent to the order page with their table number. Try it!
+
+<details>
+<summary> QR codes </summary>
+Table 1
+
+<img src="documentation/qrcodes/table1.png" height=500px width=500px>
+
+Table 2
+
+<img src="documentation/qrcodes/table2.png" height=500px width=500px>
+
+Table 3
+
+<img src="documentation/qrcodes/table3.png" height=500px width=500px>
+
+</details>
+
+**Write Review**
+
+If the user is logged in they can write a review, and only one review. This is to prevent spam
+
+<img src="documentation/features/features14.png">
+
+**Viewing your review**
+
+Fix review error before this
+
+**Delete Review**
+
+If the user has written a review and wishes to delete it they can
+
+<img src="documentation/features/features15.png">
+
+
+**Edit review**
+
+Fix review error before this
+
+**Employee home page**
+
+The employee layout looks different to the user pages. The employee page can be accessed by logging in as an employee and going to [this page](https://zoten64-the-harbour-hearth-cd54b5ce5a13.herokuapp.com/employee/)
+
+<img src="documentation/features/features16.png">
+
+**Employee view orders**
+
+**Employee change status**
+
+**Employee cancel order**
+
+**Employee contact forms**
+
+**Employee answer form**
 
 # Bugs and fixes
 
 | Bug | Fix |
--------------
+| ------------- | ------------- |
 | "Cannot import name Menu from home.models" error after the menu model has been moved | Remove the Menu import in home/views.py and home/urls.py. Remove the home urls from the main urls file |
 | Django looks for home index template in the wrong folder | Change views path to home/index.html |
 | Template functions displaying as example { % block content % } instead of displaying the actual block content| Remove spaces between {} and % |

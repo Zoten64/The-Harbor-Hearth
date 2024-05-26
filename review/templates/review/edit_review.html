@@ -17,8 +17,8 @@
 <!--System messages-->
 <ul class="messages">
     {% for message in messages %}
-    <li {% if message.tags %} class=" {{ message.tags }} mt-2 text-green-700 dark:text-green-400 text-center" {% endif
-        %}> {{ message }} </li>
+    <li {% if message.tags %} class=" {{ message.tags }} mt-2 text-green-700 dark:text-green-400 text-center" {% endif%}> 
+        {{ message }} </li>
     {% endfor %}
 </ul>
 
