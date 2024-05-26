@@ -3,8 +3,8 @@ from django import forms
 from order.models import Order
 from contact.models import ContactModel
 
-STATE = (("NOT-STARTED", "Not Started"), ("IN-PROGRESS", "In Progress"),
-         ("FINISHED", "Finished"))
+STATE = (("Not Started", "Not Started"), ("In Progress", "In Progress"),
+         ("Finished", "Finished"))
 
 
 class Cancel(forms.Form):

@@ -522,7 +522,9 @@ If the user is logged in they can write a review, and only one review. This is t
 
 **Viewing your review**
 
-Fix review error before this
+By going to account and then clicking on "my review" you can see your review
+
+<img src="documentation/features/features17.png"
 
 **Delete Review**
 
@@ -533,7 +535,9 @@ If the user has written a review and wishes to delete it they can
 
 **Edit review**
 
-Fix review error before this
+The user can edit their review by first going to "my review" and then clicking edit
+
+<img src="documentation/features/features18.png">
 
 **Employee home page**
 
@@ -543,13 +547,59 @@ The employee layout looks different to the user pages. The employee page can be 
 
 **Employee view orders**
 
+Employees can view orders put into different categories. 
+
+<img src="documentation/features/features20.png">
+
 **Employee change status**
+
+Employees can easilly change status of orders by clicking the dropdown, selecting an option and clicking "change"
+
+<img src="documentation/features/features19.png">
 
 **Employee cancel order**
 
+Employees can cancel orders. Upon cancellation an email will be sent to the person who ordered explaining why. Once an order has been cancelled it can be deleted
+
+<img src="documentation/features/features21.png">
+
+The employee has to enter a cancellation reason
+
+<img src="documentation/features/features22.png">
+
+The order will now show up in the cancelled category
+
+<img src="documentation/features/features23.png">
+
+Email sent to the person who ordered
+
+<img src="documentation/features/features24.png">
+
+When the order is cancelled the employee can delete the order
+
+<img src="documentation/features/features25.png">
+
+<img src="documentation/features/features26.png">
+
 **Employee contact forms**
 
+The employee can view the forms
+
+<img src="documentation/features/features27.png">
+
 **Employee answer form**
+
+Unanswered forms can be answered
+
+<img src="documentation/features/features28.png">
+
+Once the answer is submitted it looks like this
+
+<img src="documentation/features/features29.png">
+
+An email will be sent to the user upon answering
+
+<img src="documentation/features/features30.png">
 
 # Bugs and fixes
 

@@ -79,6 +79,7 @@ def employee_order_detail(request, order_number):
         #Change order status
         new_status = ChangeStatus(request.POST)
         if new_status.is_valid():
+            print("valid")
             order.state = request.POST['state']
             order.save()
             messages.success(request, 'Status change successful')
@@ -165,7 +166,7 @@ def employee_contact_forms(request):
                     context)
 
 
-def employee_contact_forms_detail(request):
+def employee_contact_forms_detail(request, id):
     """
     Details page for a specific contact form.
     Employees can answer forms here as well

@@ -6,7 +6,7 @@
 {% block content %}
 <!--Centers the content-->
 <div class="mx-auto w-fit">
-    <h1 class="text-xl font-bold my-4">
+    <h1 class="text-xl font-bold my-4 text-center">
         {% if order.order_number == None %}
         <!--If the order doesn't exist-->
         Order has been deleted
@@ -26,11 +26,11 @@
     <form class="my-8 mx-auto block w-fit" method="post">
         {% csrf_token %}
         {{form}}
-        <input class="rounded-lg bg-red-500 text-white p-2 my-4 w-fit text-xl block cursor-pointer" type="submit"
+        <input class="rounded-lg bg-red-500 text-white p-2 my-4 w-fit text-xl block cursor-pointer mx-auto" type="submit"
             value="Delete">
     </form>
     <!--Messages-->
-    <ul class="messages">
+    <ul class="messages text-center">
         {% for message in messages %}
         <li {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
         {% endfor %}
@@ -38,7 +38,7 @@
     <!--Back button-->
     <div>
         <a class="rounded-lg bg-cyan-400 text-black p-2 m-4 mt-40 w-fit text-xl block mx-auto"
-            href="{% url 'my_review' %}"> Back </a>
+            href="{% url 'employee_orders' %}"> Back </a>
     </div>
 </div>
 {% endblock content %}
