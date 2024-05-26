@@ -1,0 +1,146 @@
+[
+    {
+        "model": "review.review",
+        "pk": null,
+        "fields": {
+            "rating" : 5,
+            "title" : "Excellent service!",
+            "author" : 6,
+            "content" : "The staff was incredibly nice and accommodating to both me and my son's allergies. The food was great and the service was amazing.",
+            "approved" : true,
+            "featured" : true
+        }
+    },
+    {
+        "model": "review.review",
+        "pk": null,
+        "fields": {
+            "rating" : 5,
+            "title" : "Perfect Date Night Spot",
+            "author" : 7,
+            "content" : "My partner and I had an amazing evening at The Harbour Hearth. The candlelit tables and soft jazz music created a romantic atmosphere. The grilled salmon was cooked to perfection, and the chocolate lava cake was divine. Highly recommend for a special night out.",
+            "approved" : true,
+            "featured" : true
+        }
+    },
+    {
+        "model": "review.review",
+        "pk": null,
+        "fields": {
+            "rating" : 5,
+            "title" : "A Foodie's Paradise",
+            "author" : 8,
+            "content" : "I’m always on the lookout for new places to eat, and The Harbour Hearth did not disappoint. The menu is diverse, offering a delightful mix of classic and innovative dishes. The truffle fries and duck confit were standout items. Excellent service and a warm, welcoming vibe.",
+            "approved" : true,
+            "featured" : true
+        }
+    },
+    {
+        "model": "review.review",
+        "pk": null,
+        "fields": {
+            "rating" : 4,
+            "title" : "Great Food, Lovely Setting",
+            "author" : 9,
+            "content" : "We enjoyed our dinner at The Harbor Hearth. The seafood platter was fresh and beautifully presented. The atmosphere was charming, and the staff were friendly. Only minor downside was the wait time for our main course, but overall, a great experience.",
+            "approved" : true,
+            "featured" : true
+        }
+    },
+    {
+        "model": "review.review",
+        "pk": null,
+        "fields": {
+            "rating" : 4,
+            "title" : "A Delightful Lunch Spot",
+            "author" : 10,
+            "content" : "Stopped by The Harbor Hearth for lunch and was pleasantly surprised. The clam chowder was hearty, and the fish and chips were crispy and delicious. The view of the harbor added to the overall enjoyment. A bit pricey, but worth it for the quality.",
+            "approved" : true,
+            "featured" : true
+        }
+    },
+    {
+        "model": "review.review",
+        "pk": null,
+        "fields": {
+            "rating" : 4,
+            "title" : "Tasty Food with a View",
+            "author" : 11,
+            "content" : "Enjoyed a relaxing evening at The Harbor Hearth. The shrimp scampi was delicious, and the wine selection was impressive. The harbor view is stunning, especially at sunset. Service was good, though a bit slow during the busy hours.",
+            "approved" : true,
+            "featured" : true
+        }
+    },
+    {
+        "model": "review.review",
+        "pk": null,
+        "fields": {
+            "rating" : 3,
+            "title" : "Decent Food, Beautiful Location",
+            "author" : 12,
+            "content" : "Visited The Harbor Hearth for dinner. The location is fantastic, right by the water. The food was good, though not extraordinary. The crab cakes were a bit dry. Service was polite but could have been more attentive. An average experience overall.",
+            "approved" : true,
+            "featured" : true
+        }
+    },
+    {
+        "model": "review.review",
+        "pk": null,
+        "fields": {
+            "rating" : 5,
+            "title" : "Nice Place, Average Food",
+            "author" : 13,
+            "content" : "The atmosphere at The Harbour Hearth is cozy, and the view is great. However, the food was just okay. The clam linguine lacked flavor, and the portion sizes were small. The staff was nice, but the service was a bit disorganized.",
+            "approved" : true,
+            "featured" : true
+        }
+    },
+    {
+        "model": "review.review",
+        "pk": null,
+        "fields": {
+            "rating" : 3,
+            "title" : "Mixed Feelings",
+            "author" : 14,
+            "content" : "Had lunch at The Harbor Hearth. The setting is lovely, but the food was hit or miss. The Caesar salad was excellent, but the steak sandwich was overcooked. Service was friendly but slow. Not sure if I’d rush back.",
+            "approved" : true,
+            "featured" : true
+        }
+    },
+    {
+        "model": "review.review",
+        "pk": null,
+        "fields": {
+            "rating" : 2,
+            "title" : "Disappointing Experience",
+            "author" : 15,
+            "content" : "Went to The Harbor Hearth with high expectations but was let down. The seafood pasta was bland, and the bread was stale. The view is the only thing this place has going for it. Service was slow and inattentive. Not worth the price.",
+            "approved" : true,
+            "featured" : true
+        }
+    },
+    {
+        "model": "review.review",
+        "pk": null,
+        "fields": {
+            "rating" : 1,
+            "title" : "Terrible Service and Food",
+            "author" : 16,
+            "content" : "My visit to The Harbour Hearth was a disaster. The waiter was rude, and the food took forever to arrive. When it did, my shrimp was undercooked, and the vegetables were cold. The manager was unhelpful. Will not be returning.",
+            "approved" : true,
+            "featured" : true
+        }
+    },
+    {
+        "model": "review.review",
+        "pk": null,
+        "fields": {
+            "rating" : 3,
+            "title" : "Never been here",
+            "author" : 17,
+            "content" : "title",
+            "approved" : true,
+            "featured" : true
+        }
+    }
+]

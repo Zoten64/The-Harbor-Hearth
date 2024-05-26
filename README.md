@@ -392,7 +392,7 @@ pipdeptree was used to get a better look at the relationship between libraries a
 
 # Validation and testing
 
-**HTML**
+## HTML (W3C Validator)
 <details>
 <summary> Home </summary>
 <img src="documentation/html_validation/home.png">
