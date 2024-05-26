@@ -15,7 +15,8 @@ class OrderEmail(forms.Form):
     
 class OrderForm(forms.Form):
     #Hide this later as this will be handled with javascript
-    order_info = forms.CharField(widget=forms.TextInput(attrs={"class": "field_text_input"}))
+    order_info = forms.CharField(widget=forms.Textarea(
+        attrs={"class": "field_text_input"}))
     delivery_method = forms.ChoiceField(widget=forms.RadioSelect(
         attrs={"class": "my-2 border-solid"}), choices=DELIVERY_METHOD, 
         label='')
@@ -24,7 +25,8 @@ class OrderForm(forms.Form):
     #This field will be set to required in the case above through JS
     table_number = forms.IntegerField(
         widget=forms.NumberInput(attrs={"class": "field_text_input", "style" : 
-        "display: none;"}), label='', min_value=1, max_value=20, required=False)
+        "display: none;", "placeholder" : "Table Number"}), 
+        min_value=1, max_value=20, required=False, label='')
 
     class Meta:
         model = Order

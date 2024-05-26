@@ -13,7 +13,7 @@ class Menu(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(blank=True)
     ingridients = models.TextField(blank=True)
-    price = models.IntegerField()
+    price = models.FloatField(default=0)
     vegan = models.BooleanField(default=False)
     nuts = models.BooleanField(default=False)
     lactose = models.BooleanField(default=False)

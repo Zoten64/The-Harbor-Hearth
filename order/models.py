@@ -21,6 +21,7 @@ class Order(models.Model):
     delivery_method = models.CharField(choices=DELIVERY_METHOD, 
                                        default=0)
     table_number = models.IntegerField(blank=True, null=True)
+    cost = models.FloatField(default=0)
     order = models.TextField()
     state = models.CharField(choices=STATE, default=0)
     date = models.DateTimeField(auto_now_add=True)

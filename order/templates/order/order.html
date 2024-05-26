@@ -8,19 +8,27 @@
 
 <!--The content-->
 {% block content %}
-<form method="post">
-    {% csrf_token %}
-    <!-- The email field shows up if the user is not logged in -->
-    {% if user.is_authenticated == False %}
-    {{ email }}
-    {% endif %}
-    <!-- The form itself -->
-    {{ order_form }}
-    <input type="submit" value="Order">
-</form>
-<ul class="messages">
-    {% for message in messages %}
-    <li {% if message.tags %} class=" {{ message.tags }} mt-2 text-green-700 dark:text-green-400" {% endif %}> {{ message }} </li>
-    {% endfor %}
-</ul>
+<div class="max-w-md mx-auto">
+    <h1 class="text-4xl text-center font-extrabold underline mt-16 mb-8"> Order</h1>
+    <form method="post">
+        {% csrf_token %}
+        <!-- The email field shows up if the user is not logged in -->
+        {% if user.is_authenticated == False %}
+        {{ email }}
+        {% endif %}
+        <!-- The form itself -->
+        {{ order_form }}
+        <input type="submit" value="Order" class="rounded-lg bg-cyan-400 p-2 my-8 mx-auto block justify-self-end w-fit text-xl text-black">
+    </form>
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class=" {{ message.tags }} mt-2 text-green-700 dark:text-green-400" {% endif %}> {{
+            message }} </li>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/order.js' %}"></script>
+{% endblock script %}
