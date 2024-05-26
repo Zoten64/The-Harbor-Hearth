@@ -56,7 +56,8 @@ INSTALLED_APPS = [
     'contact',
     'blog',
     'menu',
-    'employee_page'
+    'employee_page',
+    'deleteacc'
 ]
 
 SITE_ID = 1
