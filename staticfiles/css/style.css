@@ -1,6 +1,7 @@
 /*Google fonts import*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+/*Generic styles*/
 * {
     /*Overrides default settings*/
     margin: 0;
@@ -33,19 +34,9 @@ hr{
     border-style: solid;
 }
 
+/*header*/
 /*Navigation elements have been split up into 3, each one getting an equal amount of space*/
 .main-navigation{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.nav-grid-item{
-    display: grid;
-    justify-self: center;
-}
-
-/*Social media section contains 2 elements.*/
-.social-media{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -55,6 +46,9 @@ hr{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+/*Main*/
+
+/*Home page*/
 
 .logo-home{
     background-image: url('../images/harborhearthlogo.svg');
@@ -62,6 +56,51 @@ hr{
     background-position: center;
 }
 
+.hero{
+    background-image: url('../images/hero.webp');
+    background-size: 100%;
+    background-position: 30%;
+}
+
+/*Footer*/
+/*Social media section contains 2 elements.*/
+.social-media{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/*Form classes*/
+
+.field_text_input{
+    padding: 2px;
+    width: 100%;
+    background-color: #f8fafc;
+    border: 1px solid black;
+    color: #020617;
+    border-radius: 10px;
+    display: block;
+}
+
+/*All text type input fields. Used on account forms*/
+.account_fields input[type=text],
+.account_fields input[type=email],
+.account_fields input[type=password]{
+    padding: 2px;
+    width: 100%;
+    background-color: #f8fafc;
+    border: 1px solid black;
+    color: #020617;
+    border-radius: 10px;
+    display: block;
+}
+
+/*Allauth style overrides*/
+.helptext{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
 
 /*Media Query: Tablets and larger (768px and up)*/
 @media screen and (min-width: 768px) {
