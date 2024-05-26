@@ -406,6 +406,7 @@ pipdeptree was used to get a better look at the relationship between libraries a
 <details>
 <summary> Reviews </summary>
 <img src="documentation/html_validation/reviews.png">
+<img src="documentation/html_validation/review_details.png">
 </details>
 
 <details>
@@ -418,6 +419,10 @@ pipdeptree was used to get a better look at the relationship between libraries a
 <img src="documentation/html_validation/blog.png">
 </details>
 
+<details>
+<summary> Log in </summary>
+<img src="documentation/html_validation/login.png">
+</details>
 
 # Deployment
 
