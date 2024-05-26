@@ -54,9 +54,7 @@ As an admin you can create special accounts for employees where they have access
 
 3.  As a customer I can order and pay online so I don't have to wait in line at the counter to do so
     - AC1: The website should have an option to order
-    - AC2: The customer should be able to add listed items to the order
-    - AC3: The customer should be able to pay directly on the website
-    - AC4: The customer should be given a short and easy to remember order number
+    - AC2: The customer should be given a short and easy to remember order number
 
     Must have
 

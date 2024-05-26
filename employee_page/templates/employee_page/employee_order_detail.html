@@ -8,9 +8,12 @@
 {% block content %}
 <div class="w-full flex items-center mt-16 flex-col">
     <div class="rounded-lg bg-white border-solid border-black border-2 dark:bg-gray-900 w-11/12 md:w-4/5 md:p-8 p-4">
-        <h2 class="text-3xl font-bold">{{order.order_number}}</h1>
-            <h3 class="text-xl">{{order.delivery_method}}
-        </h2>
+        <h2 class="text-3xl font-bold">{{order.order_number}}</h2>
+        <h3 class="text-xl">{{order.delivery_method}}</h3>
+        {% if order.delivery_method == 'TABLE' %}
+        <h3 class="text-xl">Table number: {{order.table_number}}</h3>
+        {% endif %}
+
         <p class="whitespace-pre">{{order.order}}</p>
 
         <div class="mt-4">
@@ -49,16 +52,17 @@
         </div>
         <ul class="messages">
             {% for message in messages %}
-            <li {% if message.tags %} class=" {{ message.tags }} mt-2 text-green-700 dark:text-green-400" {% endif %}> {{ message }} </li>
+            <li {% if message.tags %} class=" {{ message.tags }} mt-2 text-green-700 dark:text-green-400" {% endif %}>
+                {{ message }} </li>
             {% endfor %}
         </ul>
     </div>
     {% if order.state == 'Cancelled' %}
     <a href="{% url 'employee_delete_order' order.order_number%}"
-    class="bg-red-500 rounded-full text-white w-fit h-fit p-2 mt-8 text-xl">Delete order</a>
+        class="bg-red-500 rounded-full text-white w-fit h-fit p-2 mt-8 text-xl">Delete order</a>
     {% else %}
     <a href="{% url 'employee_cancel_order' order.order_number%}"
-    class="bg-red-500 rounded-full text-white w-fit h-fit p-2 mt-8 text-xl">Cancel order</a>
+        class="bg-red-500 rounded-full text-white w-fit h-fit p-2 mt-8 text-xl">Cancel order</a>
     {% endif %}
 
 
