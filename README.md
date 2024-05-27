@@ -1002,6 +1002,278 @@ User model imported from django messages aren't important either
 <img src="documentation/pep8/employee_page.png">
 </details>
 
+
+## Manual testing
+
+Due to lack of time I did not have time to implement automatic testing
+
+1. As a customer I can view the menu online so I can see what is available to order
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| A menu on the home page and menu page | Navigate to the home page or the menu page | Be able to view the menu | Works as expected |
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory1.png">
+</details>
+
+2. As a customer with dietary restrictions I can easily identify what I can and cannot eat so that I can avoid eating things I shouldn't
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| Clear color coded labels on the menu | Navigate to the menu and look at the item | Clear dietary restriction labels | works as expected |
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory2.png">
+</details>
+
+3. As a customer I can order online so I don't have to wait in line at the counter to do so
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| Order online feature | Navigate to home page and click the order now button in the top right. Fill in the fields and press order | Order should be placed | Works as expected |
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory3.png">
+</details>
+
+4. As a customer I can choose to have my order be eat-in or take-out to suit my needs
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| Delivery method selection | Navigate to the order page (like listed in user story 3) and select the delivery option | Delivery option will be selected | Works as expected |
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory4.png">
+</details>
+
+
+5. As an eat-in customer I can choose to have my order brought to my table or to pick it up myself at the counter to better suit my needs
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| Delivery method selection | Navigate to the order page (like listed in user story 3) and select the delivery option | Delivery option will be selected | Works as expected |
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory4.png">
+</details>
+
+6. As a customer I can scan a QR code at my table to be instantly taken to the order page with my table number to make it more convenient to order
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| scannable qr codes that will automatically fill in the table number | Scan the qr code with your phone | Table number will be filled in | Works as expected |
+
+Note: I can't show the process of scanning the code, but code for table 1 has been provided below
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/qrcodes/table1.png">
+</details>
+
+7. As a new customer I can see reviews so I can get a better idea of the experience at the bistro
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| Reviews page | Navigate to reviews | A page with reviews | Works as expected |
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory7.png">
+</details>
+
+8. As a customer I can create an account so I can access more features
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| Account signup page | Navigate to account and press "sign up" | A signup page | Works as expected |
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory8.png">
+</details>
+
+9. As a customer with an account I can log in so I can access more features
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| Account sign in page | Navigate to account page | A sign in page | Works as expected |
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory9.png">
+</details>
+
+10. As a logged in customer I can change account details so that I can keep using it:
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| Account settings pages | Make sure you're logged in. Navigate to account page and look at the bottom| Links to change account details | Works as expected |
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory10.png">
+</details>
+
+11. As a logged in customer I can delete my account so that my info is no longer stored in The Harbor Hearths database
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| Delete account feature | Navigate to account, look at the bottom and click delete account. Follow the instructions | account deletion | Works as expected |
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory11.png">
+</details>
+
+12. As a customer who forgot their password I can request a password reset to be able to regain access to my account
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| Password reset feature | Navigate to account page, press "forgot password", follow the instructions | Password reset page | Works as expected |
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory12.png">
+</details>
+
+13. As a logged in customer I can write a review about my experience at the bistro so others can get a better idea of what it's like
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| Write review functionality | Navigate to the reviews page, click write a review (or log in if you aren't), fill in the fields and press submit | Being able to write review | Works as expected |
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory13.png">
+</details>
+
+14. As a logged in customer who has written a review I can change it to make it more accurate
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| Edit review functionality | navigate to account, log in if you have to, click "my review" and press edit | Ability to edit review | works as expected|
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory14.png">
+</details>
+
+
+15. As a customer I can contact the Harbor Hearth using a form on their website so I can have any inquires answered
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| Contact form | Navigate to "contact" and  fill out the form | Contact form you can fill out | Works as expected |
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory15.png">
+</details>
+
+16. As an employee I can view orders made by customers so that I can serve them
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| View orders page | Be logged in as an employee and navigate to the employee page by appending "/employee" to the end of the home url. Click orders | A page where you can view orders | Works as expected |
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory16.png">
+</details>
+
+17. As an employee I can cancel inapporpriate orders so that I don't have to serve them
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| Cancel orders feature | Navigate to orders page by following number 16. Click on the order you want to cancel. Press cancel and enter a reason. | The order will cancel | Works as expected |
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory17.png">
+</details>
+
+18. As an employee I can see a list of questions and messages submitted by customers through the contact form so that I may assist them
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| Contact forms employee view | Be logged in as an employee and navigate to the employee page by appending "/employee" to the end of the home url. Click "Contact Forms" | A page with contact forms | Works as expected |
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory18.png">
+</details>
+
+
+19. As an administrator I have access to an admin dashboard so I can manage the data on the site
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| Admin panel | Navigate to the admin panel by appending /admin to the end of the home url. Log in if prompted | Admin panel | Works as expected |
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory19.png">
+</details>
+
+20. As an administrator I can create employee accounts so I can grant them access to specific features
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| Employee accounts feature | Navigate to admin panel by following number 19. Press new on the "employees" row. Choose the user you want to make an employee and press save | A user account will be promoted to employee | Works as expected |
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory20.png">
+</details>
+
+21. As an administrator I can create formatted blog posts of news and important information so I can keep my customers updated
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| Create Blog posts function in the admin panel | Navigate to the admin panel by following number 19. Press new on thew "posts" row. Fill out the fields.| Page for making blogposts featuring summernote as a more advanced text editor | Works as expected |
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory21.png">
+</details>
+
+22. As an administrator I can easily change the price of items on the menu so that I can keep it up to date
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| Change menu items | Navigate to admin panel. Click menus. Click the item that you want to change and change the price | The price will be changed | Works as expected |
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory22.png">
+</details>
+
+23. As an administrator I can easily add and remove items from the menu
+
+| Feature  | Action | Expected results | Actual results |
+| ------------- | ------------- | ------------- | ------------- |
+| Modify menu | Navigate to the admin panel. Either press the plus button next to menu to add an item, or click the menu text iself, click the item to be deleted and press delete| Add and/or delete items | Works as expected |
+
+<details>
+<summary>Screenshots</summary>
+<img src="documentation/testing_screenshots/userstory23.png">
+</details>
+
+## More testing
+
+**Browsers tested**
+- Google Chrome (Theoretically all chromium browsers should work)
+- Firefox
+
+**Devices tested**
+
+The website has been tested on the following devices:
+- Custom built desktop pc
+- Nothing Phone 2
+
 # Deployment
 
 **Deploying and accessing the website**

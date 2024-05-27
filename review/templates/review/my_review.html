@@ -25,7 +25,7 @@
         {% endfor %}
         <!--Author-->
         <p class="text-black dark:text-white py-4"> {{review.author}} wrote: </p>
-        <p class="whitespace-pre"> {{review.content}} </p>
+        <p class="whitespace-pre-wrap"> {{review.content}} </p>
         <!--If the review isn't approved this will show up-->
         {% if review.approved == False %}
         <p class="text-red-800 dark:text-red-500">Your review is awaiting approval. Please be patient</p>
